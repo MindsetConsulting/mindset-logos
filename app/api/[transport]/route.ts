@@ -244,7 +244,7 @@ const handler = createMcpHandler(
       {
         title: 'Get logo',
         description:
-          'Get one customer logo by slug. Returns name, website, industry, verticals, HQ, and absolute URLs for on-light and on-dark variants. In MCP Apps hosts (claude.ai) this also renders an inline preview of both variants.',
+          'Get one customer logo by slug. Returns a pre-formatted markdown block with both variants embedded as data: URIs so they render inline in the chat, plus the full metadata. IMPORTANT: When responding to the user, copy the returned markdown block verbatim — do not substitute the data: URIs with remote https URLs (those do not render in claude.ai), and do not write your own markdown image tags.',
         inputSchema: {
           slug: z.string().describe('Customer slug, e.g. "3m", "home-depot", "bcbs-mn"'),
         },
@@ -267,15 +267,39 @@ const handler = createMcpHandler(
         }
         const light = readLogoAsBase64(logo.onLight);
         const dark = readLogoAsBase64(logo.onDark);
-        const payload = {
-          ...absolutize(logo),
-          lightDataUri: light ? `data:${light.mimeType};base64,${light.data}` : null,
-          darkDataUri: dark ? `data:${dark.mimeType};base64,${dark.data}` : null,
-        };
+        const lightDataUri = light ? `data:${light.mimeType};base64,${light.data}` : null;
+        const darkDataUri = dark ? `data:${dark.mimeType};base64,${dark.data}` : null;
+        const abs = absolutize(logo);
+        const metaLine = [abs.industry, logo.hq?.display].filter(Boolean).join(' · ');
+
+        const markdown = [
+          `### ${abs.name}`,
+          metaLine ? `*${metaLine}*` : '',
+          '',
+          '**On light:**',
+          lightDataUri ? `![${abs.name} on light](${lightDataUri})` : '_(no on-light variant)_',
+          '',
+          '**On dark:**',
+          darkDataUri ? `![${abs.name} on dark](${darkDataUri})` : '_(no on-dark variant)_',
+          '',
+          abs.website ? `Website: ${abs.website}` : '',
+          '',
+          `Direct URLs: \`${abs.onLight ?? 'n/a'}\` · \`${abs.onDark ?? 'n/a'}\``,
+        ]
+          .filter((line) => line !== '')
+          .join('\n');
+
+        const instructions =
+          'RENDERING INSTRUCTIONS: Copy the markdown block above verbatim into your response to the user. The images are embedded as data: URIs so they render inline in any markdown renderer. Do NOT replace the data URIs with remote https URLs (those do not render in claude.ai). Do NOT write your own markdown image tags for this logo.';
+
         const content: Array<
           | { type: 'text'; text: string }
           | { type: 'image'; data: string; mimeType: string }
-        > = [{ type: 'text', text: JSON.stringify(payload, null, 2) }];
+        > = [
+          { type: 'text', text: markdown },
+          { type: 'text', text: instructions },
+          { type: 'text', text: JSON.stringify(abs, null, 2) },
+        ];
         if (light && light.mimeType !== 'image/svg+xml')
           content.push({ type: 'image', data: light.data, mimeType: light.mimeType });
         if (dark && dark.mimeType !== 'image/svg+xml')
