@@ -133,4 +133,27 @@ const handler = createMcpHandler(
   },
 );
 
-export { handler as GET, handler as POST, handler as DELETE };
+const CORS_HEADERS: Record<string, string> = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
+  'Access-Control-Allow-Headers':
+    'Content-Type, Authorization, mcp-session-id, mcp-protocol-version',
+  'Access-Control-Expose-Headers': 'mcp-session-id',
+  'Access-Control-Max-Age': '86400',
+};
+
+function withCors(inner: (req: Request) => Promise<Response>) {
+  return async (req: Request) => {
+    const res = await inner(req);
+    const headers = new Headers(res.headers);
+    for (const [k, v] of Object.entries(CORS_HEADERS)) headers.set(k, v);
+    return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
+  };
+}
+
+export async function OPTIONS() {
+  return new Response(null, { status: 204, headers: CORS_HEADERS });
+}
+
+const wrapped = withCors(handler);
+export { wrapped as GET, wrapped as POST, wrapped as DELETE };
