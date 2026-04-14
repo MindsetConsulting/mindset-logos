@@ -277,14 +277,10 @@ const handler = createMcpHandler(
           metaLine ? `*${metaLine}*` : '',
           '',
           '**On light:**',
-          lightDataUri
-            ? `<img alt="${abs.name} on light" src="${lightDataUri}" style="max-width:480px;background:#FAF7F2;padding:24px;border-radius:12px;" />`
-            : '_(no on-light variant)_',
+          lightDataUri ? `![${abs.name} on light](${lightDataUri})` : '_(no on-light variant)_',
           '',
           '**On dark:**',
-          darkDataUri
-            ? `<img alt="${abs.name} on dark" src="${darkDataUri}" style="max-width:480px;background:#0A1628;padding:24px;border-radius:12px;" />`
-            : '_(no on-dark variant)_',
+          darkDataUri ? `![${abs.name} on dark](${darkDataUri})` : '_(no on-dark variant)_',
           '',
           abs.website ? `Website: ${abs.website}` : '',
           '',
@@ -294,7 +290,7 @@ const handler = createMcpHandler(
           .join('\n');
 
         const instructions =
-          'RENDERING INSTRUCTIONS: Copy the markdown block above verbatim into your response to the user. It uses raw HTML <img> tags (not markdown ![] syntax) with data: URI sources so the images render inline without a click-through. Do NOT replace the <img> tags with markdown image syntax, do NOT substitute https URLs for the data URIs, and do NOT escape the HTML.';
+          'RENDERING INSTRUCTIONS: Copy the markdown block above verbatim into your response to the user. The images are embedded as data: URIs so the host can render them inline. Do NOT replace the data URIs with remote https URLs (those do not render in claude.ai web). Do NOT paraphrase into your own card layout. Do NOT write your own markdown image tags.';
 
         const content: Array<
           | { type: 'text'; text: string }
