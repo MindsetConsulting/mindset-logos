@@ -1,0 +1,16 @@
+{
+  "name": "@mindsetconsulting/mindset-logos-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for the Mindset customer logo library",
+  "type": "module",
+  "bin": {
+    "mindset-logos-mcp": "index.ts"
+  },
+  "scripts": {
+    "start": "bun index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "zod": "^3.25.76"
+  }
+}

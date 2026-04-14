@@ -1,0 +1,2646 @@
+{
+  "ranAt": "2026-04-14T20:26:31.999Z",
+  "counts": {
+    "total": 119,
+    "allGood": 119,
+    "partial": 0,
+    "broken": 0,
+    "byQuality": {
+      "onLight": {
+        "good": 113,
+        "icon": 5,
+        "flat": 1,
+        "tiny": 0,
+        "missing": 0
+      },
+      "onDark": {
+        "good": 113,
+        "icon": 5,
+        "flat": 1,
+        "tiny": 0,
+        "missing": 0
+      }
+    }
+  },
+  "audits": [
+    {
+      "slug": "3m",
+      "name": "3M Company",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "3m-on-light.png",
+        "width": 856,
+        "height": 467,
+        "hasAlpha": true,
+        "aspectRatio": 1.83,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "3m-on-dark.png",
+        "width": 856,
+        "height": 467,
+        "hasAlpha": true,
+        "aspectRatio": 1.83,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "ao-smith",
+      "name": "A. O. Smith Corporation",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "ao-smith-on-light.webp",
+        "width": 800,
+        "height": 215,
+        "hasAlpha": true,
+        "aspectRatio": 3.72,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "ao-smith-on-dark.webp",
+        "width": 800,
+        "height": 215,
+        "hasAlpha": true,
+        "aspectRatio": 3.72,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "abbott",
+      "name": "Abbott Laboratories",
+      "industry": "Biotechnology",
+      "onLight": {
+        "file": "abbott-on-light.webp",
+        "width": 820,
+        "height": 136,
+        "hasAlpha": true,
+        "aspectRatio": 6.03,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "abbott-on-dark.webp",
+        "width": 820,
+        "height": 129,
+        "hasAlpha": true,
+        "aspectRatio": 6.36,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "agiliti",
+      "name": "Agiliti Health",
+      "industry": "Machinery",
+      "onLight": {
+        "file": "agiliti-on-light.webp",
+        "width": 820,
+        "height": 381,
+        "hasAlpha": true,
+        "aspectRatio": 2.15,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "agiliti-on-dark.png",
+        "width": 845,
+        "height": 408,
+        "hasAlpha": true,
+        "aspectRatio": 2.07,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "american-crystal-sugar",
+      "name": "American Crystal Sugar",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "american-crystal-sugar-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "american-crystal-sugar-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "analog-devices",
+      "name": "Analog Devices",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "analog-devices-on-light.webp",
+        "width": 800,
+        "height": 226,
+        "hasAlpha": true,
+        "aspectRatio": 3.54,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "analog-devices-on-dark.webp",
+        "width": 800,
+        "height": 226,
+        "hasAlpha": true,
+        "aspectRatio": 3.54,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "anchorage",
+      "name": "Municipality of Anchorage",
+      "industry": "Government",
+      "onLight": {
+        "file": "anchorage-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "anchorage-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "all-good",
+      "pendingApproval": true
+    },
+    {
+      "slug": "arctic-cat",
+      "name": "Arctic Cat",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "arctic-cat-on-light.webp",
+        "width": 468,
+        "height": 213,
+        "hasAlpha": true,
+        "aspectRatio": 2.2,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "arctic-cat-on-dark.png",
+        "width": 468,
+        "height": 213,
+        "hasAlpha": true,
+        "aspectRatio": 2.2,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "astemo",
+      "name": "Astemo Americas",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "astemo-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "astemo-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "baxter",
+      "name": "Baxter International",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "baxter-on-light.webp",
+        "width": 820,
+        "height": 139,
+        "hasAlpha": true,
+        "aspectRatio": 5.9,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "baxter-on-dark.webp",
+        "width": 800,
+        "height": 126,
+        "hasAlpha": true,
+        "aspectRatio": 6.35,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "bloomberg",
+      "name": "Bloomberg",
+      "industry": "Telecommunications",
+      "onLight": {
+        "file": "bloomberg-on-light.webp",
+        "width": 800,
+        "height": 161,
+        "hasAlpha": true,
+        "aspectRatio": 4.97,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "bloomberg-on-dark.webp",
+        "width": 800,
+        "height": 161,
+        "hasAlpha": true,
+        "aspectRatio": 4.97,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "bcbs-mn",
+      "name": "Blue Cross Blue Shield of Minnesota",
+      "industry": "Insurance",
+      "onLight": {
+        "file": "bcbs-mn-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "bcbs-mn-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "bmw",
+      "name": "BMW Manufacturing",
+      "industry": "Retail",
+      "onLight": {
+        "file": "bmw-on-light.png",
+        "width": 440,
+        "height": 440,
+        "hasAlpha": true,
+        "aspectRatio": 1,
+        "quality": "icon"
+      },
+      "onDark": {
+        "file": "bmw-on-dark.png",
+        "width": 440,
+        "height": 440,
+        "hasAlpha": true,
+        "aspectRatio": 1,
+        "quality": "icon"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "boehringer-ingelheim",
+      "name": "Boehringer Ingelheim",
+      "industry": "Biotechnology",
+      "onLight": {
+        "file": "boehringer-ingelheim-on-light.webp",
+        "width": 820,
+        "height": 248,
+        "hasAlpha": true,
+        "aspectRatio": 3.31,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "boehringer-ingelheim-on-dark.webp",
+        "width": 820,
+        "height": 248,
+        "hasAlpha": true,
+        "aspectRatio": 3.31,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "border-states",
+      "name": "Border States Industries",
+      "industry": "Electronics",
+      "onLight": {
+        "file": "border-states-on-light.png",
+        "width": 558,
+        "height": 150,
+        "hasAlpha": true,
+        "aspectRatio": 3.72,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "border-states-on-dark.png",
+        "width": 558,
+        "height": 150,
+        "hasAlpha": true,
+        "aspectRatio": 3.72,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "brown-forman",
+      "name": "Brown-Forman",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "brown-forman-on-light.webp",
+        "width": 820,
+        "height": 383,
+        "hasAlpha": true,
+        "aspectRatio": 2.14,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "brown-forman-on-dark.png",
+        "width": 820,
+        "height": 383,
+        "hasAlpha": true,
+        "aspectRatio": 2.14,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "callaway-golf",
+      "name": "Callaway Golf / Topgolf",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "callaway-golf-on-light.webp",
+        "width": 820,
+        "height": 270,
+        "hasAlpha": true,
+        "aspectRatio": 3.04,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "callaway-golf-on-dark.png",
+        "width": 820,
+        "height": 270,
+        "hasAlpha": true,
+        "aspectRatio": 3.04,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "canadian-pacific",
+      "name": "Canadian Pacific Railway",
+      "industry": "Shipping",
+      "onLight": {
+        "file": "canadian-pacific-on-light.webp",
+        "width": 820,
+        "height": 355,
+        "hasAlpha": true,
+        "aspectRatio": 2.31,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "canadian-pacific-on-dark.png",
+        "width": 820,
+        "height": 355,
+        "hasAlpha": true,
+        "aspectRatio": 2.31,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "steris",
+      "name": "STERIS (Cantel Medical)",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "steris-on-light.webp",
+        "width": 820,
+        "height": 133,
+        "hasAlpha": true,
+        "aspectRatio": 6.17,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "steris-on-dark.png",
+        "width": 820,
+        "height": 133,
+        "hasAlpha": true,
+        "aspectRatio": 6.17,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "cardinal-health",
+      "name": "Cardinal Health",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "cardinal-health-on-light.webp",
+        "width": 400,
+        "height": 132,
+        "hasAlpha": true,
+        "aspectRatio": 3.03,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "cardinal-health-on-dark.png",
+        "width": 400,
+        "height": 132,
+        "hasAlpha": true,
+        "aspectRatio": 3.03,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "cargill",
+      "name": "Cargill",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "cargill-on-light.webp",
+        "width": 820,
+        "height": 367,
+        "hasAlpha": true,
+        "aspectRatio": 2.23,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "cargill-on-dark.png",
+        "width": 820,
+        "height": 367,
+        "hasAlpha": true,
+        "aspectRatio": 2.23,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "chs",
+      "name": "CHS Inc.",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "chs-on-light.webp",
+        "width": 820,
+        "height": 454,
+        "hasAlpha": true,
+        "aspectRatio": 1.81,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "chs-on-dark.png",
+        "width": 820,
+        "height": 454,
+        "hasAlpha": true,
+        "aspectRatio": 1.81,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "cnh-industrial",
+      "name": "CNH Industrial",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "cnh-industrial-on-light.webp",
+        "width": 800,
+        "height": 465,
+        "hasAlpha": true,
+        "aspectRatio": 1.72,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "cnh-industrial-on-dark.webp",
+        "width": 800,
+        "height": 465,
+        "hasAlpha": true,
+        "aspectRatio": 1.72,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "commscope",
+      "name": "CommScope",
+      "industry": "Communications",
+      "onLight": {
+        "file": "commscope-on-light.webp",
+        "width": 820,
+        "height": 112,
+        "hasAlpha": true,
+        "aspectRatio": 7.32,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "commscope-on-dark.png",
+        "width": 820,
+        "height": 112,
+        "hasAlpha": true,
+        "aspectRatio": 7.32,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "danfoss",
+      "name": "Danfoss Power Solutions",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "danfoss-on-light.webp",
+        "width": 800,
+        "height": 313,
+        "hasAlpha": true,
+        "aspectRatio": 2.56,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "danfoss-on-dark.webp",
+        "width": 820,
+        "height": 358,
+        "hasAlpha": true,
+        "aspectRatio": 2.29,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "deluxe",
+      "name": "Deluxe Corporation",
+      "industry": "Media",
+      "onLight": {
+        "file": "deluxe-on-light.webp",
+        "width": 747,
+        "height": 176,
+        "hasAlpha": true,
+        "aspectRatio": 4.24,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "deluxe-on-dark.png",
+        "width": 747,
+        "height": 176,
+        "hasAlpha": true,
+        "aspectRatio": 4.24,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "dow-jones",
+      "name": "Dow Jones",
+      "industry": "Media",
+      "onLight": {
+        "file": "dow-jones-on-light.webp",
+        "width": 820,
+        "height": 101,
+        "hasAlpha": true,
+        "aspectRatio": 8.12,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "dow-jones-on-dark.webp",
+        "width": 820,
+        "height": 101,
+        "hasAlpha": true,
+        "aspectRatio": 8.12,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "durag",
+      "name": "Durag",
+      "industry": "Machinery",
+      "onLight": {
+        "file": "durag-on-light.png",
+        "width": 900,
+        "height": 500,
+        "hasAlpha": true,
+        "aspectRatio": 1.8,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "durag-on-dark.png",
+        "width": 900,
+        "height": 500,
+        "hasAlpha": true,
+        "aspectRatio": 1.8,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "dycom",
+      "name": "Dycom Industries",
+      "industry": "Construction",
+      "onLight": {
+        "file": "dycom-on-light.webp",
+        "width": 1095,
+        "height": 180,
+        "hasAlpha": true,
+        "aspectRatio": 6.08,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "dycom-on-dark.png",
+        "width": 1095,
+        "height": 180,
+        "hasAlpha": true,
+        "aspectRatio": 6.08,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "kodak",
+      "name": "Eastman Kodak",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "kodak-on-light.png",
+        "width": 430,
+        "height": 380,
+        "hasAlpha": true,
+        "aspectRatio": 1.13,
+        "quality": "icon"
+      },
+      "onDark": {
+        "file": "kodak-on-dark.png",
+        "width": 430,
+        "height": 380,
+        "hasAlpha": true,
+        "aspectRatio": 1.13,
+        "quality": "icon"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "ecolab",
+      "name": "Ecolab",
+      "industry": "Chemicals",
+      "onLight": {
+        "file": "ecolab-on-light.webp",
+        "width": 820,
+        "height": 239,
+        "hasAlpha": true,
+        "aspectRatio": 3.43,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "ecolab-on-dark.webp",
+        "width": 820,
+        "height": 239,
+        "hasAlpha": true,
+        "aspectRatio": 3.43,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "edf-renewables",
+      "name": "EDF Renewables",
+      "industry": "Utilities",
+      "onLight": {
+        "file": "edf-renewables-on-light.webp",
+        "width": 800,
+        "height": 342,
+        "hasAlpha": true,
+        "aspectRatio": 2.34,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "edf-renewables-on-dark.webp",
+        "width": 820,
+        "height": 350,
+        "hasAlpha": true,
+        "aspectRatio": 2.34,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "entegris",
+      "name": "Entegris",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "entegris-on-light.webp",
+        "width": 800,
+        "height": 189,
+        "hasAlpha": true,
+        "aspectRatio": 4.23,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "entegris-on-dark.png",
+        "width": 800,
+        "height": 189,
+        "hasAlpha": true,
+        "aspectRatio": 4.23,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "exact-sciences",
+      "name": "Exact Sciences",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "exact-sciences-on-light.webp",
+        "width": 820,
+        "height": 284,
+        "hasAlpha": true,
+        "aspectRatio": 2.89,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "exact-sciences-on-dark.webp",
+        "width": 820,
+        "height": 284,
+        "hasAlpha": true,
+        "aspectRatio": 2.89,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "faribault-foods",
+      "name": "Faribault Foods",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "faribault-foods-on-light.png",
+        "width": 688,
+        "height": 240,
+        "hasAlpha": true,
+        "aspectRatio": 2.87,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "faribault-foods-on-dark.webp",
+        "width": 688,
+        "height": 240,
+        "hasAlpha": true,
+        "aspectRatio": 2.87,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "ford",
+      "name": "Ford Motor Company",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "ford-on-light.webp",
+        "width": 820,
+        "height": 318,
+        "hasAlpha": true,
+        "aspectRatio": 2.58,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "ford-on-dark.webp",
+        "width": 820,
+        "height": 318,
+        "hasAlpha": true,
+        "aspectRatio": 2.58,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "fujifilm",
+      "name": "Fujifilm",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "fujifilm-on-light.webp",
+        "width": 800,
+        "height": 218,
+        "hasAlpha": true,
+        "aspectRatio": 3.67,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "fujifilm-on-dark.webp",
+        "width": 800,
+        "height": 218,
+        "hasAlpha": true,
+        "aspectRatio": 3.67,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "furst-mcness",
+      "name": "Furst-McNess",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "furst-mcness-on-light.webp",
+        "width": 1077,
+        "height": 612,
+        "hasAlpha": true,
+        "aspectRatio": 1.76,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "furst-mcness-on-dark.png",
+        "width": 1077,
+        "height": 612,
+        "hasAlpha": true,
+        "aspectRatio": 1.76,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "gallagher",
+      "name": "Gallagher Group",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "gallagher-on-light.png",
+        "width": 336,
+        "height": 96,
+        "hasAlpha": true,
+        "aspectRatio": 3.5,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "gallagher-on-dark.png",
+        "width": 336,
+        "height": 96,
+        "hasAlpha": true,
+        "aspectRatio": 3.5,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "general-mills",
+      "name": "General Mills",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "general-mills-on-light.webp",
+        "width": 820,
+        "height": 477,
+        "hasAlpha": true,
+        "aspectRatio": 1.72,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "general-mills-on-dark.webp",
+        "width": 820,
+        "height": 476,
+        "hasAlpha": true,
+        "aspectRatio": 1.72,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "hd-supply",
+      "name": "HD Supply",
+      "industry": "Construction",
+      "onLight": {
+        "file": "hd-supply-on-light.png",
+        "width": 1600,
+        "height": 224,
+        "hasAlpha": true,
+        "aspectRatio": 7.14,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "hd-supply-on-dark.png",
+        "width": 1600,
+        "height": 224,
+        "hasAlpha": true,
+        "aspectRatio": 7.14,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "hexion",
+      "name": "Hexion",
+      "industry": "Engineering",
+      "onLight": {
+        "file": "hexion-on-light.png",
+        "width": 900,
+        "height": 500,
+        "hasAlpha": true,
+        "aspectRatio": 1.8,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "hexion-on-dark.png",
+        "width": 900,
+        "height": 500,
+        "hasAlpha": true,
+        "aspectRatio": 1.8,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "home-depot-canada",
+      "name": "Home Depot Canada",
+      "industry": "Retail",
+      "onLight": {
+        "file": "home-depot-canada-on-light.png",
+        "width": 600,
+        "height": 601,
+        "hasAlpha": true,
+        "aspectRatio": 1,
+        "quality": "icon"
+      },
+      "onDark": {
+        "file": "home-depot-canada-on-dark.png",
+        "width": 600,
+        "height": 601,
+        "hasAlpha": true,
+        "aspectRatio": 1,
+        "quality": "icon"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "ibm",
+      "name": "IBM",
+      "industry": "Technology",
+      "onLight": {
+        "file": "ibm-on-light.webp",
+        "width": 800,
+        "height": 319,
+        "hasAlpha": true,
+        "aspectRatio": 2.51,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "ibm-on-dark.png",
+        "width": 800,
+        "height": 319,
+        "hasAlpha": true,
+        "aspectRatio": 2.51,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "indeed",
+      "name": "Indeed",
+      "industry": "Technology",
+      "onLight": {
+        "file": "indeed-on-light.webp",
+        "width": 820,
+        "height": 219,
+        "hasAlpha": true,
+        "aspectRatio": 3.74,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "indeed-on-dark.webp",
+        "width": 820,
+        "height": 219,
+        "hasAlpha": true,
+        "aspectRatio": 3.74,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "jj-keller",
+      "name": "J. J. Keller & Associates",
+      "industry": "Media",
+      "onLight": {
+        "file": "jj-keller-on-light.webp",
+        "width": 820,
+        "height": 280,
+        "hasAlpha": true,
+        "aspectRatio": 2.93,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "jj-keller-on-dark.png",
+        "width": 820,
+        "height": 280,
+        "hasAlpha": true,
+        "aspectRatio": 2.93,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "jma-wireless",
+      "name": "JMA Wireless",
+      "industry": "Electronics",
+      "onLight": {
+        "file": "jma-wireless-on-light.webp",
+        "width": 431,
+        "height": 231,
+        "hasAlpha": true,
+        "aspectRatio": 1.87,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "jma-wireless-on-dark.png",
+        "width": 431,
+        "height": 231,
+        "hasAlpha": true,
+        "aspectRatio": 1.87,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "johns-hopkins",
+      "name": "Johns Hopkins University",
+      "industry": "Education",
+      "onLight": {
+        "file": "johns-hopkins-on-light.webp",
+        "width": 820,
+        "height": 1097,
+        "hasAlpha": true,
+        "aspectRatio": 0.75,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "johns-hopkins-on-dark.png",
+        "width": 820,
+        "height": 1097,
+        "hasAlpha": true,
+        "aspectRatio": 0.75,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "johns-manville",
+      "name": "Johns Manville",
+      "industry": "Energy",
+      "onLight": {
+        "file": "johns-manville-on-light.png",
+        "width": 820,
+        "height": 183,
+        "hasAlpha": true,
+        "aspectRatio": 4.48,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "johns-manville-on-dark.webp",
+        "width": 820,
+        "height": 183,
+        "hasAlpha": true,
+        "aspectRatio": 4.48,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "johnson-health-tech",
+      "name": "Johnson Health Tech",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "johnson-health-tech-on-light.webp",
+        "width": 800,
+        "height": 394,
+        "hasAlpha": true,
+        "aspectRatio": 2.03,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "johnson-health-tech-on-dark.webp",
+        "width": 800,
+        "height": 394,
+        "hasAlpha": true,
+        "aspectRatio": 2.03,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "johnson-screens",
+      "name": "Aqseptence (Johnson Screens)",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "johnson-screens-on-light.webp",
+        "width": 820,
+        "height": 183,
+        "hasAlpha": true,
+        "aspectRatio": 4.48,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "johnson-screens-on-dark.png",
+        "width": 820,
+        "height": 183,
+        "hasAlpha": true,
+        "aspectRatio": 4.48,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "karcher",
+      "name": "Kärcher North America",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "karcher-on-light.webp",
+        "width": 800,
+        "height": 207,
+        "hasAlpha": true,
+        "aspectRatio": 3.86,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "karcher-on-dark.webp",
+        "width": 800,
+        "height": 207,
+        "hasAlpha": true,
+        "aspectRatio": 3.86,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "kimball-electronics",
+      "name": "Kimball Electronics",
+      "industry": "Electronics",
+      "onLight": {
+        "file": "kimball-electronics-on-light.png",
+        "width": 1078,
+        "height": 180,
+        "hasAlpha": true,
+        "aspectRatio": 5.99,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "kimball-electronics-on-dark.png",
+        "width": 1078,
+        "height": 180,
+        "hasAlpha": true,
+        "aspectRatio": 5.99,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "kingspan",
+      "name": "Kingspan",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "kingspan-on-light.webp",
+        "width": 820,
+        "height": 398,
+        "hasAlpha": true,
+        "aspectRatio": 2.06,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "kingspan-on-dark.png",
+        "width": 820,
+        "height": 398,
+        "hasAlpha": true,
+        "aspectRatio": 2.06,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "lakeshore-learning",
+      "name": "Lakeshore Learning Materials",
+      "industry": "Retail",
+      "onLight": {
+        "file": "lakeshore-learning-on-light.webp",
+        "width": 800,
+        "height": 200,
+        "hasAlpha": false,
+        "aspectRatio": 4,
+        "quality": "flat"
+      },
+      "onDark": {
+        "file": "lakeshore-learning-on-dark.webp",
+        "width": 250,
+        "height": 250,
+        "hasAlpha": false,
+        "aspectRatio": 1,
+        "quality": "flat"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "lam-research",
+      "name": "Lam Research",
+      "industry": "Electronics",
+      "onLight": {
+        "file": "lam-research-on-light.webp",
+        "width": 800,
+        "height": 273,
+        "hasAlpha": true,
+        "aspectRatio": 2.93,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "lam-research-on-dark.webp",
+        "width": 800,
+        "height": 273,
+        "hasAlpha": true,
+        "aspectRatio": 2.93,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "leprino-foods",
+      "name": "Leprino Foods",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "leprino-foods-on-light.webp",
+        "width": 820,
+        "height": 188,
+        "hasAlpha": true,
+        "aspectRatio": 4.36,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "leprino-foods-on-dark.png",
+        "width": 820,
+        "height": 188,
+        "hasAlpha": true,
+        "aspectRatio": 4.36,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "lifenet-health",
+      "name": "LifeNet Health",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "lifenet-health-on-light.webp",
+        "width": 1418,
+        "height": 246,
+        "hasAlpha": true,
+        "aspectRatio": 5.76,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "lifenet-health-on-dark.png",
+        "width": 1418,
+        "height": 246,
+        "hasAlpha": true,
+        "aspectRatio": 5.76,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "jack-links",
+      "name": "Jack Link's (Link Snacks)",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "jack-links-on-light.webp",
+        "width": 300,
+        "height": 192,
+        "hasAlpha": true,
+        "aspectRatio": 1.56,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "jack-links-on-dark.png",
+        "width": 300,
+        "height": 192,
+        "hasAlpha": true,
+        "aspectRatio": 1.56,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "loparex",
+      "name": "Loparex",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "loparex-on-light.png",
+        "width": 1600,
+        "height": 253,
+        "hasAlpha": true,
+        "aspectRatio": 6.32,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "loparex-on-dark.png",
+        "width": 1600,
+        "height": 253,
+        "hasAlpha": true,
+        "aspectRatio": 6.32,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "lucid-motors",
+      "name": "Lucid Motors",
+      "industry": "Automotive",
+      "onLight": {
+        "file": "lucid-motors-on-light.webp",
+        "width": 800,
+        "height": 47,
+        "hasAlpha": true,
+        "aspectRatio": 17.02,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "lucid-motors-on-dark.webp",
+        "width": 800,
+        "height": 47,
+        "hasAlpha": true,
+        "aspectRatio": 17.02,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "lutron",
+      "name": "Lutron Electronics",
+      "industry": "Electronics",
+      "onLight": {
+        "file": "lutron-on-light.webp",
+        "width": 820,
+        "height": 121,
+        "hasAlpha": true,
+        "aspectRatio": 6.78,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "lutron-on-dark.png",
+        "width": 820,
+        "height": 121,
+        "hasAlpha": true,
+        "aspectRatio": 6.78,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "me-global",
+      "name": "ME Global",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "me-global-on-light.png",
+        "width": 1600,
+        "height": 327,
+        "hasAlpha": true,
+        "aspectRatio": 4.89,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "me-global-on-dark.png",
+        "width": 1600,
+        "height": 327,
+        "hasAlpha": true,
+        "aspectRatio": 4.89,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "medtronic",
+      "name": "Medtronic",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "medtronic-on-light.webp",
+        "width": 820,
+        "height": 135,
+        "hasAlpha": true,
+        "aspectRatio": 6.07,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "medtronic-on-dark.webp",
+        "width": 410,
+        "height": 108,
+        "hasAlpha": true,
+        "aspectRatio": 3.8,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "merit-energy",
+      "name": "Merit Energy",
+      "industry": "Energy",
+      "onLight": {
+        "file": "merit-energy-on-light.png",
+        "width": 1063,
+        "height": 141,
+        "hasAlpha": true,
+        "aspectRatio": 7.54,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "merit-energy-on-dark.png",
+        "width": 1063,
+        "height": 141,
+        "hasAlpha": true,
+        "aspectRatio": 7.54,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "mud-omaha",
+      "name": "Metropolitan Utilities District of Omaha",
+      "industry": "Utilities",
+      "onLight": {
+        "file": "mud-omaha-on-light.webp",
+        "width": 820,
+        "height": 436,
+        "hasAlpha": true,
+        "aspectRatio": 1.88,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "mud-omaha-on-dark.png",
+        "width": 820,
+        "height": 436,
+        "hasAlpha": true,
+        "aspectRatio": 1.88,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "milliken",
+      "name": "Milliken & Company",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "milliken-on-light.webp",
+        "width": 503,
+        "height": 198,
+        "hasAlpha": true,
+        "aspectRatio": 2.54,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "milliken-on-dark.png",
+        "width": 503,
+        "height": 198,
+        "hasAlpha": true,
+        "aspectRatio": 2.54,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "mts-systems",
+      "name": "MTS Systems",
+      "industry": "Electronics",
+      "onLight": {
+        "file": "mts-systems-on-light.webp",
+        "width": 820,
+        "height": 488,
+        "hasAlpha": true,
+        "aspectRatio": 1.68,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "mts-systems-on-dark.png",
+        "width": 820,
+        "height": 488,
+        "hasAlpha": true,
+        "aspectRatio": 1.68,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "natureworks",
+      "name": "NatureWorks",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "natureworks-on-light.png",
+        "width": 256,
+        "height": 34,
+        "hasAlpha": true,
+        "aspectRatio": 7.53,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "natureworks-on-dark.png",
+        "width": 256,
+        "height": 34,
+        "hasAlpha": true,
+        "aspectRatio": 7.53,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "nppd",
+      "name": "Nebraska Public Power District",
+      "industry": "Utilities",
+      "onLight": {
+        "file": "nppd-on-light.webp",
+        "width": 250,
+        "height": 82,
+        "hasAlpha": true,
+        "aspectRatio": 3.05,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "nppd-on-dark.png",
+        "width": 250,
+        "height": 82,
+        "hasAlpha": true,
+        "aspectRatio": 3.05,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "nestle",
+      "name": "Nestlé USA",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "nestle-on-light.webp",
+        "width": 420,
+        "height": 109,
+        "hasAlpha": true,
+        "aspectRatio": 3.85,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "nestle-on-dark.png",
+        "width": 420,
+        "height": 109,
+        "hasAlpha": true,
+        "aspectRatio": 3.85,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "nike",
+      "name": "Nike",
+      "industry": "Apparel",
+      "onLight": {
+        "file": "nike-on-light.webp",
+        "width": 800,
+        "height": 278,
+        "hasAlpha": true,
+        "aspectRatio": 2.88,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "nike-on-dark.webp",
+        "width": 800,
+        "height": 278,
+        "hasAlpha": true,
+        "aspectRatio": 2.88,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "ntic",
+      "name": "Northern Technologies (NTIC)",
+      "industry": "Chemicals",
+      "onLight": {
+        "file": "ntic-on-light.png",
+        "width": 405,
+        "height": 96,
+        "hasAlpha": true,
+        "aspectRatio": 4.22,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "ntic-on-dark.webp",
+        "width": 405,
+        "height": 96,
+        "hasAlpha": true,
+        "aspectRatio": 4.22,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "novocure",
+      "name": "Novocure",
+      "industry": "Machinery",
+      "onLight": {
+        "file": "novocure-on-light.webp",
+        "width": 820,
+        "height": 126,
+        "hasAlpha": true,
+        "aspectRatio": 6.51,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "novocure-on-dark.png",
+        "width": 820,
+        "height": 126,
+        "hasAlpha": true,
+        "aspectRatio": 6.51,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "orbia",
+      "name": "Orbia",
+      "industry": "Finance",
+      "onLight": {
+        "file": "orbia-on-light.webp",
+        "width": 820,
+        "height": 353,
+        "hasAlpha": true,
+        "aspectRatio": 2.32,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "orbia-on-dark.png",
+        "width": 820,
+        "height": 353,
+        "hasAlpha": true,
+        "aspectRatio": 2.32,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "organic-valley",
+      "name": "Organic Valley",
+      "industry": "Retail",
+      "onLight": {
+        "file": "organic-valley-on-light.png",
+        "width": 300,
+        "height": 221,
+        "hasAlpha": true,
+        "aspectRatio": 1.36,
+        "quality": "icon"
+      },
+      "onDark": {
+        "file": "organic-valley-on-dark.png",
+        "width": 300,
+        "height": 221,
+        "hasAlpha": true,
+        "aspectRatio": 1.36,
+        "quality": "icon"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "patterson",
+      "name": "Patterson Companies",
+      "industry": "Machinery",
+      "onLight": {
+        "file": "patterson-on-light.webp",
+        "width": 820,
+        "height": 259,
+        "hasAlpha": true,
+        "aspectRatio": 3.17,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "patterson-on-dark.png",
+        "width": 820,
+        "height": 259,
+        "hasAlpha": true,
+        "aspectRatio": 3.17,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "penn-state",
+      "name": "Penn State Applied Research Lab",
+      "industry": "Education",
+      "onLight": {
+        "file": "penn-state-on-light.png",
+        "width": 1916,
+        "height": 283,
+        "hasAlpha": true,
+        "aspectRatio": 6.77,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "penn-state-on-dark.png",
+        "width": 1916,
+        "height": 283,
+        "hasAlpha": true,
+        "aspectRatio": 6.77,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "precision-drilling",
+      "name": "Precision Drilling",
+      "industry": "Energy",
+      "onLight": {
+        "file": "precision-drilling-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "precision-drilling-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "prime-therapeutics",
+      "name": "Prime Therapeutics",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "prime-therapeutics-on-light.png",
+        "width": 1000,
+        "height": 283,
+        "hasAlpha": true,
+        "aspectRatio": 3.53,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "prime-therapeutics-on-dark.png",
+        "width": 1000,
+        "height": 283,
+        "hasAlpha": true,
+        "aspectRatio": 3.53,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "qbp",
+      "name": "Quality Bicycle Products",
+      "industry": "Recreation",
+      "onLight": {
+        "file": "qbp-on-light.png",
+        "width": 1000,
+        "height": 226,
+        "hasAlpha": true,
+        "aspectRatio": 4.42,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "qbp-on-dark.png",
+        "width": 1000,
+        "height": 226,
+        "hasAlpha": true,
+        "aspectRatio": 4.42,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "reliance-worldwide",
+      "name": "Reliance Worldwide",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "reliance-worldwide-on-light.webp",
+        "width": 820,
+        "height": 290,
+        "hasAlpha": true,
+        "aspectRatio": 2.83,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "reliance-worldwide-on-dark.png",
+        "width": 820,
+        "height": 290,
+        "hasAlpha": true,
+        "aspectRatio": 2.83,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "room-and-board",
+      "name": "Room & Board",
+      "industry": "Retail",
+      "onLight": {
+        "file": "room-and-board-on-light.webp",
+        "width": 820,
+        "height": 133,
+        "hasAlpha": true,
+        "aspectRatio": 6.17,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "room-and-board-on-dark.png",
+        "width": 820,
+        "height": 133,
+        "hasAlpha": true,
+        "aspectRatio": 6.17,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "schwans",
+      "name": "Schwan's Consumer Brands",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "schwans-on-light.png",
+        "width": 800,
+        "height": 141,
+        "hasAlpha": true,
+        "aspectRatio": 5.67,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "schwans-on-dark.png",
+        "width": 800,
+        "height": 141,
+        "hasAlpha": true,
+        "aspectRatio": 5.67,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "securian",
+      "name": "Securian Financial",
+      "industry": "Insurance",
+      "onLight": {
+        "file": "securian-on-light.webp",
+        "width": 820,
+        "height": 190,
+        "hasAlpha": true,
+        "aspectRatio": 4.32,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "securian-on-dark.webp",
+        "width": 820,
+        "height": 190,
+        "hasAlpha": true,
+        "aspectRatio": 4.32,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "shimano",
+      "name": "Shimano North America",
+      "industry": "Recreation",
+      "onLight": {
+        "file": "shimano-on-light.webp",
+        "width": 820,
+        "height": 202,
+        "hasAlpha": true,
+        "aspectRatio": 4.06,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "shimano-on-dark.png",
+        "width": 820,
+        "height": 202,
+        "hasAlpha": true,
+        "aspectRatio": 4.06,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "sick",
+      "name": "SICK Sensors",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "sick-on-light.webp",
+        "width": 820,
+        "height": 335,
+        "hasAlpha": true,
+        "aspectRatio": 2.45,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "sick-on-dark.png",
+        "width": 820,
+        "height": 335,
+        "hasAlpha": true,
+        "aspectRatio": 2.45,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "sloan",
+      "name": "Sloan Valve",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "sloan-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "sloan-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "solventum",
+      "name": "Solventum",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "solventum-on-light.webp",
+        "width": 1507,
+        "height": 377,
+        "hasAlpha": true,
+        "aspectRatio": 4,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "solventum-on-dark.png",
+        "width": 1507,
+        "height": 377,
+        "hasAlpha": true,
+        "aspectRatio": 4,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "southwire",
+      "name": "Southwire",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "southwire-on-light.png",
+        "width": 1490,
+        "height": 360,
+        "hasAlpha": true,
+        "aspectRatio": 4.14,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "southwire-on-dark.webp",
+        "width": 1490,
+        "height": 360,
+        "hasAlpha": true,
+        "aspectRatio": 4.14,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "sun-chemical",
+      "name": "Sun Chemical",
+      "industry": "Chemicals",
+      "onLight": {
+        "file": "sun-chemical-on-light.png",
+        "width": 580,
+        "height": 195,
+        "hasAlpha": true,
+        "aspectRatio": 2.97,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "sun-chemical-on-dark.png",
+        "width": 580,
+        "height": 195,
+        "hasAlpha": true,
+        "aspectRatio": 2.97,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "tamko",
+      "name": "TAMKO Building Products",
+      "industry": "Construction",
+      "onLight": {
+        "file": "tamko-on-light.png",
+        "width": 1277,
+        "height": 512,
+        "hasAlpha": true,
+        "aspectRatio": 2.49,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "tamko-on-dark.png",
+        "width": 1277,
+        "height": 512,
+        "hasAlpha": true,
+        "aspectRatio": 2.49,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "target",
+      "name": "Target Corporation",
+      "industry": "Retail",
+      "onLight": {
+        "file": "target-on-light.webp",
+        "width": 820,
+        "height": 1137,
+        "hasAlpha": true,
+        "aspectRatio": 0.72,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "target-on-dark.png",
+        "width": 820,
+        "height": 1137,
+        "hasAlpha": true,
+        "aspectRatio": 0.72,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "textron-aviation",
+      "name": "Textron Aviation",
+      "industry": "Aerospace",
+      "onLight": {
+        "file": "textron-aviation-on-light.webp",
+        "width": 820,
+        "height": 316,
+        "hasAlpha": true,
+        "aspectRatio": 2.59,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "textron-aviation-on-dark.webp",
+        "width": 820,
+        "height": 316,
+        "hasAlpha": true,
+        "aspectRatio": 2.59,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "clorox",
+      "name": "The Clorox Company",
+      "industry": "Chemicals",
+      "onLight": {
+        "file": "clorox-on-light.webp",
+        "width": 800,
+        "height": 93,
+        "hasAlpha": true,
+        "aspectRatio": 8.6,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "clorox-on-dark.webp",
+        "width": 800,
+        "height": 93,
+        "hasAlpha": true,
+        "aspectRatio": 8.6,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "home-depot",
+      "name": "The Home Depot",
+      "industry": "Retail",
+      "onLight": {
+        "file": "home-depot-on-light.png",
+        "width": 600,
+        "height": 601,
+        "hasAlpha": true,
+        "aspectRatio": 1,
+        "quality": "icon"
+      },
+      "onDark": {
+        "file": "home-depot-on-dark.png",
+        "width": 600,
+        "height": 601,
+        "hasAlpha": true,
+        "aspectRatio": 1,
+        "quality": "icon"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "tile-shop",
+      "name": "The Tile Shop",
+      "industry": "Retail",
+      "onLight": {
+        "file": "tile-shop-on-light.png",
+        "width": 3258,
+        "height": 571,
+        "hasAlpha": true,
+        "aspectRatio": 5.71,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "tile-shop-on-dark.png",
+        "width": 3258,
+        "height": 571,
+        "hasAlpha": true,
+        "aspectRatio": 5.71,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "toro",
+      "name": "The Toro Company",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "toro-on-light.png",
+        "width": 580,
+        "height": 394,
+        "hasAlpha": true,
+        "aspectRatio": 1.47,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "toro-on-dark.png",
+        "width": 580,
+        "height": 394,
+        "hasAlpha": true,
+        "aspectRatio": 1.47,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "tsi",
+      "name": "TSI Incorporated",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "tsi-on-light.png",
+        "width": 820,
+        "height": 183,
+        "hasAlpha": true,
+        "aspectRatio": 4.48,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "tsi-on-dark.webp",
+        "width": 820,
+        "height": 183,
+        "hasAlpha": true,
+        "aspectRatio": 4.48,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "turck",
+      "name": "Turck",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "turck-on-light.png",
+        "width": 900,
+        "height": 500,
+        "hasAlpha": true,
+        "aspectRatio": 1.8,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "turck-on-dark.png",
+        "width": 900,
+        "height": 500,
+        "hasAlpha": true,
+        "aspectRatio": 1.8,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "ugi",
+      "name": "UGI Corporation",
+      "industry": "Utilities",
+      "onLight": {
+        "file": "ugi-on-light.webp",
+        "width": 820,
+        "height": 469,
+        "hasAlpha": true,
+        "aspectRatio": 1.75,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "ugi-on-dark.png",
+        "width": 820,
+        "height": 469,
+        "hasAlpha": true,
+        "aspectRatio": 1.75,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "upsher-smith",
+      "name": "Upsher-Smith Laboratories",
+      "industry": "Biotechnology",
+      "onLight": {
+        "file": "upsher-smith-on-light.png",
+        "width": 820,
+        "height": 148,
+        "hasAlpha": true,
+        "aspectRatio": 5.54,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "upsher-smith-on-dark.webp",
+        "width": 820,
+        "height": 148,
+        "hasAlpha": true,
+        "aspectRatio": 5.54,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "varsity-brands",
+      "name": "Varsity Brands",
+      "industry": "Consumer",
+      "onLight": {
+        "file": "varsity-brands-on-light.webp",
+        "width": 820,
+        "height": 109,
+        "hasAlpha": true,
+        "aspectRatio": 7.52,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "varsity-brands-on-dark.png",
+        "width": 820,
+        "height": 109,
+        "hasAlpha": true,
+        "aspectRatio": 7.52,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "ventura-foods",
+      "name": "Ventura Foods",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "ventura-foods-on-light.png",
+        "width": 6051,
+        "height": 834,
+        "hasAlpha": true,
+        "aspectRatio": 7.26,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "ventura-foods-on-dark.png",
+        "width": 6051,
+        "height": 834,
+        "hasAlpha": true,
+        "aspectRatio": 7.26,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "vistaprint",
+      "name": "Vistaprint Corporate Solutions",
+      "industry": "Media",
+      "onLight": {
+        "file": "vistaprint-on-light.png",
+        "width": 1600,
+        "height": 323,
+        "hasAlpha": true,
+        "aspectRatio": 4.95,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "vistaprint-on-dark.png",
+        "width": 1600,
+        "height": 323,
+        "hasAlpha": true,
+        "aspectRatio": 4.95,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "wc-bradley",
+      "name": "W. C. Bradley",
+      "industry": "Recreation",
+      "onLight": {
+        "file": "wc-bradley-on-light.png",
+        "width": 1059,
+        "height": 250,
+        "hasAlpha": true,
+        "aspectRatio": 4.24,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "wc-bradley-on-dark.png",
+        "width": 1059,
+        "height": 250,
+        "hasAlpha": true,
+        "aspectRatio": 4.24,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "wagner-spraytech",
+      "name": "Wagner SprayTech",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "wagner-spraytech-on-light.webp",
+        "width": 820,
+        "height": 243,
+        "hasAlpha": true,
+        "aspectRatio": 3.37,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "wagner-spraytech-on-dark.png",
+        "width": 820,
+        "height": 243,
+        "hasAlpha": true,
+        "aspectRatio": 3.37,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "xcel-energy",
+      "name": "Xcel Energy",
+      "industry": "Utilities",
+      "onLight": {
+        "file": "xcel-energy-on-light.webp",
+        "width": 800,
+        "height": 156,
+        "hasAlpha": true,
+        "aspectRatio": 5.13,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "xcel-energy-on-dark.webp",
+        "width": 800,
+        "height": 156,
+        "hasAlpha": true,
+        "aspectRatio": 5.13,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "zinpro",
+      "name": "Zinpro",
+      "industry": "Agriculture",
+      "onLight": {
+        "file": "zinpro-on-light.webp",
+        "width": 820,
+        "height": 1128,
+        "hasAlpha": true,
+        "aspectRatio": 0.73,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "zinpro-on-dark.png",
+        "width": 820,
+        "height": 1128,
+        "hasAlpha": true,
+        "aspectRatio": 0.73,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "ather-energy",
+      "name": "Ather Energy",
+      "industry": "Automotive",
+      "onLight": {
+        "file": "ather-energy-on-light.webp",
+        "width": 700,
+        "height": 254,
+        "hasAlpha": true,
+        "aspectRatio": 2.76,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "ather-energy-on-dark.png",
+        "width": 700,
+        "height": 254,
+        "hasAlpha": true,
+        "aspectRatio": 2.76,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "maruti-suzuki",
+      "name": "Maruti Suzuki India",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "maruti-suzuki-on-light.webp",
+        "width": 820,
+        "height": 90,
+        "hasAlpha": true,
+        "aspectRatio": 9.11,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "maruti-suzuki-on-dark.png",
+        "width": 820,
+        "height": 90,
+        "hasAlpha": true,
+        "aspectRatio": 9.11,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "pyxus",
+      "name": "Pyxus International",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "pyxus-on-light.png",
+        "width": 683,
+        "height": 125,
+        "hasAlpha": true,
+        "aspectRatio": 5.46,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "pyxus-on-dark.png",
+        "width": 683,
+        "height": 125,
+        "hasAlpha": true,
+        "aspectRatio": 5.46,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "reddy-ice",
+      "name": "Reddy Ice",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "reddy-ice-on-light.webp",
+        "width": 219,
+        "height": 74,
+        "hasAlpha": true,
+        "aspectRatio": 2.96,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "reddy-ice-on-dark.png",
+        "width": 219,
+        "height": 74,
+        "hasAlpha": true,
+        "aspectRatio": 2.96,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "sany-america",
+      "name": "Sany America",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "sany-america-on-light.png",
+        "width": 820,
+        "height": 168,
+        "hasAlpha": true,
+        "aspectRatio": 4.88,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "sany-america-on-dark.webp",
+        "width": 820,
+        "height": 168,
+        "hasAlpha": true,
+        "aspectRatio": 4.88,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "sullair",
+      "name": "Sullair",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "sullair-on-light.webp",
+        "width": 820,
+        "height": 125,
+        "hasAlpha": true,
+        "aspectRatio": 6.56,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "sullair-on-dark.png",
+        "width": 820,
+        "height": 125,
+        "hasAlpha": true,
+        "aspectRatio": 6.56,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "pentair",
+      "name": "Pentair",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "pentair-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "pentair-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "inspire-medical",
+      "name": "Inspire Medical Systems",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "inspire-medical-on-light.png",
+        "width": 820,
+        "height": 178,
+        "hasAlpha": true,
+        "aspectRatio": 4.61,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "inspire-medical-on-dark.webp",
+        "width": 820,
+        "height": 178,
+        "hasAlpha": true,
+        "aspectRatio": 4.61,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "portico",
+      "name": "Portico Benefit Services",
+      "industry": "Insurance",
+      "onLight": {
+        "file": "portico-on-light.webp",
+        "width": 820,
+        "height": 135,
+        "hasAlpha": true,
+        "aspectRatio": 6.07,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "portico-on-dark.png",
+        "width": 820,
+        "height": 135,
+        "hasAlpha": true,
+        "aspectRatio": 6.07,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "mizuho-osi",
+      "name": "Mizuho OSI",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "mizuho-osi-on-light.webp",
+        "width": 556,
+        "height": 62,
+        "hasAlpha": true,
+        "aspectRatio": 8.97,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "mizuho-osi-on-dark.png",
+        "width": 556,
+        "height": 62,
+        "hasAlpha": true,
+        "aspectRatio": 8.97,
+        "quality": "good"
+      },
+      "status": "all-good"
+    }
+  ]
+}

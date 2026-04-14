@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mindset Logos
 
-## Getting Started
+The one place at Mindset for every customer logo. 119 companies, both `on-light` and `on-dark` variants, hand-verified and transparent. Use it from the browser, from Claude Code, from the API, or clone the repo and use the files directly.
 
-First, run the development server:
+## Where to find it
+
+| What | Where |
+|---|---|
+| **Gallery** | [mindset-logos.vercel.app](https://mindset-logos.vercel.app) |
+| **GitHub** | [MindsetConsulting/mindset-logos](https://github.com/MindsetConsulting/mindset-logos) |
+| **Vercel** | [vercel.com/mindsetconsulting/mindset-logos](https://vercel.com/mindsetconsulting/mindset-logos) |
+| **JSON API** | `https://mindset-logos.vercel.app/api/logos` |
+| **MCP server** | `claude mcp add mindset-logos -- bunx @mindsetconsulting/mindset-logos-mcp` |
+| **Raw files** | `https://mindset-logos.vercel.app/logos/{slug}-on-{light,dark}.{ext}` |
+
+## How to use it
+
+### In a browser
+
+Open the gallery. Search, filter by vertical, copy any logo's URL or download the file.
+
+### In Claude Code via MCP
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+claude mcp add mindset-logos -- bunx @mindsetconsulting/mindset-logos-mcp
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then in any Claude Code session, ask things like:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- "Grab the on-dark version of 3M and put it in the hero"
+- "List our customers in the food & beverage vertical"
+- "Build a customer-logo wall for all 119 of our customers"
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The server exposes three tools: `list_logos`, `get_logo(slug, variant)`, and `search_logos(query)`.
 
-## Learn More
+### From a script (JSON API)
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+curl https://mindset-logos.vercel.app/api/logos
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Returns every customer with their `onLight` and `onDark` file paths, website, industry, and verticals.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Direct file URLs
 
-## Deploy on Vercel
+Every file is served at `https://mindset-logos.vercel.app/logos/{slug}-on-{variant}.{ext}`. Example:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+https://mindset-logos.vercel.app/logos/3m-on-dark.png
+https://mindset-logos.vercel.app/logos/agiliti-on-light.webp
+https://mindset-logos.vercel.app/logos/bcbs-mn-on-light.svg
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Use them in Markdown, Slack, decks, emails, anywhere.
+
+## Adding a new customer
+
+1. Add an entry to `public/logos/manifest.json` with `slug`, `name`, `website`, `industry`, `verticals`.
+2. `bun run fetch <slug>` — pulls both variants from Brandfetch with a fallback to vendor website scraping.
+3. `bun run audit` — check quality and variant classification.
+4. If the automatic fetch produced flat/icon/tiny variants, follow the techniques in [CLAUDE.md](./CLAUDE.md) to re-source from the vendor site (logovectorseek, seeklogo, Wikipedia, or the header of the homepage). There are three documented techniques (trust existing alpha, Pillow pixel swap, SVG color swap) that cover every logo we've hit.
+5. Add the slug to `.pending-approval.json` until visually verified, then remove it.
+6. Commit and push. Vercel redeploys automatically.
+
+## Fixing a bad logo
+
+See the three techniques in [CLAUDE.md](./CLAUDE.md). The gist:
+- **Trust existing alpha** — Brandfetch files are often already transparent; just trim and save, never `-alpha off`.
+- **Pillow pixel swap** — for raster logos with visible theme colors, walk pixels with a per-channel rule (`b > r + 25`, `max(r,g,b) < 80`, etc) and preserve the original alpha.
+- **SVG color swap** — for vendor SVGs with white-text/colored-emblem mixes, use a Python regex keyed on the path's starting M x-coordinate so you only swap text-region white fills.
+
+## Architecture
+
+- `app/` — Next.js 16 gallery UI (Playfair Display + Inter + JetBrains Mono, Mindset brand theme).
+- `public/logos/` — all logo files, the `manifest.json`, `audit.json`, pending/override lists.
+- `lib/logos.ts` — reads the manifest and resolves each slug's variant file paths.
+- `scripts/` — `fetch-logos.ts`, `audit.ts`, `fix.ts`, `apply-approvals.ts`. Run with `bun run {fetch,audit,fix,apply-approvals}`.
+- `mcp/` — stdio MCP server that wraps the JSON API.
+- `CLAUDE.md` — full technique reference, baked into the repo so any Claude Code session has the context.
+
+Deployed to Vercel from `main`. The GitHub Actions pipeline rebuilds the `@mindsetconsulting/brand` asset on brand updates.
