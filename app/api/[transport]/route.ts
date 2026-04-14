@@ -1,8 +1,34 @@
 import { createMcpHandler } from 'mcp-handler';
 import { z } from 'zod';
+import { readFileSync } from 'fs';
+import { join, extname } from 'path';
 import { loadLogos, type Logo } from '@/lib/logos';
 
 export const maxDuration = 60;
+
+const MIME_BY_EXT: Record<string, string> = {
+  '.png': 'image/png',
+  '.webp': 'image/webp',
+  '.svg': 'image/svg+xml',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.gif': 'image/gif',
+};
+
+function readLogoAsBase64(
+  relPath: string | null,
+): { data: string; mimeType: string } | null {
+  if (!relPath) return null;
+  try {
+    const absPath = join(process.cwd(), 'public', relPath.replace(/^\//, ''));
+    const ext = extname(relPath).toLowerCase();
+    const mimeType = MIME_BY_EXT[ext] ?? 'application/octet-stream';
+    const data = readFileSync(absPath).toString('base64');
+    return { data, mimeType };
+  } catch {
+    return null;
+  }
+}
 
 const SITE_ORIGIN =
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -114,9 +140,17 @@ const handler = createMcpHandler(
             isError: true,
           };
         }
-        return {
-          content: [{ type: 'text', text: JSON.stringify(absolutize(logo), null, 2) }],
-        };
+        const content: Array<
+          | { type: 'text'; text: string }
+          | { type: 'image'; data: string; mimeType: string }
+        > = [{ type: 'text', text: JSON.stringify(absolutize(logo), null, 2) }];
+        const light = readLogoAsBase64(logo.onLight);
+        const dark = readLogoAsBase64(logo.onDark);
+        if (light && light.mimeType !== 'image/svg+xml')
+          content.push({ type: 'image', data: light.data, mimeType: light.mimeType });
+        if (dark && dark.mimeType !== 'image/svg+xml')
+          content.push({ type: 'image', data: dark.data, mimeType: dark.mimeType });
+        return { content };
       },
     );
   },
