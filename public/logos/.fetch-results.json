@@ -1,0 +1,46 @@
+{
+  "ranAt": "2026-04-14T22:02:07.026Z",
+  "summary": {
+    "total": 2,
+    "bothThemes": 2,
+    "lightOnly": 0,
+    "darkOnly": 0,
+    "neither": 0
+  },
+  "results": [
+    {
+      "slug": "sap",
+      "name": "SAP",
+      "domain": "sap.com",
+      "light": {
+        "status": "saved",
+        "file": "sap-on-dark.webp",
+        "type": "icon",
+        "hash": "68dec8452fcf"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "sap-on-light.webp",
+        "type": "logo",
+        "hash": "12bcce0a47c6"
+      }
+    },
+    {
+      "slug": "thoughtworks",
+      "name": "Thoughtworks",
+      "domain": "thoughtworks.com",
+      "light": {
+        "status": "saved",
+        "file": "thoughtworks-on-dark.webp",
+        "type": "logo",
+        "hash": "e772b27245de"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "thoughtworks-on-light.webp",
+        "type": "logo",
+        "hash": "59c61ebb6fd3"
+      }
+    }
+  ]
+}

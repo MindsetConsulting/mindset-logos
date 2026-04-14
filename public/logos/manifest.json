@@ -2081,6 +2081,54 @@
         "country": "United States",
         "display": "Union City, California, United States"
       }
+    },
+    {
+      "slug": "mindset",
+      "name": "Mindset Consulting",
+      "website": "https://www.mindsetconsulting.com",
+      "industry": "Technology",
+      "verticals": [
+        "Technology"
+      ],
+      "hq": {
+        "street": null,
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Minneapolis, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "sap",
+      "name": "SAP",
+      "website": "https://www.sap.com",
+      "industry": "Technology",
+      "verticals": [
+        "Technology"
+      ],
+      "hq": {
+        "street": "Dietmar-Hopp-Allee 16",
+        "city": "Walldorf",
+        "state": null,
+        "country": "Germany",
+        "display": "Walldorf, Germany"
+      }
+    },
+    {
+      "slug": "thoughtworks",
+      "name": "Thoughtworks",
+      "website": "https://www.thoughtworks.com",
+      "industry": "Technology",
+      "verticals": [
+        "Technology"
+      ],
+      "hq": {
+        "street": null,
+        "city": "Chicago",
+        "state": "Illinois",
+        "country": "United States",
+        "display": "Chicago, Illinois, United States"
+      }
     }
   ]
 }

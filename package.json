@@ -41,5 +41,10 @@
   "trustedDependencies": [
     "sharp",
     "unrs-resolver"
-  ]
+  ],
+  "overrides": {
+    "mcp-handler": {
+      "@modelcontextprotocol/sdk": "^1.29.0"
+    }
+  }
 }

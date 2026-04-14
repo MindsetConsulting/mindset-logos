@@ -1,22 +1,22 @@
 {
-  "ranAt": "2026-04-14T20:26:31.999Z",
+  "ranAt": "2026-04-14T22:02:27.445Z",
   "counts": {
-    "total": 119,
-    "allGood": 119,
-    "partial": 0,
+    "total": 122,
+    "allGood": 121,
+    "partial": 1,
     "broken": 0,
     "byQuality": {
       "onLight": {
-        "good": 113,
+        "good": 116,
         "icon": 5,
         "flat": 1,
         "tiny": 0,
         "missing": 0
       },
       "onDark": {
-        "good": 113,
+        "good": 115,
         "icon": 5,
-        "flat": 1,
+        "flat": 2,
         "tiny": 0,
         "missing": 0
       }
@@ -2638,6 +2638,72 @@
         "height": 62,
         "hasAlpha": true,
         "aspectRatio": 8.97,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "mindset",
+      "name": "Mindset Consulting",
+      "industry": "Technology",
+      "onLight": {
+        "file": "mindset-on-light.png",
+        "width": 1143,
+        "height": 200,
+        "hasAlpha": true,
+        "aspectRatio": 5.72,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "mindset-on-dark.png",
+        "width": 1143,
+        "height": 200,
+        "hasAlpha": true,
+        "aspectRatio": 5.72,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "sap",
+      "name": "SAP",
+      "industry": "Technology",
+      "onLight": {
+        "file": "sap-on-light.webp",
+        "width": 800,
+        "height": 396,
+        "hasAlpha": true,
+        "aspectRatio": 2.02,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "sap-on-dark.webp",
+        "width": 400,
+        "height": 400,
+        "hasAlpha": false,
+        "aspectRatio": 1,
+        "quality": "flat"
+      },
+      "status": "partial"
+    },
+    {
+      "slug": "thoughtworks",
+      "name": "Thoughtworks",
+      "industry": "Technology",
+      "onLight": {
+        "file": "thoughtworks-on-light.webp",
+        "width": 820,
+        "height": 131,
+        "hasAlpha": true,
+        "aspectRatio": 6.26,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "thoughtworks-on-dark.webp",
+        "width": 800,
+        "height": 128,
+        "hasAlpha": true,
+        "aspectRatio": 6.25,
         "quality": "good"
       },
       "status": "all-good"
