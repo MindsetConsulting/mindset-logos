@@ -2,6 +2,11 @@ import { createMcpHandler } from 'mcp-handler';
 import { z } from 'zod';
 import { readFileSync } from 'fs';
 import { join, extname } from 'path';
+import {
+  registerAppTool,
+  registerAppResource,
+  RESOURCE_MIME_TYPE,
+} from '@modelcontextprotocol/ext-apps/server';
 import { loadLogos, type Logo } from '@/lib/logos';
 
 export const maxDuration = 60;
@@ -49,6 +54,117 @@ function absolutize(logo: Logo) {
     onDark: logo.onDark ? SITE_ORIGIN + logo.onDark : null,
   };
 }
+
+const LOGO_UI_URI = 'ui://mindset-logos/logo.html';
+
+const LOGO_UI_HTML = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mindset Logo Viewer</title>
+<style>
+  :root { color-scheme: light dark; }
+  html, body { margin: 0; padding: 0; font-family: ui-sans-serif, system-ui, -apple-system, "Inter", sans-serif; }
+  body { padding: 16px; background: transparent; color: #1d1d1b; }
+  .wrap { display: grid; gap: 12px; max-width: 680px; }
+  h2 { font-family: ui-serif, Georgia, "Playfair Display", serif; font-size: 22px; margin: 0 0 4px; font-weight: 600; }
+  .meta { font-size: 12px; color: #6b7280; margin-bottom: 8px; }
+  .card { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 28px; display: flex; align-items: center; justify-content: center; min-height: 120px; }
+  .card.light { background: #FAF7F2; }
+  .card.dark { background: #0A1628; }
+  .card img { max-width: 100%; max-height: 180px; height: auto; display: block; }
+  .label { font-family: ui-monospace, "JetBrains Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280; margin-bottom: 6px; }
+  .col { display: flex; flex-direction: column; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #FAF7F2; }
+    .card { border-color: rgba(255,255,255,0.12); }
+  }
+</style>
+</head>
+<body>
+  <div id="root" class="wrap">
+    <div class="col"><div class="label">Waiting for tool result…</div></div>
+  </div>
+<script>
+(function () {
+  var rendered = false;
+
+  function render(payload) {
+    if (!payload) return;
+    rendered = true;
+    var root = document.getElementById('root');
+    var name = payload.name || payload.slug || 'Logo';
+    var hq = payload.hq && payload.hq.display ? payload.hq.display : '';
+    var industry = payload.industry || '';
+    var meta = [industry, hq].filter(Boolean).join(' · ');
+    var lightSrc = payload.lightDataUri || payload.onLight || '';
+    var darkSrc = payload.darkDataUri || payload.onDark || '';
+    var html = '<div class="col">'
+      + '<h2>' + escape(name) + '</h2>'
+      + (meta ? '<div class="meta">' + escape(meta) + '</div>' : '')
+      + '</div>'
+      + '<div class="col"><div class="label">On light</div>'
+      + '<div class="card light">' + (lightSrc ? '<img alt="' + escape(name) + ' on light" src="' + lightSrc + '">' : '<span class="meta">no variant</span>') + '</div>'
+      + '</div>'
+      + '<div class="col"><div class="label">On dark</div>'
+      + '<div class="card dark">' + (darkSrc ? '<img alt="' + escape(name) + ' on dark" src="' + darkSrc + '">' : '<span class="meta">no variant</span>') + '</div>'
+      + '</div>';
+    root.innerHTML = html;
+  }
+
+  function escape(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function extractFromToolResult(result) {
+    if (!result || !Array.isArray(result.content)) return null;
+    var data = {};
+    for (var i = 0; i < result.content.length; i++) {
+      var block = result.content[i];
+      if (block.type === 'text') {
+        try {
+          var parsed = JSON.parse(block.text);
+          if (parsed && typeof parsed === 'object') {
+            Object.assign(data, parsed);
+          }
+        } catch (_e) {}
+      } else if (block.type === 'image' && block.data && block.mimeType) {
+        var uri = 'data:' + block.mimeType + ';base64,' + block.data;
+        if (!data.lightDataUri) data.lightDataUri = uri;
+        else if (!data.darkDataUri) data.darkDataUri = uri;
+      }
+    }
+    return data;
+  }
+
+  window.addEventListener('message', function (ev) {
+    var msg = ev && ev.data;
+    if (!msg || typeof msg !== 'object') return;
+    if (msg.method === 'ui/notifications/tool-result' && msg.params) {
+      var payload = extractFromToolResult(msg.params.result);
+      if (payload) render(payload);
+    } else if (msg.method === 'ui/initialize') {
+      try {
+        (window.parent || window).postMessage(
+          { jsonrpc: '2.0', id: msg.id || 0, result: { protocolVersion: '2025-11-21', appInfo: { name: 'mindset-logo-viewer', version: '0.1.0' }, appCapabilities: {} } },
+          '*',
+        );
+      } catch (_e) {}
+    }
+  });
+
+  try {
+    (window.parent || window).postMessage(
+      { jsonrpc: '2.0', method: 'ui/notifications/initialized' },
+      '*',
+    );
+  } catch (_e) {}
+})();
+</script>
+</body>
+</html>`;
 
 const handler = createMcpHandler(
   (server) => {
@@ -122,36 +238,66 @@ const handler = createMcpHandler(
       },
     );
 
-    server.registerTool(
+    registerAppTool(
+      server,
       'get_logo',
       {
         title: 'Get logo',
         description:
-          'Get one customer logo by slug. Returns name, website, industry, verticals, HQ, and absolute URLs for on-light and on-dark variants.',
+          'Get one customer logo by slug. Returns name, website, industry, verticals, HQ, and absolute URLs for on-light and on-dark variants. In MCP Apps hosts (claude.ai) this also renders an inline preview of both variants.',
         inputSchema: {
           slug: z.string().describe('Customer slug, e.g. "3m", "home-depot", "bcbs-mn"'),
+        },
+        _meta: {
+          ui: { resourceUri: LOGO_UI_URI },
         },
       },
       async ({ slug }) => {
         const logo = loadLogos().find((l) => l.slug === slug);
         if (!logo) {
           return {
-            content: [{ type: 'text', text: JSON.stringify({ error: `No logo found for slug "${slug}"` }) }],
+            content: [
+              {
+                type: 'text',
+                text: JSON.stringify({ error: `No logo found for slug "${slug}"` }),
+              },
+            ],
             isError: true,
           };
         }
+        const light = readLogoAsBase64(logo.onLight);
+        const dark = readLogoAsBase64(logo.onDark);
+        const payload = {
+          ...absolutize(logo),
+          lightDataUri: light ? `data:${light.mimeType};base64,${light.data}` : null,
+          darkDataUri: dark ? `data:${dark.mimeType};base64,${dark.data}` : null,
+        };
         const content: Array<
           | { type: 'text'; text: string }
           | { type: 'image'; data: string; mimeType: string }
-        > = [{ type: 'text', text: JSON.stringify(absolutize(logo), null, 2) }];
-        const light = readLogoAsBase64(logo.onLight);
-        const dark = readLogoAsBase64(logo.onDark);
+        > = [{ type: 'text', text: JSON.stringify(payload, null, 2) }];
         if (light && light.mimeType !== 'image/svg+xml')
           content.push({ type: 'image', data: light.data, mimeType: light.mimeType });
         if (dark && dark.mimeType !== 'image/svg+xml')
           content.push({ type: 'image', data: dark.data, mimeType: dark.mimeType });
         return { content };
       },
+    );
+
+    registerAppResource(
+      server,
+      'Mindset Logo Viewer',
+      LOGO_UI_URI,
+      { description: 'Inline viewer for a single Mindset customer logo.' },
+      async () => ({
+        contents: [
+          {
+            uri: LOGO_UI_URI,
+            mimeType: RESOURCE_MIME_TYPE,
+            text: LOGO_UI_HTML,
+          },
+        ],
+      }),
     );
   },
   {
