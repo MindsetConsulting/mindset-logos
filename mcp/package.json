@@ -4,12 +4,27 @@
   "description": "MCP server for the Mindset customer logo library",
   "type": "module",
   "bin": {
-    "mindset-logos-mcp": "index.ts"
+    "mindset-logos-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MindsetConsulting/mindset-logos.git",
+    "directory": "mcp"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
   },
   "scripts": {
-    "start": "bun index.ts"
+    "build": "bun build index.ts --target=node --outfile=dist/index.js && sed -i '' '1s|#!/usr/bin/env bun|#!/usr/bin/env node|' dist/index.js",
+    "prepublishOnly": "bun run build",
+    "start": "node dist/index.js"
   },
-  "dependencies": {
+  "devDependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
     "zod": "^3.25.76"
   }
