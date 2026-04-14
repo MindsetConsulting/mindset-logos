@@ -13,6 +13,8 @@ export async function GET() {
       website: l.website,
       industry: l.industry,
       verticals: l.verticals,
+      hq: l.hq ?? null,
+      sfId: l.sfId ?? null,
       onLight: l.onLight,
       onDark: l.onDark,
     })),
