@@ -17,6 +17,10 @@ export async function GET() {
       sfId: l.sfId ?? null,
       onLight: l.onLight,
       onDark: l.onDark,
+      status: l.status,
+      onLightQuality: l.onLightQuality,
+      onDarkQuality: l.onDarkQuality,
+      pendingApproval: l.pendingApproval,
     })),
   });
 }

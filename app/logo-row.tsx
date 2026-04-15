@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Copy, Check, Download, ExternalLink } from 'lucide-react';
-import type { Logo } from '@/lib/logos';
+import type { Logo, LogoStatus, VariantQuality } from '@/lib/logos';
 
 type Props = { logo: Logo };
 
@@ -10,6 +10,61 @@ type Variant = 'on-light' | 'on-dark';
 
 const FORMATS = ['png', 'webp', 'jpg', 'svg'] as const;
 type Format = (typeof FORMATS)[number];
+
+const STATUS_STYLES: Record<LogoStatus, { label: string; bg: string; fg: string; dot: string }> = {
+  'all-good': {
+    label: 'Ready',
+    bg: 'bg-[color:rgba(34,197,94,0.08)]',
+    fg: 'text-[color:rgb(74,222,128)]',
+    dot: 'bg-[color:rgb(74,222,128)]',
+  },
+  partial: {
+    label: 'Partial',
+    bg: 'bg-[color:rgba(234,179,8,0.08)]',
+    fg: 'text-[color:rgb(250,204,21)]',
+    dot: 'bg-[color:rgb(250,204,21)]',
+  },
+  broken: {
+    label: 'Broken',
+    bg: 'bg-[color:rgba(239,68,68,0.08)]',
+    fg: 'text-[color:rgb(248,113,113)]',
+    dot: 'bg-[color:rgb(248,113,113)]',
+  },
+};
+
+function StatusPill({ status, pending }: { status: LogoStatus; pending: boolean }) {
+  const s = STATUS_STYLES[status];
+  const label = pending ? 'Pending review' : s.label;
+  return (
+    <span
+      title={pending ? 'Awaiting visual approval' : `Audit status: ${s.label}`}
+      className={`inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 font-mono text-[0.58rem] uppercase tracking-wider ${s.bg} ${s.fg}`}
+    >
+      <span className={`h-1.5 w-1.5 rounded-full ${s.dot}`} />
+      {label}
+    </span>
+  );
+}
+
+const QUALITY_LABEL: Record<VariantQuality, string> = {
+  good: 'good',
+  icon: 'icon',
+  flat: 'flat',
+  tiny: 'tiny',
+  missing: 'missing',
+};
+
+function QualityTag({ quality }: { quality: VariantQuality }) {
+  if (quality === 'good') return null;
+  return (
+    <span
+      title={`Audit flagged this variant as "${quality}"`}
+      className="rounded bg-[color:rgba(234,179,8,0.12)] px-1.5 py-0.5 font-mono text-[0.55rem] uppercase tracking-wider text-[color:rgb(250,204,21)]"
+    >
+      {QUALITY_LABEL[quality]}
+    </span>
+  );
+}
 
 export default function LogoRow({ logo }: Props) {
   const [copied, setCopied] = useState<string | null>(null);
@@ -36,6 +91,9 @@ export default function LogoRow({ logo }: Props) {
             {logo.hq.display}
           </p>
         )}
+        <div className="mt-1">
+          <StatusPill status={logo.status} pending={logo.pendingApproval} />
+        </div>
         <a
           href={logo.website}
           target="_blank"
@@ -50,6 +108,7 @@ export default function LogoRow({ logo }: Props) {
         slug={logo.slug}
         variant="on-light"
         src={logo.onLight}
+        quality={logo.onLightQuality}
         bgStyle="#F7F5F2"
         origin={origin}
         copied={copied}
@@ -60,6 +119,7 @@ export default function LogoRow({ logo }: Props) {
           slug={logo.slug}
           variant="on-dark"
           src={logo.onDark}
+          quality={logo.onDarkQuality}
           bgStyle="linear-gradient(135deg, #0A1628, #1E3A5F)"
           origin={origin}
           copied={copied}
@@ -74,6 +134,7 @@ function VariantCell({
   slug,
   variant,
   src,
+  quality,
   bgStyle,
   origin,
   copied,
@@ -82,6 +143,7 @@ function VariantCell({
   slug: string;
   variant: Variant;
   src: string | null;
+  quality: VariantQuality;
   bgStyle: string;
   origin: string;
   copied: string | null;
@@ -115,8 +177,9 @@ function VariantCell({
         />
       </div>
       <div className="flex items-center justify-between gap-2 border-t border-white/[0.06] bg-[color:var(--color-ink)] px-3 py-2">
-        <span className="font-mono text-[0.6rem] uppercase tracking-wider text-[color:rgba(247,245,242,0.4)]">
+        <span className="flex items-center gap-2 font-mono text-[0.6rem] uppercase tracking-wider text-[color:rgba(247,245,242,0.4)]">
           {variant}
+          <QualityTag quality={quality} />
         </span>
         <div className="flex items-center gap-1">
           {FORMATS.map((fmt) => {

@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'fs';
+import { existsSync, readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
 export type HQ = {
@@ -20,18 +20,43 @@ export type ManifestEntry = {
   hq?: HQ;
 };
 
+export type VariantQuality = 'good' | 'icon' | 'flat' | 'tiny' | 'missing';
+export type LogoStatus = 'all-good' | 'partial' | 'broken';
+
 export type Logo = ManifestEntry & {
   onLight: string | null;
   onDark: string | null;
+  status: LogoStatus;
+  onLightQuality: VariantQuality;
+  onDarkQuality: VariantQuality;
+  pendingApproval: boolean;
+};
+
+type AuditFile = {
+  audits: Array<{
+    slug: string;
+    status: LogoStatus;
+    pendingApproval?: boolean;
+    onLight: { quality: VariantQuality };
+    onDark: { quality: VariantQuality };
+  }>;
 };
 
 const EXTS = ['svg', 'png', 'webp', 'jpg', 'gif'] as const;
+
+function loadAuditIndex(logosDir: string) {
+  const auditPath = join(logosDir, 'audit.json');
+  if (!existsSync(auditPath)) return new Map<string, AuditFile['audits'][number]>();
+  const raw = JSON.parse(readFileSync(auditPath, 'utf-8')) as AuditFile;
+  return new Map(raw.audits.map((a) => [a.slug, a]));
+}
 
 export function loadLogos(): Logo[] {
   const logosDir = join(process.cwd(), 'public', 'logos');
   const manifestPath = join(logosDir, 'manifest.json');
   const raw = JSON.parse(readFileSync(manifestPath, 'utf-8')) as { customers: ManifestEntry[] };
   const files = new Set(readdirSync(logosDir));
+  const auditIndex = loadAuditIndex(logosDir);
 
   function findVariant(slug: string, variant: 'on-light' | 'on-dark'): string | null {
     for (const ext of EXTS) {
@@ -42,11 +67,18 @@ export function loadLogos(): Logo[] {
   }
 
   return raw.customers
-    .map((c) => ({
-      ...c,
-      onLight: findVariant(c.slug, 'on-light'),
-      onDark: findVariant(c.slug, 'on-dark'),
-    }))
+    .map((c) => {
+      const audit = auditIndex.get(c.slug);
+      return {
+        ...c,
+        onLight: findVariant(c.slug, 'on-light'),
+        onDark: findVariant(c.slug, 'on-dark'),
+        status: audit?.status ?? 'partial',
+        onLightQuality: audit?.onLight.quality ?? 'missing',
+        onDarkQuality: audit?.onDark.quality ?? 'missing',
+        pendingApproval: Boolean(audit?.pendingApproval),
+      };
+    })
     .filter((l) => l.onLight || l.onDark)
     .sort((a, b) => a.name.localeCompare(b.name));
 }
