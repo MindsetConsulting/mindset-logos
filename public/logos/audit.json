@@ -1,21 +1,21 @@
 {
-  "ranAt": "2026-04-14T22:02:27.445Z",
+  "ranAt": "2026-04-15T16:58:13.709Z",
   "counts": {
-    "total": 122,
-    "allGood": 121,
+    "total": 121,
+    "allGood": 120,
     "partial": 1,
     "broken": 0,
     "byQuality": {
       "onLight": {
         "good": 116,
-        "icon": 5,
+        "icon": 4,
         "flat": 1,
         "tiny": 0,
         "missing": 0
       },
       "onDark": {
         "good": 115,
-        "icon": 5,
+        "icon": 4,
         "flat": 2,
         "tiny": 0,
         "missing": 0
@@ -945,28 +945,6 @@
         "hasAlpha": true,
         "aspectRatio": 1.8,
         "quality": "good"
-      },
-      "status": "all-good"
-    },
-    {
-      "slug": "home-depot-canada",
-      "name": "Home Depot Canada",
-      "industry": "Retail",
-      "onLight": {
-        "file": "home-depot-canada-on-light.png",
-        "width": 600,
-        "height": 601,
-        "hasAlpha": true,
-        "aspectRatio": 1,
-        "quality": "icon"
-      },
-      "onDark": {
-        "file": "home-depot-canada-on-dark.png",
-        "width": 600,
-        "height": 601,
-        "hasAlpha": true,
-        "aspectRatio": 1,
-        "quality": "icon"
       },
       "status": "all-good"
     },

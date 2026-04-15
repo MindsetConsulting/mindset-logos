@@ -14,13 +14,21 @@ export async function GET() {
       industry: l.industry,
       verticals: l.verticals,
       hq: l.hq ?? null,
-      sfId: l.sfId ?? null,
       onLight: l.onLight,
       onDark: l.onDark,
       status: l.status,
       onLightQuality: l.onLightQuality,
       onDarkQuality: l.onDarkQuality,
       pendingApproval: l.pendingApproval,
+      salesforce: {
+        sfId: l.salesforce.sfId,
+        sfName: l.salesforce.sfName,
+        type: l.salesforce.type,
+        rawType: l.salesforce.rawType,
+        duns: l.salesforce.duns,
+        partner: l.salesforce.partner,
+        mindsetPartner: l.salesforce.mindsetPartner,
+      },
     })),
   });
 }

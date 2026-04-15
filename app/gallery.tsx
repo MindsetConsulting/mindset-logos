@@ -2,12 +2,15 @@
 
 import { useState, useMemo } from 'react';
 import { Search, Github, Terminal, ChevronDown, Copy, Check } from 'lucide-react';
-import type { Logo } from '@/lib/logos';
+import type { Logo, AccountType } from '@/lib/logos';
 import LogoRow from './logo-row';
+
+type TypeFilter = 'all' | AccountType;
 
 export default function Gallery({ logos }: { logos: Logo[] }) {
   const [query, setQuery] = useState('');
   const [vertical, setVertical] = useState<string>('');
+  const [typeFilter, setTypeFilter] = useState<TypeFilter>('all');
   const [devOpen, setDevOpen] = useState(false);
   const [copiedCmd, setCopiedCmd] = useState<string | null>(null);
 
@@ -23,6 +26,14 @@ export default function Gallery({ logos }: { logos: Logo[] }) {
     return Array.from(set).sort();
   }, [logos]);
 
+  const typeCounts = useMemo(() => {
+    const counts: Record<AccountType, number> = { customer: 0, partner: 0, prospect: 0, self: 0, other: 0 };
+    logos.forEach((l) => {
+      counts[l.salesforce.type] += 1;
+    });
+    return counts;
+  }, [logos]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return logos.filter((l) => {
@@ -34,9 +45,10 @@ export default function Gallery({ logos }: { logos: Logo[] }) {
         if (!hit) return false;
       }
       if (vertical && !l.verticals.includes(vertical)) return false;
+      if (typeFilter !== 'all' && l.salesforce.type !== typeFilter) return false;
       return true;
     });
-  }, [logos, query, vertical]);
+  }, [logos, query, vertical, typeFilter]);
 
   return (
     <div className="min-h-screen">
@@ -49,7 +61,7 @@ export default function Gallery({ logos }: { logos: Logo[] }) {
             Every customer logo, ready to drop in.
           </h1>
           <p className="mt-4 max-w-[60ch] font-sans text-base leading-relaxed text-[color:rgba(247,245,242,0.6)]">
-            {logos.length} customers. Each one has a light and a dark variant, sourced from vendor sites and hand-checked for transparency. Copy any variant as PNG, WebP, JPG, or SVG. The transcoder handles the conversion on the fly.
+            {typeCounts.customer} customers, {typeCounts.partner} partners, {typeCounts.prospect} prospects. Each one has a light and a dark variant, sourced from vendor sites and hand-checked for transparency. Copy any variant as PNG, WebP, JPG, or SVG. The transcoder handles the conversion on the fly.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -154,6 +166,18 @@ curl https://mindset-logos.vercel.app/api/logos/anchorage/on-dark.svg # only whe
               className="w-full rounded-lg border border-white/[0.08] bg-white/[0.03] py-2.5 pl-10 pr-4 font-sans text-sm text-[color:var(--color-warm-white)] placeholder:text-[color:rgba(247,245,242,0.35)] focus:border-[color:var(--color-violet-light)] focus:outline-none"
             />
           </div>
+          <select
+            value={typeFilter}
+            onChange={(e) => setTypeFilter(e.target.value as TypeFilter)}
+            className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-2.5 font-sans text-sm text-[color:var(--color-warm-white)] focus:border-[color:var(--color-violet-light)] focus:outline-none"
+          >
+            <option value="all">All types ({logos.length})</option>
+            <option value="customer">Customers ({typeCounts.customer})</option>
+            <option value="partner">Partners ({typeCounts.partner})</option>
+            <option value="prospect">Prospects ({typeCounts.prospect})</option>
+            {typeCounts.self > 0 && <option value="self">Self ({typeCounts.self})</option>}
+            {typeCounts.other > 0 && <option value="other">Other ({typeCounts.other})</option>}
+          </select>
           <select
             value={vertical}
             onChange={(e) => setVertical(e.target.value)}

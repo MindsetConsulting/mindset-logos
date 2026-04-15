@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Copy, Check, Download, ExternalLink } from 'lucide-react';
-import type { Logo, LogoStatus, VariantQuality } from '@/lib/logos';
+import type { AccountType, Logo, LogoStatus, VariantQuality } from '@/lib/logos';
 
 type Props = { logo: Logo };
 
@@ -10,6 +10,53 @@ type Variant = 'on-light' | 'on-dark';
 
 const FORMATS = ['png', 'webp', 'jpg', 'svg'] as const;
 type Format = (typeof FORMATS)[number];
+
+const TYPE_STYLES: Record<AccountType, { label: string; bg: string; fg: string; dot: string }> = {
+  customer: {
+    label: 'Customer',
+    bg: 'bg-[color:rgba(124,109,242,0.12)]',
+    fg: 'text-[color:var(--color-violet-light)]',
+    dot: 'bg-[color:var(--color-violet-light)]',
+  },
+  partner: {
+    label: 'Partner',
+    bg: 'bg-[color:rgba(97,189,120,0.12)]',
+    fg: 'text-[color:rgb(134,239,172)]',
+    dot: 'bg-[color:rgb(134,239,172)]',
+  },
+  prospect: {
+    label: 'Prospect',
+    bg: 'bg-[color:rgba(234,179,8,0.12)]',
+    fg: 'text-[color:rgb(250,204,21)]',
+    dot: 'bg-[color:rgb(250,204,21)]',
+  },
+  self: {
+    label: 'Mindset',
+    bg: 'bg-[color:rgba(247,245,242,0.08)]',
+    fg: 'text-[color:var(--color-warm-white)]',
+    dot: 'bg-[color:var(--color-warm-white)]',
+  },
+  other: {
+    label: 'Other',
+    bg: 'bg-[color:rgba(247,245,242,0.05)]',
+    fg: 'text-[color:rgba(247,245,242,0.55)]',
+    dot: 'bg-[color:rgba(247,245,242,0.55)]',
+  },
+};
+
+function TypePill({ type, rawType }: { type: AccountType; rawType: string | null }) {
+  const s = TYPE_STYLES[type];
+  const title = rawType && rawType !== s.label ? `Salesforce type: ${rawType}` : `Salesforce type: ${s.label}`;
+  return (
+    <span
+      title={title}
+      className={`inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 font-mono text-[0.58rem] uppercase tracking-wider ${s.bg} ${s.fg}`}
+    >
+      <span className={`h-1.5 w-1.5 rounded-full ${s.dot}`} />
+      {s.label}
+    </span>
+  );
+}
 
 const STATUS_STYLES: Record<LogoStatus, { label: string; bg: string; fg: string; dot: string }> = {
   'all-good': {
@@ -91,8 +138,11 @@ export default function LogoRow({ logo }: Props) {
             {logo.hq.display}
           </p>
         )}
-        <div className="mt-1">
-          <StatusPill status={logo.status} pending={logo.pendingApproval} />
+        <div className="mt-1 flex flex-wrap items-center gap-1.5">
+          <TypePill type={logo.salesforce.type} rawType={logo.salesforce.rawType} />
+          {(logo.status !== 'all-good' || logo.pendingApproval) && (
+            <StatusPill status={logo.status} pending={logo.pendingApproval} />
+          )}
         </div>
         <a
           href={logo.website}

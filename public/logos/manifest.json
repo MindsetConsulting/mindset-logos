@@ -12,8 +12,8 @@
         "Retail",
         "Chemical"
       ],
-      "sfId": "001TO000002XqbPYAS",
-      "sfName": "Solventum Corporation",
+      "sfId": "001j0000005tPVSAA2",
+      "sfName": "3M Company",
       "hq": {
         "street": "3M Center Bldg 275",
         "city": "Saint Paul",
@@ -739,24 +739,6 @@
         "state": "Ohio",
         "country": "United States",
         "display": "Columbus, Ohio, United States"
-      }
-    },
-    {
-      "slug": "home-depot-canada",
-      "name": "Home Depot Canada",
-      "website": "https://www.homedepot.ca",
-      "industry": "Retail",
-      "verticals": [
-        "Retail"
-      ],
-      "sfId": "001j000000dME0kAAG",
-      "sfName": "Home Depot of Canada Inc",
-      "hq": {
-        "street": "825 Caledonia Rd",
-        "city": "North York",
-        "state": "Ontario",
-        "country": "Canada",
-        "display": "North York, Ontario, Canada"
       }
     },
     {

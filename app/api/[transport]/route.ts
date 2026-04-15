@@ -49,9 +49,9 @@ function absolutize(logo: Logo) {
     industry: logo.industry,
     verticals: logo.verticals,
     hq: logo.hq ?? null,
-    sfId: logo.sfId ?? null,
     onLight: logo.onLight ? SITE_ORIGIN + logo.onLight : null,
     onDark: logo.onDark ? SITE_ORIGIN + logo.onDark : null,
+    salesforce: logo.salesforce,
   };
 }
 
@@ -173,25 +173,33 @@ const handler = createMcpHandler(
       {
         title: 'List logos',
         description:
-          'List every Mindset Consulting customer logo. Returns slug, name, website, industry, verticals, HQ, and absolute URLs for on-light and on-dark variants. Optional vertical filter.',
+          'List every Mindset Consulting customer logo. Returns slug, name, website, industry, verticals, HQ, absolute URLs for on-light and on-dark variants, and a salesforce block { sfId, sfName, type, rawType, duns, partner, mindsetPartner }. Type is normalized to customer | partner | prospect | self | other. Optional filters for vertical and type.',
         inputSchema: {
           vertical: z
             .string()
             .optional()
             .describe('Optional vertical/industry filter, e.g. "Healthcare".'),
+          type: z
+            .enum(['customer', 'partner', 'prospect', 'self', 'other'])
+            .optional()
+            .describe('Optional Salesforce account type filter (normalized).'),
         },
       },
-      async ({ vertical }) => {
+      async ({ vertical, type }) => {
         const logos = loadLogos();
-        const filtered = vertical
-          ? logos.filter((l) => l.verticals.includes(vertical) || l.industry === vertical)
-          : logos;
+        let out = logos;
+        if (vertical) {
+          out = out.filter((l) => l.verticals.includes(vertical) || l.industry === vertical);
+        }
+        if (type) {
+          out = out.filter((l) => l.salesforce.type === type);
+        }
         return {
           content: [
             {
               type: 'text',
               text: JSON.stringify(
-                { total: filtered.length, logos: filtered.map(absolutize) },
+                { total: out.length, logos: out.map(absolutize) },
                 null,
                 2,
               ),
@@ -206,9 +214,9 @@ const handler = createMcpHandler(
       {
         title: 'Search logos',
         description:
-          'Fuzzy search the Mindset customer logo library by free-text query. Matches slug, name, industry, verticals, and HQ city/state.',
+          'Fuzzy search the Mindset customer logo library. Matches slug, name, industry, verticals, HQ city/state, Salesforce name, DUNS number, and Salesforce ID.',
         inputSchema: {
-          query: z.string().describe('Search query'),
+          query: z.string().describe('Search query (name, slug, industry, city, DUNS, or sfId)'),
           limit: z.number().int().min(1).max(100).optional().describe('Max results (default 20)'),
         },
       },
@@ -224,6 +232,9 @@ const handler = createMcpHandler(
             if (l.verticals.some((v) => v.toLowerCase().includes(q))) score += 4;
             if (l.hq?.city?.toLowerCase().includes(q)) score += 2;
             if (l.hq?.state?.toLowerCase().includes(q)) score += 2;
+            if (l.salesforce.sfName?.toLowerCase().includes(q)) score += 6;
+            if (l.salesforce.duns && l.salesforce.duns.includes(q)) score += 12;
+            if (l.salesforce.sfId && l.salesforce.sfId.toLowerCase().includes(q)) score += 12;
             return { logo: l, score };
           })
           .filter((x) => x.score > 0)

@@ -10,7 +10,8 @@
     "audit": "bun scripts/audit.ts",
     "fix": "bun scripts/fix.ts",
     "apply-approvals": "bun scripts/apply-approvals.ts",
-    "upload-to-sf": "bun scripts/upload-to-salesforce.ts"
+    "upload-to-sf": "bun scripts/upload-to-salesforce.ts",
+    "enrich-sf": "bun scripts/enrich-salesforce.ts"
   },
   "dependencies": {
     "@mindsetconsulting/brand": "^0.1.0",

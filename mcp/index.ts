@@ -29,6 +29,16 @@ type HQ = {
   display: string | null;
 };
 
+type Salesforce = {
+  sfId: string | null;
+  sfName: string | null;
+  type: 'customer' | 'partner' | 'prospect' | 'self' | 'other';
+  rawType: string | null;
+  duns: string | null;
+  partner: string | null;
+  mindsetPartner: boolean;
+};
+
 type Logo = {
   slug: string;
   name: string;
@@ -37,8 +47,8 @@ type Logo = {
   verticals: string[];
   onLight: string | null;
   onDark: string | null;
-  sfId?: string;
   hq?: HQ;
+  salesforce?: Salesforce;
 };
 
 type ApiResponse = { total: number; logos: Logo[] };
@@ -77,7 +87,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: 'list_logos',
       description:
-        'List every Mindset Consulting customer logo. Each entry has slug, name, website, industry, verticals, HQ address, and absolute URLs for on-light and on-dark variants. Optional vertical filter.',
+        'List every Mindset Consulting customer logo. Each entry has slug, name, website, industry, verticals, HQ, absolute URLs for on-light and on-dark variants, and a salesforce block with { sfId, sfName, type, rawType, duns, partner, mindsetPartner }. Type is normalized to one of: customer, partner, prospect, self, other. Optional filters for vertical and salesforce type.',
       inputSchema: {
         type: 'object',
         properties: {
@@ -85,17 +95,22 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
             type: 'string',
             description: 'Optional vertical/industry filter (e.g. "Healthcare", "Food & Beverage").',
           },
+          type: {
+            type: 'string',
+            enum: ['customer', 'partner', 'prospect', 'self', 'other'],
+            description: 'Optional Salesforce account type filter (normalized).',
+          },
         },
       },
     },
     {
       name: 'search_logos',
       description:
-        'Fuzzy search the Mindset customer logo library by a free-text query. Matches against slug, name, industry, verticals, and HQ city/state.',
+        'Fuzzy search the Mindset customer logo library by a free-text query. Matches against slug, name, industry, verticals, HQ city/state, Salesforce name, DUNS number, and Salesforce ID.',
       inputSchema: {
         type: 'object',
         properties: {
-          query: { type: 'string', description: 'Search query' },
+          query: { type: 'string', description: 'Search query (name, slug, industry, city, DUNS, or sfId)' },
           limit: { type: 'number', description: 'Max results (default 20)' },
         },
         required: ['query'],
@@ -104,7 +119,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: 'get_logo',
       description:
-        'Get one customer logo by slug. Returns name, website, industry, verticals, HQ address, and absolute URLs for the on-light and on-dark variants. Drop the URLs directly into HTML, slides, emails, etc.',
+        'Get one customer logo by slug. Returns name, website, industry, verticals, HQ, absolute URLs for on-light and on-dark variants, and the salesforce metadata block. Drop the URLs directly into HTML, slides, emails, etc.',
       inputSchema: {
         type: 'object',
         properties: {
@@ -121,10 +136,14 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const logos = await fetchLogos();
 
   if (name === 'list_logos') {
-    const vertical = (args as { vertical?: string })?.vertical;
-    const out = vertical
-      ? logos.filter((l) => l.verticals.includes(vertical) || l.industry === vertical)
-      : logos;
+    const { vertical, type } = (args as { vertical?: string; type?: string }) ?? {};
+    let out = logos;
+    if (vertical) {
+      out = out.filter((l) => l.verticals.includes(vertical) || l.industry === vertical);
+    }
+    if (type) {
+      out = out.filter((l) => l.salesforce?.type === type);
+    }
     return {
       content: [
         {
@@ -147,6 +166,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         if (l.verticals.some((v) => v.toLowerCase().includes(q))) score += 4;
         if (l.hq?.city?.toLowerCase().includes(q)) score += 2;
         if (l.hq?.state?.toLowerCase().includes(q)) score += 2;
+        if (l.salesforce?.sfName?.toLowerCase().includes(q)) score += 6;
+        if (l.salesforce?.duns && l.salesforce.duns.includes(q)) score += 12;
+        if (l.salesforce?.sfId && l.salesforce.sfId.toLowerCase().includes(q)) score += 12;
         return { logo: l, score };
       })
       .filter((x) => x.score > 0)
