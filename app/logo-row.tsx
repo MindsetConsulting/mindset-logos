@@ -125,8 +125,8 @@ export default function LogoRow({ logo }: Props) {
   const origin = typeof window !== 'undefined' ? window.location.origin : '';
 
   return (
-    <div className="group grid grid-cols-[220px_1fr_1fr] gap-0 overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.015] transition hover:border-white/[0.14]">
-      <div className="flex flex-col justify-center gap-1.5 border-r border-white/[0.06] px-5 py-5">
+    <div className="group grid grid-cols-1 md:grid-cols-[220px_1fr_1fr] gap-0 overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.015] transition hover:border-white/[0.14]">
+      <div className="flex flex-col justify-center gap-1.5 border-b border-white/[0.06] px-5 py-4 md:border-b-0 md:border-r md:py-5">
         <p className="font-serif text-lg font-semibold leading-tight text-[color:var(--color-warm-white)]">
           {logo.name}
         </p>
@@ -164,7 +164,7 @@ export default function LogoRow({ logo }: Props) {
         copied={copied}
         onCopy={copy}
       />
-      <div className="border-l border-white/[0.06]">
+      <div className="border-t border-white/[0.06] md:border-t-0 md:border-l">
         <VariantCell
           slug={logo.slug}
           variant="on-dark"
@@ -226,12 +226,12 @@ function VariantCell({
           className="max-h-[92px] max-w-[80%] object-contain"
         />
       </div>
-      <div className="flex items-center justify-between gap-2 border-t border-white/[0.06] bg-[color:var(--color-ink)] px-3 py-2">
+      <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 border-t border-white/[0.06] bg-[color:var(--color-ink)] px-3 py-2">
         <span className="flex items-center gap-2 font-mono text-[0.6rem] uppercase tracking-wider text-[color:rgba(247,245,242,0.4)]">
           {variant}
           <QualityTag quality={quality} />
         </span>
-        <div className="flex items-center gap-1">
+        <div className="flex flex-wrap items-center gap-1">
           {FORMATS.map((fmt) => {
             const enabled = fmt !== 'svg' || svgAvailable;
             const key = `${slug}-${variant}-${fmt}`;

@@ -52,7 +52,7 @@ export default function Gallery({ logos }: { logos: Logo[] }) {
 
   return (
     <div className="min-h-screen">
-      <header className="border-b border-white/[0.06] px-6 py-10 md:px-12 md:py-14">
+      <header className="border-b border-white/[0.06] px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-14">
         <div className="mx-auto max-w-[1200px]">
           <p className="font-mono text-[0.72rem] uppercase tracking-[0.14em] text-[color:var(--color-violet-light)]">
             Mindset Consulting · Customer Marks
@@ -156,8 +156,8 @@ curl https://mindset-logos.vercel.app/api/logos/anchorage/on-dark.svg # only whe
       </header>
 
       <div className="sticky top-0 z-20 border-b border-white/[0.06] bg-[color:var(--color-ink)]/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-3 px-6 py-4 md:px-12">
-          <div className="relative flex flex-1 items-center min-w-[200px]">
+        <div className="mx-auto flex max-w-[1200px] flex-col gap-3 px-4 py-3 sm:flex-row sm:flex-wrap sm:items-center sm:px-6 sm:py-4 md:px-12">
+          <div className="relative flex w-full items-center sm:min-w-[200px] sm:flex-1">
             <Search className="pointer-events-none absolute left-3 h-4 w-4 text-[color:rgba(247,245,242,0.4)]" />
             <input
               value={query}
@@ -166,37 +166,39 @@ curl https://mindset-logos.vercel.app/api/logos/anchorage/on-dark.svg # only whe
               className="w-full rounded-lg border border-white/[0.08] bg-white/[0.03] py-2.5 pl-10 pr-4 font-sans text-sm text-[color:var(--color-warm-white)] placeholder:text-[color:rgba(247,245,242,0.35)] focus:border-[color:var(--color-violet-light)] focus:outline-none"
             />
           </div>
-          <select
-            value={typeFilter}
-            onChange={(e) => setTypeFilter(e.target.value as TypeFilter)}
-            className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-2.5 font-sans text-sm text-[color:var(--color-warm-white)] focus:border-[color:var(--color-violet-light)] focus:outline-none"
-          >
-            <option value="all">All types ({logos.length})</option>
-            <option value="customer">Customers ({typeCounts.customer})</option>
-            <option value="partner">Partners ({typeCounts.partner})</option>
-            <option value="prospect">Prospects ({typeCounts.prospect})</option>
-            {typeCounts.self > 0 && <option value="self">Self ({typeCounts.self})</option>}
-            {typeCounts.other > 0 && <option value="other">Other ({typeCounts.other})</option>}
-          </select>
-          <select
-            value={vertical}
-            onChange={(e) => setVertical(e.target.value)}
-            className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-2.5 font-sans text-sm text-[color:var(--color-warm-white)] focus:border-[color:var(--color-violet-light)] focus:outline-none"
-          >
-            <option value="">All verticals</option>
-            {verticals.map((v) => (
-              <option key={v} value={v}>
-                {v}
-              </option>
-            ))}
-          </select>
-          <span className="font-mono text-[0.7rem] uppercase tracking-wider text-[color:rgba(247,245,242,0.4)]">
-            {filtered.length} showing
-          </span>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <select
+              value={typeFilter}
+              onChange={(e) => setTypeFilter(e.target.value as TypeFilter)}
+              className="flex-1 min-w-[140px] rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-2.5 font-sans text-sm text-[color:var(--color-warm-white)] focus:border-[color:var(--color-violet-light)] focus:outline-none sm:flex-none"
+            >
+              <option value="all">All types ({logos.length})</option>
+              <option value="customer">Customers ({typeCounts.customer})</option>
+              <option value="partner">Partners ({typeCounts.partner})</option>
+              <option value="prospect">Prospects ({typeCounts.prospect})</option>
+              {typeCounts.self > 0 && <option value="self">Self ({typeCounts.self})</option>}
+              {typeCounts.other > 0 && <option value="other">Other ({typeCounts.other})</option>}
+            </select>
+            <select
+              value={vertical}
+              onChange={(e) => setVertical(e.target.value)}
+              className="flex-1 min-w-[140px] rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-2.5 font-sans text-sm text-[color:var(--color-warm-white)] focus:border-[color:var(--color-violet-light)] focus:outline-none sm:flex-none"
+            >
+              <option value="">All verticals</option>
+              {verticals.map((v) => (
+                <option key={v} value={v}>
+                  {v}
+                </option>
+              ))}
+            </select>
+            <span className="font-mono text-[0.7rem] uppercase tracking-wider text-[color:rgba(247,245,242,0.4)]">
+              {filtered.length} showing
+            </span>
+          </div>
         </div>
       </div>
 
-      <main className="mx-auto max-w-[1200px] px-6 py-10 md:px-12">
+      <main className="mx-auto max-w-[1200px] px-4 py-6 sm:px-6 sm:py-10 md:px-12">
         {filtered.length === 0 ? (
           <div className="py-24 text-center font-mono text-sm text-[color:rgba(247,245,242,0.45)]">
             No customers match that search.
@@ -210,7 +212,7 @@ curl https://mindset-logos.vercel.app/api/logos/anchorage/on-dark.svg # only whe
         )}
       </main>
 
-      <footer className="border-t border-white/[0.06] px-6 py-8 md:px-12">
+      <footer className="border-t border-white/[0.06] px-4 py-6 sm:px-6 sm:py-8 md:px-12">
         <div className="mx-auto max-w-[1200px] font-mono text-[0.7rem] uppercase tracking-wider text-[color:rgba(247,245,242,0.4)]">
           Managed via{' '}
           <a
