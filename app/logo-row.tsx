@@ -6,6 +6,11 @@ import type { Logo } from '@/lib/logos';
 
 type Props = { logo: Logo };
 
+type Variant = 'on-light' | 'on-dark';
+
+const FORMATS = ['png', 'webp', 'jpg', 'svg'] as const;
+type Format = (typeof FORMATS)[number];
+
 export default function LogoRow({ logo }: Props) {
   const [copied, setCopied] = useState<string | null>(null);
 
@@ -41,8 +46,9 @@ export default function LogoRow({ logo }: Props) {
           <ExternalLink className="h-2.5 w-2.5" />
         </a>
       </div>
-      <Variant
-        label="on-light"
+      <VariantCell
+        slug={logo.slug}
+        variant="on-light"
         src={logo.onLight}
         bgStyle="#F7F5F2"
         origin={origin}
@@ -50,8 +56,9 @@ export default function LogoRow({ logo }: Props) {
         onCopy={copy}
       />
       <div className="border-l border-white/[0.06]">
-        <Variant
-          label="on-dark"
+        <VariantCell
+          slug={logo.slug}
+          variant="on-dark"
           src={logo.onDark}
           bgStyle="linear-gradient(135deg, #0A1628, #1E3A5F)"
           origin={origin}
@@ -63,15 +70,17 @@ export default function LogoRow({ logo }: Props) {
   );
 }
 
-function Variant({
-  label,
+function VariantCell({
+  slug,
+  variant,
   src,
   bgStyle,
   origin,
   copied,
   onCopy,
 }: {
-  label: string;
+  slug: string;
+  variant: Variant;
   src: string | null;
   bgStyle: string;
   origin: string;
@@ -85,9 +94,14 @@ function Variant({
       </div>
     );
   }
-  const key = `${src}`;
-  const fullUrl = `${origin}${src}`;
+
+  const sourceExt = (src.split('.').pop() ?? '').toLowerCase();
+  const svgAvailable = sourceExt === 'svg';
   const filename = src.split('/').pop() ?? 'logo';
+
+  const urlFor = (format: Format) =>
+    `${origin}/api/logos/${slug}/${variant}.${format}`;
+
   return (
     <div className="relative flex h-full flex-col">
       <div
@@ -96,37 +110,56 @@ function Variant({
       >
         <img
           src={src}
-          alt={label}
+          alt={variant}
           className="max-h-[92px] max-w-[80%] object-contain"
         />
       </div>
-      <div className="flex items-center justify-between border-t border-white/[0.06] bg-[color:var(--color-ink)] px-3 py-2">
+      <div className="flex items-center justify-between gap-2 border-t border-white/[0.06] bg-[color:var(--color-ink)] px-3 py-2">
         <span className="font-mono text-[0.6rem] uppercase tracking-wider text-[color:rgba(247,245,242,0.4)]">
-          {label}
+          {variant}
         </span>
         <div className="flex items-center gap-1">
-          <button
-            onClick={() => onCopy(`${key}-url`, fullUrl)}
-            title="Copy URL"
-            className="flex items-center gap-1 rounded px-2 py-1 font-mono text-[0.58rem] uppercase tracking-wider text-[color:rgba(247,245,242,0.55)] transition hover:bg-white/[0.06] hover:text-[color:var(--color-warm-white)]"
-          >
-            {copied === `${key}-url` ? (
-              <>
-                <Check className="h-3 w-3 text-[color:var(--color-green)]" /> Copied
-              </>
-            ) : (
-              <>
-                <Copy className="h-3 w-3" /> Copy URL
-              </>
-            )}
-          </button>
+          {FORMATS.map((fmt) => {
+            const enabled = fmt !== 'svg' || svgAvailable;
+            const key = `${slug}-${variant}-${fmt}`;
+            const isCopied = copied === key;
+            return (
+              <button
+                key={fmt}
+                disabled={!enabled}
+                onClick={() => enabled && onCopy(key, urlFor(fmt))}
+                title={
+                  enabled
+                    ? `Copy ${fmt.toUpperCase()} URL`
+                    : `SVG not available (source is ${sourceExt.toUpperCase()})`
+                }
+                className={`flex items-center gap-1 rounded px-1.5 py-1 font-mono text-[0.58rem] uppercase tracking-wider transition ${
+                  enabled
+                    ? 'text-[color:rgba(247,245,242,0.55)] hover:bg-white/[0.06] hover:text-[color:var(--color-warm-white)]'
+                    : 'cursor-not-allowed text-[color:rgba(247,245,242,0.2)]'
+                }`}
+              >
+                {isCopied ? (
+                  <>
+                    <Check className="h-3 w-3 text-[color:var(--color-green)]" />
+                    {fmt}
+                  </>
+                ) : (
+                  <>
+                    <Copy className="h-3 w-3" />
+                    {fmt}
+                  </>
+                )}
+              </button>
+            );
+          })}
           <a
             href={src}
             download={filename}
-            title="Download"
-            className="flex items-center gap-1 rounded px-2 py-1 font-mono text-[0.58rem] uppercase tracking-wider text-[color:rgba(247,245,242,0.55)] transition hover:bg-white/[0.06] hover:text-[color:var(--color-warm-white)]"
+            title="Download original source file"
+            className="ml-1 flex items-center gap-1 rounded px-2 py-1 font-mono text-[0.58rem] uppercase tracking-wider text-[color:rgba(247,245,242,0.55)] transition hover:bg-white/[0.06] hover:text-[color:var(--color-warm-white)]"
           >
-            <Download className="h-3 w-3" /> Download
+            <Download className="h-3 w-3" />
           </a>
         </div>
       </div>

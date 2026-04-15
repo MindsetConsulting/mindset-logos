@@ -49,7 +49,7 @@ export default function Gallery({ logos }: { logos: Logo[] }) {
             Every customer logo, ready to drop in.
           </h1>
           <p className="mt-4 max-w-[60ch] font-sans text-base leading-relaxed text-[color:rgba(247,245,242,0.6)]">
-            {logos.length} customers. Each one has a light and a dark variant, sourced from vendor sites and hand-checked for transparency. Copy the URL or download the file — whatever you need.
+            {logos.length} customers. Each one has a light and a dark variant, sourced from vendor sites and hand-checked for transparency. Copy any variant as PNG, WebP, JPG, or SVG. The transcoder handles the conversion on the fly.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -106,9 +106,19 @@ export default function Gallery({ logos }: { logos: Logo[] }) {
                 <p className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-[color:var(--color-violet-light)]">
                   3 · Or just hit the API directly
                 </p>
+                <p className="mt-2 font-sans text-sm text-[color:rgba(247,245,242,0.65)]">
+                  List everything, or hit the per-logo transcoder and pick a format and width. Works for any customer regardless of source format.
+                </p>
                 <CodeBlock
                   label="api"
-                  code="curl https://mindset-logos.vercel.app/api/logos"
+                  code={`# list every customer
+curl https://mindset-logos.vercel.app/api/logos
+
+# fetch a specific variant in any format (png, webp, jpg, svg)
+curl https://mindset-logos.vercel.app/api/logos/abbott/on-light.png?w=800
+curl https://mindset-logos.vercel.app/api/logos/cargill/on-dark.webp?w=1200
+curl https://mindset-logos.vercel.app/api/logos/abbott/on-light.jpg   # flattened onto cream
+curl https://mindset-logos.vercel.app/api/logos/anchorage/on-dark.svg # only when source is SVG`}
                   copiedCmd={copiedCmd}
                   onCopy={copyCmd}
                 />

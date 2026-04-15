@@ -1,6 +1,6 @@
 # Mindset Logos
 
-The one place at Mindset for every customer logo. 119 companies, both `on-light` and `on-dark` variants, hand-verified and transparent. Use it from the browser, from Claude Code, from the API, or clone the repo and use the files directly.
+The one place at Mindset for every customer logo. 122 companies, both `on-light` and `on-dark` variants, hand-verified and transparent. Use it from the browser, from Claude Code, from the API, or clone the repo and use the files directly. Every variant can be fetched in any format (PNG, WebP, JPG, or SVG) via the on-the-fly transcoder.
 
 ## Where to find it
 
@@ -9,7 +9,8 @@ The one place at Mindset for every customer logo. 119 companies, both `on-light`
 | **Gallery** | [mindset-logos.vercel.app](https://mindset-logos.vercel.app) |
 | **GitHub** | [MindsetConsulting/mindset-logos](https://github.com/MindsetConsulting/mindset-logos) |
 | **Vercel** | [vercel.com/mindsetconsulting/mindset-logos](https://vercel.com/mindsetconsulting/mindset-logos) |
-| **JSON API** | `https://mindset-logos.vercel.app/api/logos` |
+| **JSON list API** | `https://mindset-logos.vercel.app/api/logos` |
+| **Transcoder API** | `https://mindset-logos.vercel.app/api/logos/{slug}/{variant}.{format}` |
 | **MCP (Claude Code)** | `claude mcp add mindset-logos -- npx -y @mindsetconsulting/mindset-logos-mcp` |
 | **MCP (claude.ai team)** | Custom connector URL: `https://mindset-logos.vercel.app/api/mcp` |
 | **Raw files** | `https://mindset-logos.vercel.app/logos/{slug}-on-{light,dark}.{ext}` |
@@ -63,9 +64,35 @@ curl https://mindset-logos.vercel.app/api/logos
 
 Returns every customer with their `onLight` and `onDark` file paths, website, industry, and verticals.
 
-### Direct file URLs
+### Transcoder API (pick your format)
 
-Every file is served at `https://mindset-logos.vercel.app/logos/{slug}-on-{variant}.{ext}`. Example:
+Every variant can be fetched in any format via `/api/logos/{slug}/{variant}.{format}`:
+
+```
+# PNG (transparent, universal)
+https://mindset-logos.vercel.app/api/logos/abbott/on-light.png?w=800
+
+# WebP (transparent, 3x smaller than PNG)
+https://mindset-logos.vercel.app/api/logos/cargill/on-light.webp?w=800
+
+# JPEG (flattened onto cream for on-light, navy for on-dark; override with &bg=ffffff)
+https://mindset-logos.vercel.app/api/logos/3m/on-light.jpg?w=1200
+
+# SVG (passthrough; only works when the source file is SVG, 415 otherwise)
+https://mindset-logos.vercel.app/api/logos/anchorage/on-dark.svg
+```
+
+**Why this exists:** some downstream consumers (Google Slides API, older clients) only accept specific formats. Instead of hand-maintaining multiple files per customer, the transcoder reads whatever source we have (WebP, SVG, or PNG) and returns the format you asked for. Results are cached immutably on Vercel's CDN per URL, so the conversion runs exactly once per `{slug, variant, format, width}` combo.
+
+Query params:
+- `w` — target width in pixels (default 800, max 2000). SVG sources rasterize at a density calibrated to this width so they stay sharp.
+- `bg` — hex color for JPEG background (e.g. `bg=ffffff`). Defaults to cream for `on-light`, navy for `on-dark`. Ignored for PNG/WebP since those preserve alpha.
+
+Extension omitted (`/api/logos/abbott/on-light`) defaults to PNG.
+
+### Direct file URLs (raw sources)
+
+If you want the original source file in its native format:
 
 ```
 https://mindset-logos.vercel.app/logos/3m-on-dark.png
@@ -73,7 +100,7 @@ https://mindset-logos.vercel.app/logos/agiliti-on-light.webp
 https://mindset-logos.vercel.app/logos/bcbs-mn-on-light.svg
 ```
 
-Use them in Markdown, Slack, decks, emails, anywhere.
+Use them in Markdown, Slack, decks, emails, anywhere that accepts whatever format the source happens to be.
 
 ## Adding a new customer
 
