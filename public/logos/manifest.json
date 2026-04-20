@@ -320,6 +320,25 @@
       }
     },
     {
+      "slug": "srs-distribution",
+      "name": "SRS Distribution",
+      "website": "https://www.srsdistribution.com",
+      "industry": "Construction",
+      "verticals": [
+        "Distribution",
+        "Construction"
+      ],
+      "sfId": "0015b000028Lu7YAAS",
+      "sfName": "SRS Distribution Inc.",
+      "hq": {
+        "street": "7440 State Highway 121",
+        "city": "McKinney",
+        "state": "Texas",
+        "country": "United States",
+        "display": "McKinney, Texas, United States"
+      }
+    },
+    {
       "slug": "steris",
       "name": "STERIS (Cantel Medical)",
       "website": "https://www.steris.com",
@@ -1990,6 +2009,57 @@
         "state": "Indiana",
         "country": "United States",
         "display": "Michigan City, Indiana, United States"
+      }
+    },
+    {
+      "slug": "auria-solutions",
+      "name": "Auria Solutions",
+      "website": "https://www.auriasolutions.com",
+      "industry": "Manufacturing",
+      "verticals": [
+        "Manufacturing"
+      ],
+      "sfId": "0010a00001ZLvg2AAD",
+      "sfName": "Auria Solutions USA Inc.",
+      "hq": {
+        "city": "Southfield",
+        "state": "Michigan",
+        "country": "United States",
+        "display": "Southfield, Michigan, United States"
+      }
+    },
+    {
+      "slug": "diageo-india",
+      "name": "Diageo India",
+      "website": "https://www.diageoindia.com",
+      "industry": "Food & Beverage",
+      "verticals": [
+        "CPG"
+      ],
+      "sfId": "001TO00000Jt1IJYAZ",
+      "sfName": "Diageo India",
+      "hq": {
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "country": "India",
+        "display": "Bengaluru, Karnataka, India"
+      }
+    },
+    {
+      "slug": "flagstone-foods",
+      "name": "Flagstone Foods",
+      "website": "https://www.flagstonefoods.com",
+      "industry": "Food & Beverage",
+      "verticals": [
+        "CPG"
+      ],
+      "sfId": "001j000000Mlem7AAB",
+      "sfName": "Flagstone Foods LLC",
+      "hq": {
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Minneapolis, Minnesota, United States"
       }
     },
     {

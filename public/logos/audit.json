@@ -1,21 +1,21 @@
 {
-  "ranAt": "2026-04-15T16:58:13.709Z",
+  "ranAt": "2026-04-20T13:19:23.798Z",
   "counts": {
-    "total": 121,
-    "allGood": 120,
-    "partial": 1,
+    "total": 125,
+    "allGood": 123,
+    "partial": 2,
     "broken": 0,
     "byQuality": {
       "onLight": {
-        "good": 116,
-        "icon": 4,
+        "good": 118,
+        "icon": 5,
         "flat": 1,
-        "tiny": 0,
+        "tiny": 1,
         "missing": 0
       },
       "onDark": {
-        "good": 115,
-        "icon": 4,
+        "good": 118,
+        "icon": 5,
         "flat": 2,
         "tiny": 0,
         "missing": 0
@@ -419,6 +419,28 @@
         "quality": "good"
       },
       "status": "all-good"
+    },
+    {
+      "slug": "srs-distribution",
+      "name": "SRS Distribution",
+      "industry": "Construction",
+      "onLight": {
+        "file": "srs-distribution-on-light.webp",
+        "width": 120,
+        "height": 76,
+        "hasAlpha": true,
+        "aspectRatio": 1.58,
+        "quality": "tiny"
+      },
+      "onDark": {
+        "file": "srs-distribution-on-dark.webp",
+        "width": 344,
+        "height": 232,
+        "hasAlpha": true,
+        "aspectRatio": 1.48,
+        "quality": "good"
+      },
+      "status": "partial"
     },
     {
       "slug": "steris",
@@ -2529,6 +2551,72 @@
         "hasAlpha": true,
         "aspectRatio": 6.56,
         "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "auria-solutions",
+      "name": "Auria Solutions",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "auria-solutions-on-light.webp",
+        "width": 820,
+        "height": 311,
+        "hasAlpha": true,
+        "aspectRatio": 2.64,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "auria-solutions-on-dark.webp",
+        "width": 820,
+        "height": 311,
+        "hasAlpha": true,
+        "aspectRatio": 2.64,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "diageo-india",
+      "name": "Diageo India",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "diageo-india-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "diageo-india-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "all-good"
+    },
+    {
+      "slug": "flagstone-foods",
+      "name": "Flagstone Foods",
+      "industry": "Food & Beverage",
+      "onLight": {
+        "file": "flagstone-foods-on-light.webp",
+        "width": 440,
+        "height": 341,
+        "hasAlpha": true,
+        "aspectRatio": 1.29,
+        "quality": "icon"
+      },
+      "onDark": {
+        "file": "flagstone-foods-on-dark.webp",
+        "width": 440,
+        "height": 341,
+        "hasAlpha": true,
+        "aspectRatio": 1.29,
+        "quality": "icon"
       },
       "status": "all-good"
     },

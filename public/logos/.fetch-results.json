@@ -1,45 +1,62 @@
 {
-  "ranAt": "2026-04-14T22:02:07.026Z",
+  "ranAt": "2026-04-20T12:43:45.802Z",
   "summary": {
-    "total": 2,
-    "bothThemes": 2,
+    "total": 3,
+    "bothThemes": 3,
     "lightOnly": 0,
     "darkOnly": 0,
     "neither": 0
   },
   "results": [
     {
-      "slug": "sap",
-      "name": "SAP",
-      "domain": "sap.com",
+      "slug": "auria-solutions",
+      "name": "Auria Solutions",
+      "domain": "auriasolutions.com",
       "light": {
         "status": "saved",
-        "file": "sap-on-dark.webp",
-        "type": "icon",
-        "hash": "68dec8452fcf"
+        "file": "auria-solutions-on-dark.webp",
+        "type": "logo",
+        "hash": "ed30caab61ec"
       },
       "dark": {
         "status": "saved",
-        "file": "sap-on-light.webp",
-        "type": "logo",
-        "hash": "12bcce0a47c6"
+        "file": "auria-solutions-on-light.webp",
+        "type": "icon",
+        "hash": "bc211b9312af"
       }
     },
     {
-      "slug": "thoughtworks",
-      "name": "Thoughtworks",
-      "domain": "thoughtworks.com",
+      "slug": "diageo-india",
+      "name": "Diageo India",
+      "domain": "diageoindia.com",
       "light": {
         "status": "saved",
-        "file": "thoughtworks-on-dark.webp",
-        "type": "logo",
-        "hash": "e772b27245de"
+        "file": "diageo-india-on-dark.webp",
+        "type": "icon",
+        "hash": "fd06e6306a10"
       },
       "dark": {
         "status": "saved",
-        "file": "thoughtworks-on-light.webp",
+        "file": "diageo-india-on-light.webp",
         "type": "logo",
-        "hash": "59c61ebb6fd3"
+        "hash": "36033d4e1b90"
+      }
+    },
+    {
+      "slug": "flagstone-foods",
+      "name": "Flagstone Foods",
+      "domain": "flagstonefoods.com",
+      "light": {
+        "status": "saved",
+        "file": "flagstone-foods-on-dark.webp",
+        "type": "icon",
+        "hash": "724b6aaf377b"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "flagstone-foods-on-light.webp",
+        "type": "logo",
+        "hash": "9b4f542a61b1"
       }
     }
   ]
