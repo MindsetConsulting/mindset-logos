@@ -1,16 +1,16 @@
 {
-  "ranAt": "2026-04-20T13:19:23.798Z",
+  "ranAt": "2026-06-07T16:31:09.808Z",
   "counts": {
     "total": 125,
-    "allGood": 123,
-    "partial": 2,
+    "allGood": 124,
+    "partial": 1,
     "broken": 0,
     "byQuality": {
       "onLight": {
-        "good": 118,
+        "good": 119,
         "icon": 5,
         "flat": 1,
-        "tiny": 1,
+        "tiny": 0,
         "missing": 0
       },
       "onDark": {
@@ -426,11 +426,11 @@
       "industry": "Construction",
       "onLight": {
         "file": "srs-distribution-on-light.webp",
-        "width": 120,
-        "height": 76,
+        "width": 344,
+        "height": 232,
         "hasAlpha": true,
-        "aspectRatio": 1.58,
-        "quality": "tiny"
+        "aspectRatio": 1.48,
+        "quality": "good"
       },
       "onDark": {
         "file": "srs-distribution-on-dark.webp",
@@ -440,7 +440,7 @@
         "aspectRatio": 1.48,
         "quality": "good"
       },
-      "status": "partial"
+      "status": "all-good"
     },
     {
       "slug": "steris",
@@ -2713,19 +2713,19 @@
       "name": "Mindset Consulting",
       "industry": "Technology",
       "onLight": {
-        "file": "mindset-on-light.png",
-        "width": 1143,
-        "height": 200,
+        "file": "mindset-on-light.svg",
+        "width": 0,
+        "height": 0,
         "hasAlpha": true,
-        "aspectRatio": 5.72,
+        "aspectRatio": 0,
         "quality": "good"
       },
       "onDark": {
-        "file": "mindset-on-dark.png",
-        "width": 1143,
-        "height": 200,
+        "file": "mindset-on-dark.svg",
+        "width": 0,
+        "height": 0,
         "hasAlpha": true,
-        "aspectRatio": 5.72,
+        "aspectRatio": 0,
         "quality": "good"
       },
       "status": "all-good"
