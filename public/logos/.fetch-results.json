@@ -1,62 +1,181 @@
 {
-  "ranAt": "2026-04-20T12:43:45.802Z",
+  "ranAt": "2026-07-28T19:13:38.763Z",
   "summary": {
-    "total": 3,
-    "bothThemes": 3,
+    "total": 10,
+    "bothThemes": 10,
     "lightOnly": 0,
     "darkOnly": 0,
     "neither": 0
   },
   "results": [
     {
-      "slug": "auria-solutions",
-      "name": "Auria Solutions",
-      "domain": "auriasolutions.com",
+      "slug": "championx",
+      "name": "ChampionX",
+      "domain": "championx.com",
       "light": {
         "status": "saved",
-        "file": "auria-solutions-on-dark.webp",
-        "type": "logo",
-        "hash": "ed30caab61ec"
+        "file": "championx-on-dark.webp",
+        "type": "icon",
+        "hash": "3ddbdc3a1a58"
       },
       "dark": {
         "status": "saved",
-        "file": "auria-solutions-on-light.webp",
-        "type": "icon",
-        "hash": "bc211b9312af"
+        "file": "championx-on-light.webp",
+        "type": "logo",
+        "hash": "bfe86d79a65c"
       }
     },
     {
-      "slug": "diageo-india",
-      "name": "Diageo India",
-      "domain": "diageoindia.com",
+      "slug": "cheney-brothers",
+      "name": "Cheney Brothers",
+      "domain": "cheneybrothers.com",
       "light": {
         "status": "saved",
-        "file": "diageo-india-on-dark.webp",
+        "file": "cheney-brothers-on-dark.webp",
         "type": "icon",
-        "hash": "fd06e6306a10"
+        "hash": "39e29fb19d8b"
       },
       "dark": {
         "status": "saved",
-        "file": "diageo-india-on-light.webp",
-        "type": "logo",
-        "hash": "36033d4e1b90"
+        "file": "cheney-brothers-on-light.webp",
+        "type": "icon",
+        "hash": "39e29fb19d8b"
       }
     },
     {
-      "slug": "flagstone-foods",
-      "name": "Flagstone Foods",
-      "domain": "flagstonefoods.com",
+      "slug": "cps-energy",
+      "name": "CPS Energy",
+      "domain": "cpsenergy.com",
       "light": {
         "status": "saved",
-        "file": "flagstone-foods-on-dark.webp",
-        "type": "icon",
-        "hash": "724b6aaf377b"
+        "file": "cps-energy-on-dark.webp",
+        "type": "logo",
+        "hash": "776c93d36637"
       },
       "dark": {
         "status": "saved",
-        "file": "flagstone-foods-on-light.webp",
+        "file": "cps-energy-on-light.webp",
         "type": "logo",
-        "hash": "9b4f542a61b1"
+        "hash": "eff33a5b9540"
+      }
+    },
+    {
+      "slug": "fujitsu",
+      "name": "Fujitsu",
+      "domain": "fujitsu.com",
+      "light": {
+        "status": "saved",
+        "file": "fujitsu-on-dark.webp",
+        "type": "logo",
+        "hash": "ac405f73ef54"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "fujitsu-on-light.webp",
+        "type": "logo",
+        "hash": "83726eff7e7a"
+      }
+    },
+    {
+      "slug": "kellogg",
+      "name": "Kellogg Company",
+      "domain": "wkkellogg.com",
+      "light": {
+        "status": "saved",
+        "file": "kellogg-on-dark.webp",
+        "type": "icon",
+        "hash": "674464b5d474"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "kellogg-on-light.webp",
+        "type": "logo",
+        "hash": "db2b53fb1b31"
+      }
+    },
+    {
+      "slug": "marathon-oil",
+      "name": "Marathon Oil",
+      "domain": "marathonoil.com",
+      "light": {
+        "status": "saved",
+        "file": "marathon-oil-on-dark.webp",
+        "type": "icon",
+        "hash": "d500f2cf041d"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "marathon-oil-on-light.webp",
+        "type": "logo",
+        "hash": "8810d13b7af8"
+      }
+    },
+    {
+      "slug": "meg-energy",
+      "name": "MEG Energy",
+      "domain": "megenergy.com",
+      "light": {
+        "status": "saved",
+        "file": "meg-energy-on-dark.webp",
+        "type": "logo",
+        "hash": "9a8fea474389"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "meg-energy-on-light.webp",
+        "type": "icon",
+        "hash": "4101c24a2a57"
+      }
+    },
+    {
+      "slug": "pactiv-evergreen",
+      "name": "Pactiv Evergreen",
+      "domain": "pactivevergreen.com",
+      "light": {
+        "status": "saved",
+        "file": "pactiv-evergreen-on-dark.webp",
+        "type": "icon",
+        "hash": "6af97e1cfe56"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "pactiv-evergreen-on-light.webp",
+        "type": "logo",
+        "hash": "deb6f79cc258"
+      }
+    },
+    {
+      "slug": "spirit-aerosystems",
+      "name": "Spirit AeroSystems",
+      "domain": "spiritaero.com",
+      "light": {
+        "status": "saved",
+        "file": "spirit-aerosystems-on-dark.webp",
+        "type": "logo",
+        "hash": "149bf523ff2f"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "spirit-aerosystems-on-light.webp",
+        "type": "logo",
+        "hash": "e3870385800c"
+      }
+    },
+    {
+      "slug": "ucare",
+      "name": "UCare",
+      "domain": "ucare.org",
+      "light": {
+        "status": "saved",
+        "file": "ucare-on-dark.webp",
+        "type": "icon",
+        "hash": "4456c1f27b41"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "ucare-on-light.webp",
+        "type": "logo",
+        "hash": "173319d44dec"
       }
     }
   ]

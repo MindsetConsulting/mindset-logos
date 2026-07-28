@@ -23,24 +23,6 @@
       }
     },
     {
-      "slug": "ao-smith",
-      "name": "A. O. Smith Corporation",
-      "website": "https://www.aosmith.com",
-      "industry": "Manufacturing",
-      "verticals": [
-        "CPG"
-      ],
-      "sfId": "0015b00001vredPAAQ",
-      "sfName": "A. O. Smith Corporation",
-      "hq": {
-        "street": "11270 W Park Pl Ste 170",
-        "city": "Milwaukee",
-        "state": "Wisconsin",
-        "country": "United States",
-        "display": "Milwaukee, Wisconsin, United States"
-      }
-    },
-    {
       "slug": "abbott",
       "name": "Abbott Laboratories",
       "website": "https://www.abbott.com",
@@ -127,6 +109,24 @@
       }
     },
     {
+      "slug": "ao-smith",
+      "name": "A. O. Smith Corporation",
+      "website": "https://www.aosmith.com",
+      "industry": "Manufacturing",
+      "verticals": [
+        "CPG"
+      ],
+      "sfId": "0015b00001vredPAAQ",
+      "sfName": "A. O. Smith Corporation",
+      "hq": {
+        "street": "11270 W Park Pl Ste 170",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
+        "country": "United States",
+        "display": "Milwaukee, Wisconsin, United States"
+      }
+    },
+    {
       "slug": "arctic-cat",
       "name": "Arctic Cat",
       "website": "https://arcticcat.txtsv.com",
@@ -161,6 +161,41 @@
       }
     },
     {
+      "slug": "ather-energy",
+      "name": "Ather Energy",
+      "website": "https://www.atherenergy.com",
+      "industry": "Automotive",
+      "verticals": [
+        "Manufacturing"
+      ],
+      "sfId": "001TO00000fcsJAYAY",
+      "sfName": "Ather Energy",
+      "hq": {
+        "street": null,
+        "city": null,
+        "state": null,
+        "country": null,
+        "display": null
+      }
+    },
+    {
+      "slug": "auria-solutions",
+      "name": "Auria Solutions",
+      "website": "https://www.auriasolutions.com",
+      "industry": "Manufacturing",
+      "verticals": [
+        "Manufacturing"
+      ],
+      "sfId": "0010a00001ZLvg2AAD",
+      "sfName": "Auria Solutions USA Inc.",
+      "hq": {
+        "city": "Southfield",
+        "state": "Michigan",
+        "country": "United States",
+        "display": "Southfield, Michigan, United States"
+      }
+    },
+    {
       "slug": "baxter",
       "name": "Baxter International",
       "website": "https://www.baxter.com",
@@ -179,24 +214,6 @@
       }
     },
     {
-      "slug": "bloomberg",
-      "name": "Bloomberg",
-      "website": "https://www.bloomberg.com",
-      "industry": "Telecommunications",
-      "verticals": [
-        "Technology"
-      ],
-      "sfId": "0010a00001GaapVAAR",
-      "sfName": "Bloomberg L.P.",
-      "hq": {
-        "street": "731 Lexington Ave",
-        "city": "New York",
-        "state": "New York",
-        "country": "United States",
-        "display": "New York, New York, United States"
-      }
-    },
-    {
       "slug": "bcbs-mn",
       "name": "Blue Cross Blue Shield of Minnesota",
       "website": "https://www.bluecrossmn.com",
@@ -212,6 +229,24 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Eagan, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "bloomberg",
+      "name": "Bloomberg",
+      "website": "https://www.bloomberg.com",
+      "industry": "Telecommunications",
+      "verticals": [
+        "Technology"
+      ],
+      "sfId": "0010a00001GaapVAAR",
+      "sfName": "Bloomberg L.P.",
+      "hq": {
+        "street": "731 Lexington Ave",
+        "city": "New York",
+        "state": "New York",
+        "country": "United States",
+        "display": "New York, New York, United States"
       }
     },
     {
@@ -320,43 +355,6 @@
       }
     },
     {
-      "slug": "srs-distribution",
-      "name": "SRS Distribution",
-      "website": "https://www.srsdistribution.com",
-      "industry": "Construction",
-      "verticals": [
-        "Distribution",
-        "Construction"
-      ],
-      "sfId": "0015b000028Lu7YAAS",
-      "sfName": "SRS Distribution Inc.",
-      "hq": {
-        "street": "7440 State Highway 121",
-        "city": "McKinney",
-        "state": "Texas",
-        "country": "United States",
-        "display": "McKinney, Texas, United States"
-      }
-    },
-    {
-      "slug": "steris",
-      "name": "STERIS (Cantel Medical)",
-      "website": "https://www.steris.com",
-      "industry": "Healthcare",
-      "verticals": [
-        "Healthcare"
-      ],
-      "sfId": "0010a00001AHKjyAAH",
-      "sfName": "Cantel Medical LLC",
-      "hq": {
-        "street": "150 Clove Rd Ste 36",
-        "city": "Little Falls",
-        "state": "New Jersey",
-        "country": "United States",
-        "display": "Little Falls, New Jersey, United States"
-      }
-    },
-    {
       "slug": "cardinal-health",
       "name": "Cardinal Health",
       "website": "https://www.cardinal.com",
@@ -393,6 +391,45 @@
       }
     },
     {
+      "slug": "championx",
+      "name": "ChampionX",
+      "website": "https://www.championx.com",
+      "industry": "Manufacturing",
+      "verticals": [
+        "Manufacturing",
+        "Energy",
+        "Chemical"
+      ],
+      "sfId": "0015b00001psyIZAAY",
+      "sfName": "Championx Corporation",
+      "hq": {
+        "street": "2445 Technology Forest Blvd Bldg 4",
+        "city": "The Woodlands",
+        "state": "Texas",
+        "country": "United States",
+        "display": "The Woodlands, Texas, United States"
+      }
+    },
+    {
+      "slug": "cheney-brothers",
+      "name": "Cheney Brothers",
+      "website": "https://www.cheneybrothers.com",
+      "industry": "Food & Beverage",
+      "verticals": [
+        "Food & Beverage",
+        "Distribution"
+      ],
+      "sfId": "0015b000027dSKzAAM",
+      "sfName": "Cheney Bros., Inc.",
+      "hq": {
+        "street": "1 Cheney Way",
+        "city": "Riviera Beach",
+        "state": "Florida",
+        "country": "United States",
+        "display": "Riviera Beach, Florida, United States"
+      }
+    },
+    {
       "slug": "chs",
       "name": "CHS Inc.",
       "website": "https://www.chsinc.com",
@@ -408,6 +445,24 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Inver Grove Heights, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "clorox",
+      "name": "The Clorox Company",
+      "website": "https://www.thecloroxcompany.com",
+      "industry": "Chemicals",
+      "verticals": [
+        "Chemical"
+      ],
+      "sfId": "0015b00001mSonVAAS",
+      "sfName": "The Clorox Company",
+      "hq": {
+        "street": "1221 Broadway",
+        "city": "Oakland",
+        "state": "California",
+        "country": "United States",
+        "display": "Oakland, California, United States"
       }
     },
     {
@@ -446,6 +501,25 @@
       }
     },
     {
+      "slug": "cps-energy",
+      "name": "CPS Energy",
+      "website": "https://www.cpsenergy.com",
+      "industry": "Utilities",
+      "verticals": [
+        "Utilities",
+        "Energy"
+      ],
+      "sfId": "0010a00001HN6NyAAL",
+      "sfName": "CPS Energy",
+      "hq": {
+        "street": "145 Navarro St",
+        "city": "San Antonio",
+        "state": "Texas",
+        "country": "United States",
+        "display": "San Antonio, Texas, United States"
+      }
+    },
+    {
       "slug": "danfoss",
       "name": "Danfoss Power Solutions",
       "website": "https://www.danfoss.com",
@@ -477,6 +551,23 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Minneapolis, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "diageo-india",
+      "name": "Diageo India",
+      "website": "https://www.diageoindia.com",
+      "industry": "Food & Beverage",
+      "verticals": [
+        "CPG"
+      ],
+      "sfId": "001TO00000Jt1IJYAZ",
+      "sfName": "Diageo India",
+      "hq": {
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "country": "India",
+        "display": "Bengaluru, Karnataka, India"
       }
     },
     {
@@ -529,24 +620,6 @@
         "state": "Florida",
         "country": "United States",
         "display": "West Palm Beach, Florida, United States"
-      }
-    },
-    {
-      "slug": "kodak",
-      "name": "Eastman Kodak",
-      "website": "https://www.kodak.com",
-      "industry": "Manufacturing",
-      "verticals": [
-        "Manufacturing"
-      ],
-      "sfId": "0010a00001fIDxRAAW",
-      "sfName": "Eastman Kodak Company",
-      "hq": {
-        "street": "343 State St",
-        "city": "Rochester",
-        "state": "New York",
-        "country": "United States",
-        "display": "Rochester, New York, United States"
       }
     },
     {
@@ -643,6 +716,23 @@
       }
     },
     {
+      "slug": "flagstone-foods",
+      "name": "Flagstone Foods",
+      "website": "https://www.flagstonefoods.com",
+      "industry": "Food & Beverage",
+      "verticals": [
+        "CPG"
+      ],
+      "sfId": "001j000000Mlem7AAB",
+      "sfName": "Flagstone Foods LLC",
+      "hq": {
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Minneapolis, Minnesota, United States"
+      }
+    },
+    {
       "slug": "ford",
       "name": "Ford Motor Company",
       "website": "https://www.ford.com",
@@ -672,6 +762,24 @@
         "state": "New York",
         "country": "United States",
         "display": "Valhalla, New York, United States"
+      }
+    },
+    {
+      "slug": "fujitsu",
+      "name": "Fujitsu",
+      "website": "https://www.fujitsu.com",
+      "industry": "Technology",
+      "verticals": [
+        "Technology"
+      ],
+      "sfId": "001j000000HgMjhAAF",
+      "sfName": "Fujitsu Research of America, Inc.",
+      "hq": {
+        "street": "350 Cobalt Way",
+        "city": "Sunnyvale",
+        "state": "California",
+        "country": "United States",
+        "display": "Sunnyvale, California, United States"
       }
     },
     {
@@ -761,6 +869,24 @@
       }
     },
     {
+      "slug": "home-depot",
+      "name": "The Home Depot",
+      "website": "https://www.homedepot.com",
+      "industry": "Retail",
+      "verticals": [
+        "CPG"
+      ],
+      "sfId": "0010a00001BdocpAAB",
+      "sfName": "The Home Depot Inc",
+      "hq": {
+        "street": "2455 Paces Ferry Rd Se",
+        "city": "Atlanta",
+        "state": "Georgia",
+        "country": "United States",
+        "display": "Atlanta, Georgia, United States"
+      }
+    },
+    {
       "slug": "ibm",
       "name": "IBM",
       "website": "https://www.ibm.com",
@@ -794,6 +920,42 @@
         "state": "Texas",
         "country": "United States",
         "display": "Austin, Texas, United States"
+      }
+    },
+    {
+      "slug": "inspire-medical",
+      "name": "Inspire Medical Systems",
+      "website": "https://www.inspiresleep.com",
+      "industry": "Healthcare",
+      "verticals": [
+        "Healthcare"
+      ],
+      "sfId": "001TO00000ip9O5YAI",
+      "sfName": "Inspire Medical Systems, Inc.",
+      "hq": {
+        "street": "5500 Wayzata Blvd Ste 1600",
+        "city": "Golden Valley",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Golden Valley, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "jack-links",
+      "name": "Jack Link's (Link Snacks)",
+      "website": "https://www.jacklinks.com",
+      "industry": "Food & Beverage",
+      "verticals": [
+        "Food & Beverage"
+      ],
+      "sfId": "001j000000OJZ4gAAH",
+      "sfName": "Link Snacks, Inc.",
+      "hq": {
+        "street": "1 Snack Food Ln",
+        "city": "Minong",
+        "state": "Wisconsin",
+        "country": "United States",
+        "display": "Minong, Wisconsin, United States"
       }
     },
     {
@@ -918,6 +1080,25 @@
       }
     },
     {
+      "slug": "kellogg",
+      "name": "Kellogg Company",
+      "website": "https://www.wkkellogg.com",
+      "industry": "Food & Beverage",
+      "verticals": [
+        "Food & Beverage",
+        "Manufacturing"
+      ],
+      "sfId": "001j000000tZvA7AAK",
+      "sfName": "Kellogg Company",
+      "hq": {
+        "street": "1 Kellogg Sq",
+        "city": "Battle Creek",
+        "state": "Michigan",
+        "country": "United States",
+        "display": "Battle Creek, Michigan, United States"
+      }
+    },
+    {
       "slug": "kimball-electronics",
       "name": "Kimball Electronics",
       "website": "https://www.kimballelectronics.com",
@@ -947,6 +1128,24 @@
         "state": "Florida",
         "country": "United States",
         "display": "Deland, Florida, United States"
+      }
+    },
+    {
+      "slug": "kodak",
+      "name": "Eastman Kodak",
+      "website": "https://www.kodak.com",
+      "industry": "Manufacturing",
+      "verticals": [
+        "Manufacturing"
+      ],
+      "sfId": "0010a00001fIDxRAAW",
+      "sfName": "Eastman Kodak Company",
+      "hq": {
+        "street": "343 State St",
+        "city": "Rochester",
+        "state": "New York",
+        "country": "United States",
+        "display": "Rochester, New York, United States"
       }
     },
     {
@@ -1021,24 +1220,6 @@
       }
     },
     {
-      "slug": "jack-links",
-      "name": "Jack Link's (Link Snacks)",
-      "website": "https://www.jacklinks.com",
-      "industry": "Food & Beverage",
-      "verticals": [
-        "Food & Beverage"
-      ],
-      "sfId": "001j000000OJZ4gAAH",
-      "sfName": "Link Snacks, Inc.",
-      "hq": {
-        "street": "1 Snack Food Ln",
-        "city": "Minong",
-        "state": "Wisconsin",
-        "country": "United States",
-        "display": "Minong, Wisconsin, United States"
-      }
-    },
-    {
       "slug": "loparex",
       "name": "Loparex",
       "website": "https://www.loparex.com",
@@ -1089,6 +1270,41 @@
       }
     },
     {
+      "slug": "marathon-oil",
+      "name": "Marathon Oil",
+      "website": "https://www.marathonoil.com",
+      "industry": "Energy",
+      "verticals": [
+        "Energy",
+        "Oil & Gas"
+      ],
+      "sfId": "001j000000j2K42AAE",
+      "sfName": "Marathon Oil Corporation",
+      "hq": {
+        "street": "990 Town and Country Blvd",
+        "city": "Houston",
+        "state": "Texas",
+        "country": "United States",
+        "display": "Houston, Texas, United States"
+      }
+    },
+    {
+      "slug": "maruti-suzuki",
+      "name": "Maruti Suzuki India",
+      "website": "https://www.marutisuzuki.com",
+      "industry": "Manufacturing",
+      "verticals": [],
+      "sfId": "001TO000006iy54YAA",
+      "sfName": "MARUTI SUZUKI INDIA LIMITED",
+      "hq": {
+        "street": "1, Nelson Mandela Road, Vasant Kunj,",
+        "city": "New Delhi",
+        "state": "Delhi",
+        "country": "India",
+        "display": "New Delhi, Delhi, India"
+      }
+    },
+    {
       "slug": "me-global",
       "name": "ME Global",
       "website": "https://www.me-elecmetal.com",
@@ -1126,6 +1342,25 @@
       }
     },
     {
+      "slug": "meg-energy",
+      "name": "MEG Energy",
+      "website": "https://www.megenergy.com",
+      "industry": "Energy",
+      "verticals": [
+        "Energy",
+        "Oil & Gas"
+      ],
+      "sfId": "001TO00000T1TaMYAV",
+      "sfName": "MEG Energy Corp",
+      "hq": {
+        "street": "600-3 Ave SW 21st Fl",
+        "city": "Calgary",
+        "state": "Alberta",
+        "country": "Canada",
+        "display": "Calgary, Alberta, Canada"
+      }
+    },
+    {
       "slug": "merit-energy",
       "name": "Merit Energy",
       "website": "https://www.meritenergy.com",
@@ -1141,24 +1376,6 @@
         "state": "Texas",
         "country": "United States",
         "display": "Dallas, Texas, United States"
-      }
-    },
-    {
-      "slug": "mud-omaha",
-      "name": "Metropolitan Utilities District of Omaha",
-      "website": "https://www.mudomaha.com",
-      "industry": "Utilities",
-      "verticals": [
-        "Utilities"
-      ],
-      "sfId": "001j000000KEN7eAAH",
-      "sfName": "Metropolitan Utilities District of Omaha",
-      "hq": {
-        "street": "7350 World Communications Dr",
-        "city": "Omaha",
-        "state": "Nebraska",
-        "country": "United States",
-        "display": "Omaha, Nebraska, United States"
       }
     },
     {
@@ -1181,6 +1398,40 @@
       }
     },
     {
+      "slug": "mindset",
+      "name": "Mindset Consulting",
+      "website": "https://www.mindsetconsulting.com",
+      "industry": "Technology",
+      "verticals": [
+        "Technology"
+      ],
+      "hq": {
+        "street": null,
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Minneapolis, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "mizuho-osi",
+      "name": "Mizuho OSI",
+      "website": "https://www.mizuhosi.com",
+      "industry": "Healthcare",
+      "verticals": [
+        "Healthcare"
+      ],
+      "sfId": "0010a00001cWsxvAAC",
+      "sfName": "Mizuho OSI Inc",
+      "hq": {
+        "street": "30031 Ahern Ave",
+        "city": "Union City",
+        "state": "California",
+        "country": "United States",
+        "display": "Union City, California, United States"
+      }
+    },
+    {
       "slug": "mts-systems",
       "name": "MTS Systems",
       "website": "https://www.mts.com",
@@ -1199,6 +1450,24 @@
       }
     },
     {
+      "slug": "mud-omaha",
+      "name": "Metropolitan Utilities District of Omaha",
+      "website": "https://www.mudomaha.com",
+      "industry": "Utilities",
+      "verticals": [
+        "Utilities"
+      ],
+      "sfId": "001j000000KEN7eAAH",
+      "sfName": "Metropolitan Utilities District of Omaha",
+      "hq": {
+        "street": "7350 World Communications Dr",
+        "city": "Omaha",
+        "state": "Nebraska",
+        "country": "United States",
+        "display": "Omaha, Nebraska, United States"
+      }
+    },
+    {
       "slug": "natureworks",
       "name": "NatureWorks",
       "website": "https://www.natureworksllc.com",
@@ -1214,24 +1483,6 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Minneapolis, Minnesota, United States"
-      }
-    },
-    {
-      "slug": "nppd",
-      "name": "Nebraska Public Power District",
-      "website": "https://www.nppd.com",
-      "industry": "Utilities",
-      "verticals": [
-        "Utilities"
-      ],
-      "sfId": "001j000000tZvAGAA0",
-      "sfName": "Nebraska Public Power District",
-      "hq": {
-        "street": "1414 15Th St",
-        "city": "Columbus",
-        "state": "Nebraska",
-        "country": "United States",
-        "display": "Columbus, Nebraska, United States"
       }
     },
     {
@@ -1271,22 +1522,6 @@
       }
     },
     {
-      "slug": "ntic",
-      "name": "Northern Technologies (NTIC)",
-      "website": "https://www.ntic.com",
-      "industry": "Chemicals",
-      "verticals": [],
-      "sfId": "001TO000005ihSzYAI",
-      "sfName": "Northern Technologies International Corporation",
-      "hq": {
-        "street": "4201 Woodland Rd",
-        "city": "Circle Pines",
-        "state": "Minnesota",
-        "country": "United States",
-        "display": "Circle Pines, Minnesota, United States"
-      }
-    },
-    {
       "slug": "novocure",
       "name": "Novocure",
       "website": "https://www.novocure.com",
@@ -1302,6 +1537,40 @@
         "state": "New Hampshire",
         "country": "United States",
         "display": "Portsmouth, New Hampshire, United States"
+      }
+    },
+    {
+      "slug": "nppd",
+      "name": "Nebraska Public Power District",
+      "website": "https://www.nppd.com",
+      "industry": "Utilities",
+      "verticals": [
+        "Utilities"
+      ],
+      "sfId": "001j000000tZvAGAA0",
+      "sfName": "Nebraska Public Power District",
+      "hq": {
+        "street": "1414 15Th St",
+        "city": "Columbus",
+        "state": "Nebraska",
+        "country": "United States",
+        "display": "Columbus, Nebraska, United States"
+      }
+    },
+    {
+      "slug": "ntic",
+      "name": "Northern Technologies (NTIC)",
+      "website": "https://www.ntic.com",
+      "industry": "Chemicals",
+      "verticals": [],
+      "sfId": "001TO000005ihSzYAI",
+      "sfName": "Northern Technologies International Corporation",
+      "hq": {
+        "street": "4201 Woodland Rd",
+        "city": "Circle Pines",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Circle Pines, Minnesota, United States"
       }
     },
     {
@@ -1336,6 +1605,25 @@
         "state": "Wisconsin",
         "country": "United States",
         "display": "La Farge, Wisconsin, United States"
+      }
+    },
+    {
+      "slug": "pactiv-evergreen",
+      "name": "Pactiv Evergreen",
+      "website": "https://www.pactivevergreen.com",
+      "industry": "Manufacturing",
+      "verticals": [
+        "Manufacturing",
+        "Food & Beverage"
+      ],
+      "sfId": "0015b000027dO7AAAU",
+      "sfName": "Pactiv Evergreen Inc.",
+      "hq": {
+        "street": "1900 W Field Ct",
+        "city": "Lake Forest",
+        "state": "Illinois",
+        "country": "United States",
+        "display": "Lake Forest, Illinois, United States"
       }
     },
     {
@@ -1375,6 +1663,42 @@
       }
     },
     {
+      "slug": "pentair",
+      "name": "Pentair",
+      "website": "https://www.pentair.com",
+      "industry": "Manufacturing",
+      "verticals": [
+        "Manufacturing"
+      ],
+      "sfId": "0010a00001bWmyEAAS",
+      "sfName": "Pentair, Inc.",
+      "hq": {
+        "street": "5500 Wayzata Blvd Ste 900",
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Minneapolis, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "portico",
+      "name": "Portico Benefit Services",
+      "website": "https://www.porticobenefits.org",
+      "industry": "Insurance",
+      "verticals": [
+        "Insurance"
+      ],
+      "sfId": "001TO00000emJkfYAE",
+      "sfName": "Portico Benefit Services",
+      "hq": {
+        "street": "7700 France Ave S",
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Minneapolis, Minnesota, United States"
+      }
+    },
+    {
       "slug": "precision-drilling",
       "name": "Precision Drilling",
       "website": "https://www.precisiondrilling.com",
@@ -1409,6 +1733,22 @@
       }
     },
     {
+      "slug": "pyxus",
+      "name": "Pyxus International",
+      "website": "https://www.pyxus.com",
+      "industry": "Food & Beverage",
+      "verticals": [],
+      "sfId": "001TO00000WrCAHYA3",
+      "sfName": "Pyxus International, Inc.",
+      "hq": {
+        "street": "6001 Hospitality Ct Ste 100",
+        "city": "Morrisville",
+        "state": "North Carolina",
+        "country": "United States",
+        "display": "Morrisville, North Carolina, United States"
+      }
+    },
+    {
       "slug": "qbp",
       "name": "Quality Bicycle Products",
       "website": "https://www.qbp.com",
@@ -1424,6 +1764,25 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Bloomington, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "reddy-ice",
+      "name": "Reddy Ice",
+      "website": "https://www.reddyice.com",
+      "industry": "Food & Beverage",
+      "verticals": [
+        "Distribution",
+        "Food & Beverage"
+      ],
+      "sfId": "0015b000024mUDnAAM",
+      "sfName": "Reddy Ice Corporation",
+      "hq": {
+        "street": "8750 N Central Expy Ste 1800",
+        "city": "Dallas",
+        "state": "Texas",
+        "country": "United States",
+        "display": "Dallas, Texas, United States"
       }
     },
     {
@@ -1456,6 +1815,40 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Minneapolis, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "sany-america",
+      "name": "Sany America",
+      "website": "https://www.sanyamerica.com",
+      "industry": "Manufacturing",
+      "verticals": [
+        "Manufacturing"
+      ],
+      "sfId": "0015b00001uEOHSAA4",
+      "sfName": "Sany America Inc.",
+      "hq": {
+        "street": "318 Cooper Cir",
+        "city": "Peachtree City",
+        "state": "Georgia",
+        "country": "United States",
+        "display": "Peachtree City, Georgia, United States"
+      }
+    },
+    {
+      "slug": "sap",
+      "name": "SAP",
+      "website": "https://www.sap.com",
+      "industry": "Technology",
+      "verticals": [
+        "Technology"
+      ],
+      "hq": {
+        "street": "Dietmar-Hopp-Allee 16",
+        "city": "Walldorf",
+        "state": null,
+        "country": "Germany",
+        "display": "Walldorf, Germany"
       }
     },
     {
@@ -1577,6 +1970,80 @@
       }
     },
     {
+      "slug": "spirit-aerosystems",
+      "name": "Spirit AeroSystems",
+      "website": "https://www.spiritaero.com",
+      "industry": "Manufacturing",
+      "verticals": [
+        "Manufacturing",
+        "Aerospace"
+      ],
+      "sfId": "0015b000029wFbMAAU",
+      "sfName": "Spirit Aerosystems Holdings, Inc.",
+      "hq": {
+        "street": "3801 S Oliver St",
+        "city": "Wichita",
+        "state": "Kansas",
+        "country": "United States",
+        "display": "Wichita, Kansas, United States"
+      }
+    },
+    {
+      "slug": "srs-distribution",
+      "name": "SRS Distribution",
+      "website": "https://www.srsdistribution.com",
+      "industry": "Construction",
+      "verticals": [
+        "Distribution",
+        "Construction"
+      ],
+      "sfId": "0015b000028Lu7YAAS",
+      "sfName": "SRS Distribution Inc.",
+      "hq": {
+        "street": "7440 State Highway 121",
+        "city": "McKinney",
+        "state": "Texas",
+        "country": "United States",
+        "display": "McKinney, Texas, United States"
+      }
+    },
+    {
+      "slug": "steris",
+      "name": "STERIS (Cantel Medical)",
+      "website": "https://www.steris.com",
+      "industry": "Healthcare",
+      "verticals": [
+        "Healthcare"
+      ],
+      "sfId": "0010a00001AHKjyAAH",
+      "sfName": "Cantel Medical LLC",
+      "hq": {
+        "street": "150 Clove Rd Ste 36",
+        "city": "Little Falls",
+        "state": "New Jersey",
+        "country": "United States",
+        "display": "Little Falls, New Jersey, United States"
+      }
+    },
+    {
+      "slug": "sullair",
+      "name": "Sullair",
+      "website": "https://www.sullair.com",
+      "industry": "Manufacturing",
+      "verticals": [
+        "Manufacturing"
+      ],
+      "sfId": "0015b00002BiSIjAAN",
+      "sfName": "Sullair, LLC",
+      "hq": {
+        "street": "1 Sullair Way",
+        "city": "Michigan City",
+        "state": "Indiana",
+        "country": "United States",
+        "display": "Michigan City, Indiana, United States"
+      }
+    },
+    {
       "slug": "sun-chemical",
       "name": "Sun Chemical",
       "website": "https://www.sunchemical.com",
@@ -1645,39 +2112,19 @@
       }
     },
     {
-      "slug": "clorox",
-      "name": "The Clorox Company",
-      "website": "https://www.thecloroxcompany.com",
-      "industry": "Chemicals",
+      "slug": "thoughtworks",
+      "name": "Thoughtworks",
+      "website": "https://www.thoughtworks.com",
+      "industry": "Technology",
       "verticals": [
-        "Chemical"
+        "Technology"
       ],
-      "sfId": "0015b00001mSonVAAS",
-      "sfName": "The Clorox Company",
       "hq": {
-        "street": "1221 Broadway",
-        "city": "Oakland",
-        "state": "California",
+        "street": null,
+        "city": "Chicago",
+        "state": "Illinois",
         "country": "United States",
-        "display": "Oakland, California, United States"
-      }
-    },
-    {
-      "slug": "home-depot",
-      "name": "The Home Depot",
-      "website": "https://www.homedepot.com",
-      "industry": "Retail",
-      "verticals": [
-        "CPG"
-      ],
-      "sfId": "0010a00001BdocpAAB",
-      "sfName": "The Home Depot Inc",
-      "hq": {
-        "street": "2455 Paces Ferry Rd Se",
-        "city": "Atlanta",
-        "state": "Georgia",
-        "country": "United States",
-        "display": "Atlanta, Georgia, United States"
+        "display": "Chicago, Illinois, United States"
       }
     },
     {
@@ -1748,6 +2195,25 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Plymouth, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "ucare",
+      "name": "UCare",
+      "website": "https://www.ucare.org",
+      "industry": "Insurance",
+      "verticals": [
+        "Insurance",
+        "Healthcare"
+      ],
+      "sfId": "001j000000b8qaYAAQ",
+      "sfName": "UCare",
+      "hq": {
+        "street": "500 Stinson Blvd NE",
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Minneapolis, Minnesota, United States"
       }
     },
     {
@@ -1835,6 +2301,22 @@
       }
     },
     {
+      "slug": "wagner-spraytech",
+      "name": "Wagner SprayTech",
+      "website": "https://www.wagnerspraytech.com",
+      "industry": "Manufacturing",
+      "verticals": [],
+      "sfId": "001j000000DKZO1AAP",
+      "sfName": "Wagner Spray Tech Corporation",
+      "hq": {
+        "street": "1770 Fernbrook Ln N",
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Minneapolis, Minnesota, United States"
+      }
+    },
+    {
       "slug": "wc-bradley",
       "name": "W. C. Bradley",
       "website": "https://www.wcbradley.com",
@@ -1851,22 +2333,6 @@
         "state": "Georgia",
         "country": "United States",
         "display": "Columbus, Georgia, United States"
-      }
-    },
-    {
-      "slug": "wagner-spraytech",
-      "name": "Wagner SprayTech",
-      "website": "https://www.wagnerspraytech.com",
-      "industry": "Manufacturing",
-      "verticals": [],
-      "sfId": "001j000000DKZO1AAP",
-      "sfName": "Wagner Spray Tech Corporation",
-      "hq": {
-        "street": "1770 Fernbrook Ln N",
-        "city": "Minneapolis",
-        "state": "Minnesota",
-        "country": "United States",
-        "display": "Minneapolis, Minnesota, United States"
       }
     },
     {
@@ -1904,282 +2370,6 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Eden Prairie, Minnesota, United States"
-      }
-    },
-    {
-      "slug": "ather-energy",
-      "name": "Ather Energy",
-      "website": "https://www.atherenergy.com",
-      "industry": "Automotive",
-      "verticals": [
-        "Manufacturing"
-      ],
-      "sfId": "001TO00000fcsJAYAY",
-      "sfName": "Ather Energy",
-      "hq": {
-        "street": null,
-        "city": null,
-        "state": null,
-        "country": null,
-        "display": null
-      }
-    },
-    {
-      "slug": "maruti-suzuki",
-      "name": "Maruti Suzuki India",
-      "website": "https://www.marutisuzuki.com",
-      "industry": "Manufacturing",
-      "verticals": [],
-      "sfId": "001TO000006iy54YAA",
-      "sfName": "MARUTI SUZUKI INDIA LIMITED",
-      "hq": {
-        "street": "1, Nelson Mandela Road, Vasant Kunj,",
-        "city": "New Delhi",
-        "state": "Delhi",
-        "country": "India",
-        "display": "New Delhi, Delhi, India"
-      }
-    },
-    {
-      "slug": "pyxus",
-      "name": "Pyxus International",
-      "website": "https://www.pyxus.com",
-      "industry": "Food & Beverage",
-      "verticals": [],
-      "sfId": "001TO00000WrCAHYA3",
-      "sfName": "Pyxus International, Inc.",
-      "hq": {
-        "street": "6001 Hospitality Ct Ste 100",
-        "city": "Morrisville",
-        "state": "North Carolina",
-        "country": "United States",
-        "display": "Morrisville, North Carolina, United States"
-      }
-    },
-    {
-      "slug": "reddy-ice",
-      "name": "Reddy Ice",
-      "website": "https://www.reddyice.com",
-      "industry": "Food & Beverage",
-      "verticals": [
-        "Distribution",
-        "Food & Beverage"
-      ],
-      "sfId": "0015b000024mUDnAAM",
-      "sfName": "Reddy Ice Corporation",
-      "hq": {
-        "street": "8750 N Central Expy Ste 1800",
-        "city": "Dallas",
-        "state": "Texas",
-        "country": "United States",
-        "display": "Dallas, Texas, United States"
-      }
-    },
-    {
-      "slug": "sany-america",
-      "name": "Sany America",
-      "website": "https://www.sanyamerica.com",
-      "industry": "Manufacturing",
-      "verticals": [
-        "Manufacturing"
-      ],
-      "sfId": "0015b00001uEOHSAA4",
-      "sfName": "Sany America Inc.",
-      "hq": {
-        "street": "318 Cooper Cir",
-        "city": "Peachtree City",
-        "state": "Georgia",
-        "country": "United States",
-        "display": "Peachtree City, Georgia, United States"
-      }
-    },
-    {
-      "slug": "sullair",
-      "name": "Sullair",
-      "website": "https://www.sullair.com",
-      "industry": "Manufacturing",
-      "verticals": [
-        "Manufacturing"
-      ],
-      "sfId": "0015b00002BiSIjAAN",
-      "sfName": "Sullair, LLC",
-      "hq": {
-        "street": "1 Sullair Way",
-        "city": "Michigan City",
-        "state": "Indiana",
-        "country": "United States",
-        "display": "Michigan City, Indiana, United States"
-      }
-    },
-    {
-      "slug": "auria-solutions",
-      "name": "Auria Solutions",
-      "website": "https://www.auriasolutions.com",
-      "industry": "Manufacturing",
-      "verticals": [
-        "Manufacturing"
-      ],
-      "sfId": "0010a00001ZLvg2AAD",
-      "sfName": "Auria Solutions USA Inc.",
-      "hq": {
-        "city": "Southfield",
-        "state": "Michigan",
-        "country": "United States",
-        "display": "Southfield, Michigan, United States"
-      }
-    },
-    {
-      "slug": "diageo-india",
-      "name": "Diageo India",
-      "website": "https://www.diageoindia.com",
-      "industry": "Food & Beverage",
-      "verticals": [
-        "CPG"
-      ],
-      "sfId": "001TO00000Jt1IJYAZ",
-      "sfName": "Diageo India",
-      "hq": {
-        "city": "Bengaluru",
-        "state": "Karnataka",
-        "country": "India",
-        "display": "Bengaluru, Karnataka, India"
-      }
-    },
-    {
-      "slug": "flagstone-foods",
-      "name": "Flagstone Foods",
-      "website": "https://www.flagstonefoods.com",
-      "industry": "Food & Beverage",
-      "verticals": [
-        "CPG"
-      ],
-      "sfId": "001j000000Mlem7AAB",
-      "sfName": "Flagstone Foods LLC",
-      "hq": {
-        "city": "Minneapolis",
-        "state": "Minnesota",
-        "country": "United States",
-        "display": "Minneapolis, Minnesota, United States"
-      }
-    },
-    {
-      "slug": "pentair",
-      "name": "Pentair",
-      "website": "https://www.pentair.com",
-      "industry": "Manufacturing",
-      "verticals": [
-        "Manufacturing"
-      ],
-      "sfId": "0010a00001bWmyEAAS",
-      "sfName": "Pentair, Inc.",
-      "hq": {
-        "street": "5500 Wayzata Blvd Ste 900",
-        "city": "Minneapolis",
-        "state": "Minnesota",
-        "country": "United States",
-        "display": "Minneapolis, Minnesota, United States"
-      }
-    },
-    {
-      "slug": "inspire-medical",
-      "name": "Inspire Medical Systems",
-      "website": "https://www.inspiresleep.com",
-      "industry": "Healthcare",
-      "verticals": [
-        "Healthcare"
-      ],
-      "sfId": "001TO00000ip9O5YAI",
-      "sfName": "Inspire Medical Systems, Inc.",
-      "hq": {
-        "street": "5500 Wayzata Blvd Ste 1600",
-        "city": "Golden Valley",
-        "state": "Minnesota",
-        "country": "United States",
-        "display": "Golden Valley, Minnesota, United States"
-      }
-    },
-    {
-      "slug": "portico",
-      "name": "Portico Benefit Services",
-      "website": "https://www.porticobenefits.org",
-      "industry": "Insurance",
-      "verticals": [
-        "Insurance"
-      ],
-      "sfId": "001TO00000emJkfYAE",
-      "sfName": "Portico Benefit Services",
-      "hq": {
-        "street": "7700 France Ave S",
-        "city": "Minneapolis",
-        "state": "Minnesota",
-        "country": "United States",
-        "display": "Minneapolis, Minnesota, United States"
-      }
-    },
-    {
-      "slug": "mizuho-osi",
-      "name": "Mizuho OSI",
-      "website": "https://www.mizuhosi.com",
-      "industry": "Healthcare",
-      "verticals": [
-        "Healthcare"
-      ],
-      "sfId": "0010a00001cWsxvAAC",
-      "sfName": "Mizuho OSI Inc",
-      "hq": {
-        "street": "30031 Ahern Ave",
-        "city": "Union City",
-        "state": "California",
-        "country": "United States",
-        "display": "Union City, California, United States"
-      }
-    },
-    {
-      "slug": "mindset",
-      "name": "Mindset Consulting",
-      "website": "https://www.mindsetconsulting.com",
-      "industry": "Technology",
-      "verticals": [
-        "Technology"
-      ],
-      "hq": {
-        "street": null,
-        "city": "Minneapolis",
-        "state": "Minnesota",
-        "country": "United States",
-        "display": "Minneapolis, Minnesota, United States"
-      }
-    },
-    {
-      "slug": "sap",
-      "name": "SAP",
-      "website": "https://www.sap.com",
-      "industry": "Technology",
-      "verticals": [
-        "Technology"
-      ],
-      "hq": {
-        "street": "Dietmar-Hopp-Allee 16",
-        "city": "Walldorf",
-        "state": null,
-        "country": "Germany",
-        "display": "Walldorf, Germany"
-      }
-    },
-    {
-      "slug": "thoughtworks",
-      "name": "Thoughtworks",
-      "website": "https://www.thoughtworks.com",
-      "industry": "Technology",
-      "verticals": [
-        "Technology"
-      ],
-      "hq": {
-        "street": null,
-        "city": "Chicago",
-        "state": "Illinois",
-        "country": "United States",
-        "display": "Chicago, Illinois, United States"
       }
     }
   ]

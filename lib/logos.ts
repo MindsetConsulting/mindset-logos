@@ -89,7 +89,8 @@ const EXTS = ['svg', 'png', 'webp', 'jpg', 'gif'] as const;
 function normalizeAccountType(raw: string | null | undefined): AccountType {
   if (!raw) return 'other';
   const t = raw.toLowerCase();
-  if (t === 'customer') return 'customer';
+  // "Customer", "Customer (Subsidiary)", "Customer (Acquired)", "Customer & Partner", …
+  if (t.startsWith('customer')) return 'customer';
   if (t === 'prospect') return 'prospect';
   if (t === 'self') return 'self';
   if (

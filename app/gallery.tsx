@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { Search, Github, Terminal, ChevronDown, Copy, Check } from 'lucide-react';
+import { Search, Github, Terminal, ChevronDown, Copy, Check, Download } from 'lucide-react';
 import type { Logo, AccountType } from '@/lib/logos';
 import LogoRow from './logo-row';
 
@@ -50,6 +50,15 @@ export default function Gallery({ logos }: { logos: Logo[] }) {
     });
   }, [logos, query, vertical, typeFilter]);
 
+  const downloadUrl = useMemo(() => {
+    const params = new URLSearchParams();
+    if (typeFilter !== 'all') params.set('type', typeFilter);
+    if (vertical) params.set('vertical', vertical);
+    if (query.trim()) params.set('q', query.trim());
+    const qs = params.toString();
+    return `/api/logos/download${qs ? `?${qs}` : ''}`;
+  }, [typeFilter, vertical, query]);
+
   return (
     <div className="min-h-screen">
       <header className="border-b border-white/[0.06] px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-14">
@@ -61,7 +70,7 @@ export default function Gallery({ logos }: { logos: Logo[] }) {
             Every customer logo, ready to drop in.
           </h1>
           <p className="mt-4 max-w-[60ch] font-sans text-base leading-relaxed text-[color:rgba(247,245,242,0.6)]">
-            {typeCounts.customer} customers, {typeCounts.partner} partners, {typeCounts.prospect} prospects. Each one has a light and a dark variant, sourced from vendor sites and hand-checked for transparency. Copy any variant as PNG, WebP, JPG, or SVG. The transcoder handles the conversion on the fly.
+            {typeCounts.customer} customers, {typeCounts.partner} partners, {typeCounts.prospect} prospects. Each one has a light and a dark variant, sourced from vendor sites and hand-checked for transparency. Copy any variant as PNG, WebP, JPG, or SVG. The transcoder handles the conversion on the fly, or grab the whole filtered set as a ZIP.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -130,7 +139,11 @@ curl https://mindset-logos.vercel.app/api/logos
 curl https://mindset-logos.vercel.app/api/logos/abbott/on-light.png?w=800
 curl https://mindset-logos.vercel.app/api/logos/cargill/on-dark.webp?w=1200
 curl https://mindset-logos.vercel.app/api/logos/abbott/on-light.jpg   # flattened onto cream
-curl https://mindset-logos.vercel.app/api/logos/anchorage/on-dark.svg # only when source is SVG`}
+curl https://mindset-logos.vercel.app/api/logos/anchorage/on-dark.svg # only when source is SVG
+
+# download the whole library (or a filtered slice) as a ZIP
+curl -O https://mindset-logos.vercel.app/api/logos/download?type=customer
+curl -O "https://mindset-logos.vercel.app/api/logos/download?vertical=Healthcare&format=source"`}
                   copiedCmd={copiedCmd}
                   onCopy={copyCmd}
                 />
@@ -191,6 +204,13 @@ curl https://mindset-logos.vercel.app/api/logos/anchorage/on-dark.svg # only whe
                 </option>
               ))}
             </select>
+            <a
+              href={downloadUrl}
+              title="Download every logo in the current filter as a ZIP (PNG at 1200px, plus SVG where we have vectors)"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-2.5 font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-warm-white)] transition hover:border-[color:var(--color-violet-light)] hover:bg-white/[0.08]"
+            >
+              <Download className="h-3.5 w-3.5" /> ZIP ({filtered.length})
+            </a>
             <span className="font-mono text-[0.7rem] uppercase tracking-wider text-[color:rgba(247,245,242,0.4)]">
               {filtered.length} showing
             </span>
