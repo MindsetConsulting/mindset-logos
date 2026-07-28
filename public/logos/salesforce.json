@@ -1,5 +1,5 @@
 {
-  "lastSync": "2026-07-28T19:20:05Z",
+  "lastSync": "2026-07-28T20:20:16Z",
   "accounts": {
     "0010a00001AGTWBAA5": {
       "sfName": "Faribault Foods, Inc.",
@@ -143,7 +143,7 @@
     },
     "0010a00001HN6NyAAL": {
       "sfName": "CPS Energy",
-      "type": "Customer (Churning)",
+      "type": "Prospect",
       "duns": "960044667",
       "partner": null,
       "mindsetPartner": false
@@ -360,14 +360,14 @@
     },
     "0015b00001psyIZAAY": {
       "sfName": "Championx Corporation",
-      "type": "Customer (Subsidiary)",
+      "type": "Prospect",
       "duns": "081123048",
       "partner": null,
       "mindsetPartner": false
     },
     "0015b00001uEOHSAA4": {
       "sfName": "Sany America Inc.",
-      "type": "Customer",
+      "type": "Prospect",
       "duns": null,
       "partner": null,
       "mindsetPartner": false
@@ -423,7 +423,7 @@
     },
     "0015b000024mUDnAAM": {
       "sfName": "Reddy Ice Corporation",
-      "type": "Customer",
+      "type": "Prospect",
       "duns": "97700480",
       "partner": null,
       "mindsetPartner": false
@@ -437,14 +437,14 @@
     },
     "0015b000027dO7AAAU": {
       "sfName": "Pactiv Evergreen Inc.",
-      "type": "Customer (Subsidiary)",
+      "type": "Prospect",
       "duns": "117684601",
       "partner": null,
       "mindsetPartner": false
     },
     "0015b000027dSKzAAM": {
       "sfName": "Cheney Bros., Inc.",
-      "type": "Customer (Acquired Subsidiary)",
+      "type": "Prospect",
       "duns": "32831471",
       "partner": null,
       "mindsetPartner": false
@@ -458,7 +458,7 @@
     },
     "0015b000029wFbMAAU": {
       "sfName": "Spirit Aerosystems Holdings, Inc.",
-      "type": "Customer (Subsidiary)",
+      "type": "Prospect",
       "duns": "790050020",
       "partner": null,
       "mindsetPartner": false
@@ -472,7 +472,7 @@
     },
     "0015b00002BiSIjAAN": {
       "sfName": "Sullair, LLC",
-      "type": "Customer",
+      "type": "Prospect",
       "duns": "005545835",
       "partner": null,
       "mindsetPartner": false
@@ -521,7 +521,7 @@
     },
     "001TO000006iy54YAA": {
       "sfName": "MARUTI SUZUKI INDIA LIMITED",
-      "type": "Customer",
+      "type": "Prospect",
       "duns": "650058878",
       "partner": null,
       "mindsetPartner": false
@@ -570,14 +570,14 @@
     },
     "001TO00000T1TaMYAV": {
       "sfName": "MEG Energy Corp",
-      "type": "Customer (Acquired)",
+      "type": "Prospect",
       "duns": "201197469",
       "partner": null,
       "mindsetPartner": false
     },
     "001TO00000WrCAHYA3": {
       "sfName": "Pyxus International, Inc.",
-      "type": "Customer",
+      "type": "Prospect",
       "duns": "007940091",
       "partner": null,
       "mindsetPartner": false
@@ -766,7 +766,7 @@
     },
     "001j000000HgMjhAAF": {
       "sfName": "Fujitsu Research of America, Inc.",
-      "type": "Customer & Partner",
+      "type": "Prospect",
       "duns": "622287878",
       "partner": null,
       "mindsetPartner": false
@@ -829,7 +829,7 @@
     },
     "001j000000b8qaYAAQ": {
       "sfName": "UCare",
-      "type": "Customer (Inactive)",
+      "type": "Prospect",
       "duns": null,
       "partner": null,
       "mindsetPartner": false
@@ -843,7 +843,7 @@
     },
     "001j000000j2K42AAE": {
       "sfName": "Marathon Oil Corporation",
-      "type": "Customer (Subsidiary)",
+      "type": "Prospect",
       "duns": "2028801",
       "partner": null,
       "mindsetPartner": false
@@ -878,7 +878,7 @@
     },
     "001j000000tZvA7AAK": {
       "sfName": "Kellogg Company",
-      "type": "Customer (Subsidiary)",
+      "type": "Prospect",
       "duns": "005356209",
       "partner": null,
       "mindsetPartner": false
