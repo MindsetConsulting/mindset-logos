@@ -30,6 +30,20 @@ export type LogoStatus = 'all-good' | 'partial' | 'broken';
  */
 export type AccountType = 'customer' | 'partner' | 'prospect' | 'self' | 'other';
 
+/**
+ * Opportunity-based relationship, the ground truth for "is this a client".
+ * Unlike AccountType (a hand-maintained SF picklist), this is derived from
+ * actual opportunities on the account:
+ *   customer — at least one Closed Won opportunity (and not a partner)
+ *   partner  — partner-typed account, regardless of won opps
+ *   pipeline — no win yet, but at least one open opportunity
+ *   prospect — in the library, but no opportunities at all
+ *   other    — no Salesforce link (e.g. the Mindset and SAP marks)
+ * Anything shown as proof of delivered work (the website logo wall) must
+ * require relationship === 'customer'.
+ */
+export type Relationship = 'customer' | 'partner' | 'pipeline' | 'prospect' | 'other';
+
 export type SalesforceInfo = {
   sfId: string | null;
   sfName: string | null;
@@ -38,6 +52,9 @@ export type SalesforceInfo = {
   duns: string | null;
   partner: string | null;
   mindsetPartner: boolean;
+  wonCount: number;
+  openCount: number;
+  relationship: Relationship;
 };
 
 export type Logo = ManifestEntry & {
@@ -60,28 +77,20 @@ type AuditFile = {
   }>;
 };
 
+type SalesforceAccountRow = {
+  sfName: string | null;
+  type: string | null;
+  duns: string | null;
+  partner: string | null;
+  mindsetPartner: boolean;
+  won?: number;
+  open?: number;
+};
+
 type SalesforceFile = {
   lastSync: string;
-  accounts: Record<
-    string,
-    {
-      sfName: string | null;
-      type: string | null;
-      duns: string | null;
-      partner: string | null;
-      mindsetPartner: boolean;
-    }
-  >;
-  manualOverrides?: Record<
-    string,
-    {
-      sfName: string | null;
-      type: string | null;
-      duns: string | null;
-      partner: string | null;
-      mindsetPartner: boolean;
-    }
-  >;
+  accounts: Record<string, SalesforceAccountRow>;
+  manualOverrides?: Record<string, SalesforceAccountRow>;
 };
 
 const EXTS = ['svg', 'png', 'webp', 'jpg', 'gif'] as const;
@@ -137,14 +146,32 @@ export function loadLogos(): Logo[] {
     const override = sfFile?.manualOverrides?.[c.slug];
     const byId = c.sfId ? sfFile?.accounts?.[c.sfId] : undefined;
     const src = override ?? byId;
+    const type = normalizeAccountType(src?.type ?? null);
+    const wonCount = src?.won ?? 0;
+    const openCount = src?.open ?? 0;
+    let relationship: Relationship;
+    if (!c.sfId) {
+      relationship = 'other';
+    } else if (type === 'partner' || Boolean(src?.mindsetPartner)) {
+      relationship = 'partner';
+    } else if (wonCount > 0) {
+      relationship = 'customer';
+    } else if (openCount > 0) {
+      relationship = 'pipeline';
+    } else {
+      relationship = 'prospect';
+    }
     return {
       sfId: c.sfId ?? null,
       sfName: src?.sfName ?? c.sfName ?? null,
-      type: normalizeAccountType(src?.type ?? null),
+      type,
       rawType: src?.type ?? null,
       duns: src?.duns ?? null,
       partner: src?.partner ?? null,
       mindsetPartner: Boolean(src?.mindsetPartner),
+      wonCount,
+      openCount,
+      relationship,
     };
   }
 

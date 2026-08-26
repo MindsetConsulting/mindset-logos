@@ -1,181 +1,326 @@
 {
-  "ranAt": "2026-07-28T19:13:38.763Z",
+  "ranAt": "2026-08-26T14:43:07.131Z",
   "summary": {
-    "total": 10,
-    "bothThemes": 10,
+    "total": 19,
+    "bothThemes": 17,
     "lightOnly": 0,
     "darkOnly": 0,
-    "neither": 0
+    "neither": 2
   },
   "results": [
     {
-      "slug": "championx",
-      "name": "ChampionX",
-      "domain": "championx.com",
+      "slug": "amer-sports",
+      "name": "Amer Sports",
+      "domain": "amersports.com",
       "light": {
         "status": "saved",
-        "file": "championx-on-dark.webp",
+        "file": "amer-sports-on-dark.webp",
+        "type": "logo",
+        "hash": "05bb39ef1bbe"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "amer-sports-on-light.webp",
+        "type": "logo",
+        "hash": "11902ce80e25"
+      }
+    },
+    {
+      "slug": "apogee",
+      "name": "Apogee Enterprises",
+      "domain": "apog.com",
+      "light": {
+        "status": "saved",
+        "file": "apogee-on-dark.webp",
         "type": "icon",
-        "hash": "3ddbdc3a1a58"
+        "hash": "b7aba0970c74"
       },
       "dark": {
         "status": "saved",
-        "file": "championx-on-light.webp",
+        "file": "apogee-on-light.webp",
         "type": "logo",
-        "hash": "bfe86d79a65c"
+        "hash": "b47d631f75d8"
       }
     },
     {
-      "slug": "cheney-brothers",
-      "name": "Cheney Brothers",
-      "domain": "cheneybrothers.com",
+      "slug": "continental-resources",
+      "name": "Continental Resources",
+      "domain": "clr.com",
       "light": {
         "status": "saved",
-        "file": "cheney-brothers-on-dark.webp",
+        "file": "continental-resources-on-dark.webp",
         "type": "icon",
-        "hash": "39e29fb19d8b"
+        "hash": "85e337c87c01"
       },
       "dark": {
         "status": "saved",
-        "file": "cheney-brothers-on-light.webp",
+        "file": "continental-resources-on-light.webp",
+        "type": "logo",
+        "hash": "27c01f3c15ed"
+      }
+    },
+    {
+      "slug": "flowers-foods",
+      "name": "Flowers Foods",
+      "domain": "flowersfoods.com",
+      "light": {
+        "status": "saved",
+        "file": "flowers-foods-on-dark.webp",
+        "type": "logo",
+        "hash": "2b4f80b2771e"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "flowers-foods-on-light.webp",
+        "type": "logo",
+        "hash": "aece1892f92b"
+      }
+    },
+    {
+      "slug": "fluence-energy",
+      "name": "Fluence Energy",
+      "domain": "fluenceenergy.com",
+      "light": {
+        "status": "saved",
+        "file": "fluence-energy-on-dark.webp",
+        "type": "logo",
+        "hash": "6f2dd9f2f8a8"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "fluence-energy-on-light.webp",
+        "type": "logo",
+        "hash": "6ad4c8a9496e"
+      }
+    },
+    {
+      "slug": "foth",
+      "name": "Foth",
+      "domain": "foth.com",
+      "light": {
+        "status": "saved",
+        "file": "foth-on-dark.webp",
         "type": "icon",
-        "hash": "39e29fb19d8b"
-      }
-    },
-    {
-      "slug": "cps-energy",
-      "name": "CPS Energy",
-      "domain": "cpsenergy.com",
-      "light": {
-        "status": "saved",
-        "file": "cps-energy-on-dark.webp",
-        "type": "logo",
-        "hash": "776c93d36637"
+        "hash": "a1c4afcb77e3"
       },
       "dark": {
         "status": "saved",
-        "file": "cps-energy-on-light.webp",
+        "file": "foth-on-light.webp",
         "type": "logo",
-        "hash": "eff33a5b9540"
+        "hash": "1127f50dcf1e"
       }
     },
     {
-      "slug": "fujitsu",
-      "name": "Fujitsu",
-      "domain": "fujitsu.com",
+      "slug": "gilead",
+      "name": "Gilead Sciences",
+      "domain": "gilead.com",
       "light": {
         "status": "saved",
-        "file": "fujitsu-on-dark.webp",
+        "file": "gilead-on-dark.webp",
         "type": "logo",
-        "hash": "ac405f73ef54"
+        "hash": "e0a6c2e23feb"
       },
       "dark": {
         "status": "saved",
-        "file": "fujitsu-on-light.webp",
+        "file": "gilead-on-light.webp",
         "type": "logo",
-        "hash": "83726eff7e7a"
+        "hash": "0cb6367cc914"
       }
     },
     {
-      "slug": "kellogg",
-      "name": "Kellogg Company",
-      "domain": "wkkellogg.com",
+      "slug": "intel",
+      "name": "Intel",
+      "domain": "intel.com",
       "light": {
         "status": "saved",
-        "file": "kellogg-on-dark.webp",
+        "file": "intel-on-dark.webp",
+        "type": "logo",
+        "hash": "73417ca6dd34"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "intel-on-light.webp",
+        "type": "logo",
+        "hash": "97073d50f2a0"
+      }
+    },
+    {
+      "slug": "itt",
+      "name": "ITT",
+      "domain": "itt.com",
+      "light": {
+        "status": "saved",
+        "file": "itt-on-dark.webp",
         "type": "icon",
-        "hash": "674464b5d474"
+        "hash": "2cfe7f7c7453"
       },
       "dark": {
         "status": "saved",
-        "file": "kellogg-on-light.webp",
+        "file": "itt-on-light.webp",
         "type": "logo",
-        "hash": "db2b53fb1b31"
+        "hash": "0e7dbdd57584"
       }
     },
     {
-      "slug": "marathon-oil",
-      "name": "Marathon Oil",
-      "domain": "marathonoil.com",
+      "slug": "kimberly-clark",
+      "name": "Kimberly-Clark",
+      "domain": "kimberly-clark.com",
       "light": {
         "status": "saved",
-        "file": "marathon-oil-on-dark.webp",
+        "file": "kimberly-clark-on-dark.webp",
+        "type": "logo",
+        "hash": "5e06f26d7a04"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "kimberly-clark-on-light.webp",
+        "type": "logo",
+        "hash": "3bf5314d754b"
+      }
+    },
+    {
+      "slug": "liberty-mutual",
+      "name": "Liberty Mutual",
+      "domain": "libertymutual.com",
+      "light": {
+        "status": "saved",
+        "file": "liberty-mutual-on-dark.webp",
         "type": "icon",
-        "hash": "d500f2cf041d"
+        "hash": "82b80bf4fceb"
       },
       "dark": {
         "status": "saved",
-        "file": "marathon-oil-on-light.webp",
+        "file": "liberty-mutual-on-light.webp",
         "type": "logo",
-        "hash": "8810d13b7af8"
+        "hash": "98ffb987974c"
       }
     },
     {
-      "slug": "meg-energy",
-      "name": "MEG Energy",
-      "domain": "megenergy.com",
+      "slug": "megha-engineering",
+      "name": "Megha Engineering",
+      "domain": "meghaeng.com",
+      "light": {
+        "status": "missing",
+        "reason": "Brandfetch fallback (38bcb2ab059c)"
+      },
+      "dark": {
+        "status": "missing",
+        "reason": "Brandfetch fallback (38bcb2ab059c)"
+      }
+    },
+    {
+      "slug": "precor",
+      "name": "Precor",
+      "domain": "precor.com",
       "light": {
         "status": "saved",
-        "file": "meg-energy-on-dark.webp",
+        "file": "precor-on-dark.webp",
         "type": "logo",
-        "hash": "9a8fea474389"
+        "hash": "a726c6ff4104"
       },
       "dark": {
         "status": "saved",
-        "file": "meg-energy-on-light.webp",
+        "file": "precor-on-light.webp",
         "type": "icon",
-        "hash": "4101c24a2a57"
+        "hash": "26a9fc706def"
       }
     },
     {
-      "slug": "pactiv-evergreen",
-      "name": "Pactiv Evergreen",
-      "domain": "pactivevergreen.com",
+      "slug": "simpson-strong-tie",
+      "name": "Simpson Strong-Tie",
+      "domain": "strongtie.com",
       "light": {
         "status": "saved",
-        "file": "pactiv-evergreen-on-dark.webp",
+        "file": "simpson-strong-tie-on-dark.webp",
         "type": "icon",
-        "hash": "6af97e1cfe56"
+        "hash": "7af1a55b29d4"
       },
       "dark": {
         "status": "saved",
-        "file": "pactiv-evergreen-on-light.webp",
+        "file": "simpson-strong-tie-on-light.webp",
         "type": "logo",
-        "hash": "deb6f79cc258"
+        "hash": "35960c8853a9"
       }
     },
     {
-      "slug": "spirit-aerosystems",
-      "name": "Spirit AeroSystems",
-      "domain": "spiritaero.com",
+      "slug": "solstice-materials",
+      "name": "Solstice Advanced Materials",
+      "domain": "solstice-am.com",
       "light": {
-        "status": "saved",
-        "file": "spirit-aerosystems-on-dark.webp",
-        "type": "logo",
-        "hash": "149bf523ff2f"
+        "status": "missing",
+        "reason": "Brandfetch fallback (b8d53c4fb2de)"
       },
       "dark": {
-        "status": "saved",
-        "file": "spirit-aerosystems-on-light.webp",
-        "type": "logo",
-        "hash": "e3870385800c"
+        "status": "missing",
+        "reason": "Brandfetch fallback (b8d53c4fb2de)"
       }
     },
     {
-      "slug": "ucare",
-      "name": "UCare",
-      "domain": "ucare.org",
+      "slug": "spartech",
+      "name": "Spartech",
+      "domain": "spartech.com",
       "light": {
         "status": "saved",
-        "file": "ucare-on-dark.webp",
+        "file": "spartech-on-dark.webp",
         "type": "icon",
-        "hash": "4456c1f27b41"
+        "hash": "e9ae9f976f0c"
       },
       "dark": {
         "status": "saved",
-        "file": "ucare-on-light.webp",
+        "file": "spartech-on-light.webp",
         "type": "logo",
-        "hash": "173319d44dec"
+        "hash": "320bbb2fa666"
+      }
+    },
+    {
+      "slug": "thomson-reuters",
+      "name": "Thomson Reuters",
+      "domain": "thomsonreuters.com",
+      "light": {
+        "status": "saved",
+        "file": "thomson-reuters-on-dark.webp",
+        "type": "logo",
+        "hash": "9437bc349116"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "thomson-reuters-on-light.webp",
+        "type": "logo",
+        "hash": "19e49f7149f5"
+      }
+    },
+    {
+      "slug": "tyson-foods",
+      "name": "Tyson Foods",
+      "domain": "tyson.com",
+      "light": {
+        "status": "saved",
+        "file": "tyson-foods-on-dark.webp",
+        "type": "icon",
+        "hash": "a39fbdfb603b"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "tyson-foods-on-light.webp",
+        "type": "logo",
+        "hash": "438e730109b4"
+      }
+    },
+    {
+      "slug": "victrola",
+      "name": "Victrola",
+      "domain": "victrola.com",
+      "light": {
+        "status": "saved",
+        "file": "victrola-on-dark.webp",
+        "type": "logo",
+        "hash": "096a31b1a161"
+      },
+      "dark": {
+        "status": "saved",
+        "file": "victrola-on-light.webp",
+        "type": "icon",
+        "hash": "523ef5668129"
       }
     }
   ]

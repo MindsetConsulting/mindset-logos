@@ -1,5 +1,5 @@
 {
-  "source": "Salesforce Accounts with StageName='Closed Won' \u2014 pulled 2026-04-13",
+  "source": "Salesforce accounts — customers (Closed Won opps) + open-opportunity pipeline + partners. Re-synced 2026-08-26; relationship truth lives in salesforce.json won/open counts.",
   "customers": [
     {
       "slug": "3m",
@@ -56,6 +56,22 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Eden Prairie, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "amer-sports",
+      "name": "Amer Sports",
+      "website": "http://www.amersports.com",
+      "industry": "Manufacturing",
+      "verticals": [],
+      "sfId": "001TO00000fn3mjYAA",
+      "sfName": "Amer Sports Company",
+      "hq": {
+        "street": "1 Prudential Plz 130 E Randolph St Ste 600",
+        "city": "Chicago",
+        "state": "Illinois",
+        "country": "United States",
+        "display": "Chicago, Illinois, United States"
       }
     },
     {
@@ -124,6 +140,22 @@
         "state": "Wisconsin",
         "country": "United States",
         "display": "Milwaukee, Wisconsin, United States"
+      }
+    },
+    {
+      "slug": "apogee",
+      "name": "Apogee Enterprises",
+      "website": "http://www.apog.com",
+      "industry": "Manufacturing",
+      "verticals": [],
+      "sfId": "0010a00001DMIjbAAH",
+      "sfName": "Apogee Enterprises, Inc.",
+      "hq": {
+        "street": "4400 W 78Th St Ste 520",
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Minneapolis, Minnesota, United States"
       }
     },
     {
@@ -501,6 +533,22 @@
       }
     },
     {
+      "slug": "continental-resources",
+      "name": "Continental Resources",
+      "website": "http://www.clr.com",
+      "industry": "Energy",
+      "verticals": [],
+      "sfId": "0010a00001hupxFAAQ",
+      "sfName": "Continental Resources, Inc.",
+      "hq": {
+        "street": "20 N Broadway",
+        "city": "Oklahoma City",
+        "state": "Oklahoma",
+        "country": "United States",
+        "display": "Oklahoma City, Oklahoma, United States"
+      }
+    },
+    {
       "slug": "cps-energy",
       "name": "CPS Energy",
       "website": "https://www.cpsenergy.com",
@@ -733,6 +781,38 @@
       }
     },
     {
+      "slug": "flowers-foods",
+      "name": "Flowers Foods",
+      "website": "http://www.flowersfoods.com",
+      "industry": "Food & Beverage",
+      "verticals": [],
+      "sfId": "0010a00001UVhpAAAT",
+      "sfName": "Flowers Foods, Inc.",
+      "hq": {
+        "street": "1919 Flowers Cir",
+        "city": "Thomasville",
+        "state": "Georgia",
+        "country": "United States",
+        "display": "Thomasville, Georgia, United States"
+      }
+    },
+    {
+      "slug": "fluence-energy",
+      "name": "Fluence Energy",
+      "website": "https://fluenceenergy.com",
+      "industry": "Manufacturing",
+      "verticals": [],
+      "sfId": "001TO00000GcT7pYAF",
+      "sfName": "Fluence Energy, Inc.",
+      "hq": {
+        "street": "4601 Fairfax Dr Ste 600",
+        "city": "Arlington",
+        "state": "Virginia",
+        "country": "United States",
+        "display": "Arlington, Virginia, United States"
+      }
+    },
+    {
       "slug": "ford",
       "name": "Ford Motor Company",
       "website": "https://www.ford.com",
@@ -746,6 +826,22 @@
         "state": "Michigan",
         "country": "United States",
         "display": "Dearborn, Michigan, United States"
+      }
+    },
+    {
+      "slug": "foth",
+      "name": "Foth",
+      "website": "http://www.foth.com",
+      "industry": "Engineering",
+      "verticals": [],
+      "sfId": "001TO00000nBDLvYAO",
+      "sfName": "The Foth Companies",
+      "hq": {
+        "street": "2121 Innovation Ct Ste 300",
+        "city": "De Pere",
+        "state": "Wisconsin",
+        "country": "United States",
+        "display": "De Pere, Wisconsin, United States"
       }
     },
     {
@@ -832,6 +928,22 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Golden Valley, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "gilead",
+      "name": "Gilead Sciences",
+      "website": "http://www.gilead.com",
+      "industry": "Biotechnology",
+      "verticals": [],
+      "sfId": "0015b000027dJp4AAE",
+      "sfName": "Gilead Sciences, Inc.",
+      "hq": {
+        "street": "333 Lakeside Dr",
+        "city": "Foster City",
+        "state": "California",
+        "country": "United States",
+        "display": "Foster City, California, United States"
       }
     },
     {
@@ -938,6 +1050,38 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Golden Valley, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "intel",
+      "name": "Intel",
+      "website": "http://www.intel.com",
+      "industry": "Electronics",
+      "verticals": [],
+      "sfId": "0015b000026ArSfAAK",
+      "sfName": "Intel Corporation",
+      "hq": {
+        "street": "2200 Mission College Blvd",
+        "city": "Santa Clara",
+        "state": "California",
+        "country": "United States",
+        "display": "Santa Clara, California, United States"
+      }
+    },
+    {
+      "slug": "itt",
+      "name": "ITT",
+      "website": "http://www.itt.com",
+      "industry": "Manufacturing",
+      "verticals": [],
+      "sfId": "0015b000027dbu8AAA",
+      "sfName": "ITT Inc.",
+      "hq": {
+        "street": "1133 Westchester Ave Ste N-100",
+        "city": "White Plains",
+        "state": "New York",
+        "country": "United States",
+        "display": "White Plains, New York, United States"
       }
     },
     {
@@ -1065,7 +1209,7 @@
     },
     {
       "slug": "karcher",
-      "name": "K\u00e4rcher North America",
+      "name": "Kärcher North America",
       "website": "https://www.kaercher.com",
       "industry": "Manufacturing",
       "verticals": [],
@@ -1112,6 +1256,22 @@
         "state": "Indiana",
         "country": "United States",
         "display": "Jasper, Indiana, United States"
+      }
+    },
+    {
+      "slug": "kimberly-clark",
+      "name": "Kimberly-Clark",
+      "website": "http://www.kimberly-clark.com",
+      "industry": "Manufacturing",
+      "verticals": [],
+      "sfId": "0010a00001C8TZyAAN",
+      "sfName": "Kimberly-Clark Corporation",
+      "hq": {
+        "street": "351 Phelps Dr",
+        "city": "Irving",
+        "state": "Texas",
+        "country": "United States",
+        "display": "Irving, Texas, United States"
       }
     },
     {
@@ -1198,6 +1358,22 @@
         "state": "Colorado",
         "country": "United States",
         "display": "Denver, Colorado, United States"
+      }
+    },
+    {
+      "slug": "liberty-mutual",
+      "name": "Liberty Mutual",
+      "website": "http://www.libertymutual.com",
+      "industry": "Insurance",
+      "verticals": [],
+      "sfId": "0010a00001P6htYAAR",
+      "sfName": "Liberty Mutual",
+      "hq": {
+        "street": "175 Berkeley Street",
+        "city": "Boston",
+        "state": "Massachusetts",
+        "country": "United States",
+        "display": "Boston, Massachusetts, United States"
       }
     },
     {
@@ -1361,6 +1537,22 @@
       }
     },
     {
+      "slug": "megha-engineering",
+      "name": "Megha Engineering",
+      "website": "https://meghaeng.com",
+      "industry": "Construction",
+      "verticals": [],
+      "sfId": "001TO00000f16dFYAQ",
+      "sfName": "MEGHA ENGINEERING & INFRASTRUCTURES LIMITED",
+      "hq": {
+        "street": "S-2, Technocrat Industrial Estate, Balanagar",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "country": "India",
+        "display": "Hyderabad, Telangana, India"
+      }
+    },
+    {
       "slug": "merit-energy",
       "name": "Merit Energy",
       "website": "https://www.meritenergy.com",
@@ -1487,7 +1679,7 @@
     },
     {
       "slug": "nestle",
-      "name": "Nestl\u00e9 USA",
+      "name": "Nestlé USA",
       "website": "https://www.nestleusa.com",
       "industry": "Food & Beverage",
       "verticals": [
@@ -1582,7 +1774,7 @@
       "sfId": "0015b00001kkG0vAAE",
       "sfName": "Orbia",
       "hq": {
-        "street": "12551 Avenida das Na\u00e7\u00f5es Unidas",
+        "street": "12551 Avenida das Nações Unidas",
         "city": "Sao Paulo",
         "state": null,
         "country": "Brazil",
@@ -1714,6 +1906,22 @@
         "state": "Alberta",
         "country": "Canada",
         "display": "Calgary, Alberta, Canada"
+      }
+    },
+    {
+      "slug": "precor",
+      "name": "Precor",
+      "website": "http://www.precor.com",
+      "industry": "Manufacturing",
+      "verticals": [],
+      "sfId": "001TO00000lceZHYAY",
+      "sfName": "Precor Incorporated",
+      "hq": {
+        "street": "24309 Snohomish Woodinville Rd",
+        "city": "Woodinville",
+        "state": "Washington",
+        "country": "United States",
+        "display": "Woodinville, Washington, United States"
       }
     },
     {
@@ -1920,6 +2128,22 @@
       }
     },
     {
+      "slug": "simpson-strong-tie",
+      "name": "Simpson Strong-Tie",
+      "website": "http://www.strongtie.com",
+      "industry": "Manufacturing",
+      "verticals": [],
+      "sfId": "0015b00001vseKiAAI",
+      "sfName": "Simpson Strong-Tie Company Inc.",
+      "hq": {
+        "street": "5956 W Las Positas Blvd",
+        "city": "Pleasanton",
+        "state": "California",
+        "country": "United States",
+        "display": "Pleasanton, California, United States"
+      }
+    },
+    {
       "slug": "sloan",
       "name": "Sloan Valve",
       "website": "https://www.sloan.com",
@@ -1935,6 +2159,22 @@
         "state": "Illinois",
         "country": "United States",
         "display": "Franklin Park, Illinois, United States"
+      }
+    },
+    {
+      "slug": "solstice-materials",
+      "name": "Solstice Advanced Materials",
+      "website": "https://www.solstice-am.com",
+      "industry": "Chemicals",
+      "verticals": [],
+      "sfId": "001TO00000gfkoIYAQ",
+      "sfName": "Solstice Advanced Materials Inc.",
+      "hq": {
+        "street": "115 Tabor Rd",
+        "city": "Morris Plains",
+        "state": "New Jersey",
+        "country": "United States",
+        "display": "Morris Plains, New Jersey, United States"
       }
     },
     {
@@ -1967,6 +2207,22 @@
         "state": "Georgia",
         "country": "United States",
         "display": "Carrolton, Georgia, United States"
+      }
+    },
+    {
+      "slug": "spartech",
+      "name": "Spartech",
+      "website": "https://www.spartech.com",
+      "industry": "Manufacturing",
+      "verticals": [],
+      "sfId": "001TO00000oIUNsYAO",
+      "sfName": "Spartech LLC",
+      "hq": {
+        "street": "11650 Lakeside Crossing Ct",
+        "city": "Maryland Heights",
+        "state": "Missouri",
+        "country": "United States",
+        "display": "Maryland Heights, Missouri, United States"
       }
     },
     {
@@ -2112,6 +2368,22 @@
       }
     },
     {
+      "slug": "thomson-reuters",
+      "name": "Thomson Reuters",
+      "website": "http://www.thomsonreuters.com",
+      "industry": "Technology",
+      "verticals": [],
+      "sfId": "001j000000FiC3wAAF",
+      "sfName": "Thomson Reuters Corp.",
+      "hq": {
+        "street": "610 Opperman Dr",
+        "city": "Eagan",
+        "state": "Minnesota",
+        "country": "United States",
+        "display": "Eagan, Minnesota, United States"
+      }
+    },
+    {
       "slug": "thoughtworks",
       "name": "Thoughtworks",
       "website": "https://www.thoughtworks.com",
@@ -2125,7 +2397,9 @@
         "state": "Illinois",
         "country": "United States",
         "display": "Chicago, Illinois, United States"
-      }
+      },
+      "sfId": "0015b00002JzHVzAAN",
+      "sfName": "Thoughtworks, Inc."
     },
     {
       "slug": "tile-shop",
@@ -2195,6 +2469,22 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Plymouth, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "tyson-foods",
+      "name": "Tyson Foods",
+      "website": "http://www.tyson.com",
+      "industry": "Food & Beverage",
+      "verticals": [],
+      "sfId": "0015b000026ArSSAA0",
+      "sfName": "Tyson Foods, Inc.",
+      "hq": {
+        "street": "2200 W Don Tyson Pkwy",
+        "city": "Springdale",
+        "state": "Arkansas",
+        "country": "United States",
+        "display": "Springdale, Arkansas, United States"
       }
     },
     {
@@ -2280,6 +2570,22 @@
         "state": "California",
         "country": "United States",
         "display": "Brea, California, United States"
+      }
+    },
+    {
+      "slug": "victrola",
+      "name": "Victrola",
+      "website": "https://victrola.com",
+      "industry": "Electronics",
+      "verticals": [],
+      "sfId": "001TO00000pbuCLYAY",
+      "sfName": "Victrola",
+      "hq": {
+        "street": "3350 Walnut St",
+        "city": "Denver",
+        "state": "Colorado",
+        "country": "United States",
+        "display": "Denver, Colorado, United States"
       }
     },
     {

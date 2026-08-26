@@ -28,6 +28,9 @@ export async function GET() {
         duns: l.salesforce.duns,
         partner: l.salesforce.partner,
         mindsetPartner: l.salesforce.mindsetPartner,
+        wonCount: l.salesforce.wonCount,
+        openCount: l.salesforce.openCount,
+        relationship: l.salesforce.relationship,
       },
     })),
   });

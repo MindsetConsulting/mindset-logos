@@ -54,6 +54,25 @@ async function query(ids: string[]): Promise<SfAccount[]> {
   return body.records;
 }
 
+// Closed-won and open-opportunity counts per account. These are the ground
+// truth for the `relationship` field in lib/logos.ts — Account.Type alone let
+// prospects onto the website logo wall (caught 2026-08-26).
+async function oppCounts(ids: string[], where: string): Promise<Record<string, number>> {
+  const counts: Record<string, number> = {};
+  for (let i = 0; i < ids.length; i += BATCH) {
+    const idList = ids.slice(i, i + BATCH).map((id) => `'${id}'`).join(',');
+    const soql = `SELECT AccountId, COUNT(Id) n FROM Opportunity WHERE ${where} AND AccountId IN (${idList}) GROUP BY AccountId`;
+    const url = `${SF_URL}/services/data/v60.0/query?q=${encodeURIComponent(soql)}`;
+    const res = await fetch(url, { headers: { Authorization: `Bearer ${SF_TOKEN}` } });
+    if (!res.ok) {
+      throw new Error(`SF opp query failed ${res.status}: ${await res.text()}`);
+    }
+    const body = (await res.json()) as { records: Array<{ AccountId: string; n: number }> };
+    for (const r of body.records) counts[r.AccountId] = r.n;
+  }
+  return counts;
+}
+
 const BATCH = 60;
 const all: SfAccount[] = [];
 for (let i = 0; i < sfIds.length; i += BATCH) {
@@ -63,12 +82,18 @@ for (let i = 0; i < sfIds.length; i += BATCH) {
   console.log(`[enrich-sf]   batch ${i / BATCH + 1}: ${rows.length} rows`);
 }
 
+console.log('[enrich-sf] Counting closed-won and open opportunities…');
+const wonCounts = await oppCounts(sfIds, "StageName = 'Closed Won'");
+const openCounts = await oppCounts(sfIds, 'IsClosed = false');
+
 const accounts: Record<string, {
   sfName: string | null;
   type: string | null;
   duns: string | null;
   partner: string | null;
   mindsetPartner: boolean;
+  won: number;
+  open: number;
 }> = {};
 
 for (const a of all) {
@@ -78,12 +103,17 @@ for (const a of all) {
     duns: a.D_U_N_S_Number__c ?? null,
     partner: a.Partner__c ?? null,
     mindsetPartner: Boolean(a.Mindset_Partner__c),
+    won: wonCounts[a.Id] ?? 0,
+    open: openCounts[a.Id] ?? 0,
   };
 }
+
+const existing = JSON.parse(readFileSync(OUTPUT_PATH, 'utf-8')) as { manualOverrides?: unknown };
 
 const output = {
   lastSync: new Date().toISOString(),
   accounts,
+  ...(existing.manualOverrides ? { manualOverrides: existing.manualOverrides } : {}),
 };
 
 writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2) + '\n');
