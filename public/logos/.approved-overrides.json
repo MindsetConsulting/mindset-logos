@@ -1,3 +1,14 @@
 {
-  "slugs": ["home-depot", "home-depot-canada", "organic-valley", "lakeshore-learning", "bmw", "kodak", "anchorage", "flagstone-foods"]
+  "slugs": [
+    "anchorage",
+    "apogee",
+    "bmw",
+    "flagstone-foods",
+    "home-depot",
+    "home-depot-canada",
+    "kodak",
+    "lakeshore-learning",
+    "organic-valley",
+    "simpson-strong-tie"
+  ]
 }

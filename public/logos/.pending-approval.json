@@ -1,31 +1,3 @@
 {
-  "slugs": [
-    "amer-sports",
-    "anchorage",
-    "apogee",
-    "championx",
-    "cheney-brothers",
-    "continental-resources",
-    "flowers-foods",
-    "fluence-energy",
-    "foth",
-    "gilead",
-    "intel",
-    "itt",
-    "kellogg",
-    "kimberly-clark",
-    "liberty-mutual",
-    "marathon-oil",
-    "meg-energy",
-    "megha-engineering",
-    "pactiv-evergreen",
-    "precor",
-    "simpson-strong-tie",
-    "solstice-materials",
-    "spartech",
-    "thomson-reuters",
-    "tyson-foods",
-    "ucare",
-    "victrola"
-  ]
+  "slugs": []
 }
