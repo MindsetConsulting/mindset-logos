@@ -8,6 +8,9 @@ type Props = { logo: Logo };
 
 type Variant = 'on-light' | 'on-dark';
 
+// Changes every deploy, so browsers never show a stale thumbnail after a logo is fixed.
+const BUILD = (process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ?? '').slice(0, 7);
+
 const FORMATS = ['png', 'webp', 'jpg', 'svg'] as const;
 type Format = (typeof FORMATS)[number];
 
@@ -237,7 +240,7 @@ function VariantCell({
         style={{ background: bgStyle, minHeight: '140px' }}
       >
         <img
-          src={`/api/logos/${slug}/${variant}.webp?w=480`}
+          src={`/api/logos/${slug}/${variant}.webp?w=480${BUILD ? `&v=${BUILD}` : ''}`}
           alt={`${slug} ${variant}`}
           loading="lazy"
           decoding="async"
