@@ -1,23 +1,23 @@
 {
-  "ranAt": "2026-08-26T15:15:32.049Z",
+  "ranAt": "2026-11-18T14:53:17.711Z",
   "counts": {
-    "total": 154,
+    "total": 169,
     "allGood": 153,
-    "partial": 1,
+    "partial": 16,
     "broken": 0,
     "byQuality": {
       "onLight": {
-        "good": 147,
-        "icon": 6,
+        "good": 161,
+        "icon": 7,
         "flat": 1,
         "tiny": 0,
         "missing": 0
       },
       "onDark": {
-        "good": 145,
+        "good": 159,
         "icon": 7,
         "flat": 2,
-        "tiny": 0,
+        "tiny": 1,
         "missing": 0
       }
     }
@@ -220,6 +220,29 @@
         "quality": "icon"
       },
       "status": "all-good"
+    },
+    {
+      "slug": "applied-materials",
+      "name": "Applied Materials",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "applied-materials-on-light.webp",
+        "width": 820,
+        "height": 206,
+        "hasAlpha": true,
+        "aspectRatio": 3.98,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "applied-materials-on-dark.webp",
+        "width": 820,
+        "height": 206,
+        "hasAlpha": true,
+        "aspectRatio": 3.98,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
     },
     {
       "slug": "arctic-cat",
@@ -464,6 +487,29 @@
       "status": "all-good"
     },
     {
+      "slug": "builders-firstsource",
+      "name": "Builders FirstSource",
+      "industry": "Construction",
+      "onLight": {
+        "file": "builders-firstsource-on-light.png",
+        "width": 291,
+        "height": 240,
+        "hasAlpha": true,
+        "aspectRatio": 1.21,
+        "quality": "icon"
+      },
+      "onDark": {
+        "file": "builders-firstsource-on-dark.png",
+        "width": 168,
+        "height": 42,
+        "hasAlpha": true,
+        "aspectRatio": 4,
+        "quality": "tiny"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
       "slug": "callaway-golf",
       "name": "Callaway Golf / Topgolf",
       "industry": "Manufacturing",
@@ -550,6 +596,29 @@
         "quality": "good"
       },
       "status": "all-good"
+    },
+    {
+      "slug": "chamberlain-group",
+      "name": "Chamberlain Group",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "chamberlain-group-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "chamberlain-group-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
     },
     {
       "slug": "championx",
@@ -860,6 +929,29 @@
       "status": "all-good"
     },
     {
+      "slug": "eaton",
+      "name": "Eaton",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "eaton-on-light.webp",
+        "width": 800,
+        "height": 218,
+        "hasAlpha": true,
+        "aspectRatio": 3.67,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "eaton-on-dark.webp",
+        "width": 820,
+        "height": 224,
+        "hasAlpha": true,
+        "aspectRatio": 3.66,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
       "slug": "ecolab",
       "name": "Ecolab",
       "industry": "Chemicals",
@@ -924,6 +1016,29 @@
         "quality": "good"
       },
       "status": "all-good"
+    },
+    {
+      "slug": "everpure",
+      "name": "Everpure",
+      "industry": "Technology",
+      "onLight": {
+        "file": "everpure-on-light.webp",
+        "width": 820,
+        "height": 144,
+        "hasAlpha": true,
+        "aspectRatio": 5.69,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "everpure-on-dark.webp",
+        "width": 820,
+        "height": 144,
+        "hasAlpha": true,
+        "aspectRatio": 5.69,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
     },
     {
       "slug": "exact-sciences",
@@ -1212,6 +1327,52 @@
       "status": "all-good"
     },
     {
+      "slug": "grant-thornton",
+      "name": "Grant Thornton",
+      "industry": "Finance",
+      "onLight": {
+        "file": "grant-thornton-on-light.webp",
+        "width": 820,
+        "height": 153,
+        "hasAlpha": true,
+        "aspectRatio": 5.36,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "grant-thornton-on-dark.webp",
+        "width": 820,
+        "height": 153,
+        "hasAlpha": true,
+        "aspectRatio": 5.36,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
+      "slug": "haworth",
+      "name": "Haworth",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "haworth-on-light.webp",
+        "width": 1320,
+        "height": 160,
+        "hasAlpha": true,
+        "aspectRatio": 8.25,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "haworth-on-dark.png",
+        "width": 1320,
+        "height": 160,
+        "hasAlpha": true,
+        "aspectRatio": 8.25,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
       "slug": "hd-supply",
       "name": "HD Supply",
       "industry": "Construction",
@@ -1276,6 +1437,29 @@
         "quality": "icon"
       },
       "status": "all-good"
+    },
+    {
+      "slug": "hrizons",
+      "name": "Hrizons",
+      "industry": "Technology",
+      "onLight": {
+        "file": "hrizons-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "hrizons-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
     },
     {
       "slug": "ibm",
@@ -1784,6 +1968,29 @@
       "status": "all-good"
     },
     {
+      "slug": "livanova",
+      "name": "LivaNova",
+      "industry": "Healthcare",
+      "onLight": {
+        "file": "livanova-on-light.webp",
+        "width": 820,
+        "height": 180,
+        "hasAlpha": true,
+        "aspectRatio": 4.56,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "livanova-on-dark.png",
+        "width": 820,
+        "height": 180,
+        "hasAlpha": true,
+        "aspectRatio": 4.56,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
       "slug": "loparex",
       "name": "Loparex",
       "industry": "Manufacturing",
@@ -2246,6 +2453,29 @@
       "status": "all-good"
     },
     {
+      "slug": "nuna",
+      "name": "Nuna",
+      "industry": "Consumer",
+      "onLight": {
+        "file": "nuna-on-light.webp",
+        "width": 800,
+        "height": 130,
+        "hasAlpha": true,
+        "aspectRatio": 6.15,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "nuna-on-dark.webp",
+        "width": 820,
+        "height": 133,
+        "hasAlpha": true,
+        "aspectRatio": 6.17,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
       "slug": "orbia",
       "name": "Orbia",
       "industry": "Finance",
@@ -2552,6 +2782,29 @@
         "quality": "good"
       },
       "status": "all-good"
+    },
+    {
+      "slug": "reynolds-consumer-products",
+      "name": "Reynolds Consumer Products",
+      "industry": "Manufacturing",
+      "onLight": {
+        "file": "reynolds-consumer-products-on-light.png",
+        "width": 250,
+        "height": 65,
+        "hasAlpha": true,
+        "aspectRatio": 3.85,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "reynolds-consumer-products-on-dark.webp",
+        "width": 250,
+        "height": 65,
+        "hasAlpha": true,
+        "aspectRatio": 3.85,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
     },
     {
       "slug": "room-and-board",
@@ -2862,6 +3115,29 @@
       "status": "all-good"
     },
     {
+      "slug": "sram",
+      "name": "SRAM",
+      "industry": "Recreation",
+      "onLight": {
+        "file": "sram-on-light.webp",
+        "width": 820,
+        "height": 105,
+        "hasAlpha": true,
+        "aspectRatio": 7.81,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "sram-on-dark.png",
+        "width": 820,
+        "height": 105,
+        "hasAlpha": true,
+        "aspectRatio": 7.81,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
       "slug": "srs-distribution",
       "name": "SRS Distribution",
       "industry": "Construction",
@@ -2948,6 +3224,29 @@
         "quality": "good"
       },
       "status": "all-good"
+    },
+    {
+      "slug": "taciti",
+      "name": "Taciti Consulting",
+      "industry": "Technology",
+      "onLight": {
+        "file": "taciti-on-light.webp",
+        "width": 820,
+        "height": 423,
+        "hasAlpha": true,
+        "aspectRatio": 1.94,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "taciti-on-dark.png",
+        "width": 820,
+        "height": 423,
+        "hasAlpha": true,
+        "aspectRatio": 1.94,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
     },
     {
       "slug": "tamko",
@@ -3258,6 +3557,29 @@
       "status": "all-good"
     },
     {
+      "slug": "venetian-las-vegas",
+      "name": "The Venetian Resort Las Vegas",
+      "industry": "Hospitality",
+      "onLight": {
+        "file": "venetian-las-vegas-on-light.webp",
+        "width": 820,
+        "height": 208,
+        "hasAlpha": true,
+        "aspectRatio": 3.94,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "venetian-las-vegas-on-dark.webp",
+        "width": 820,
+        "height": 208,
+        "hasAlpha": true,
+        "aspectRatio": 3.94,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
       "slug": "ventura-foods",
       "name": "Ventura Foods",
       "industry": "Food & Beverage",
@@ -3300,6 +3622,29 @@
         "quality": "good"
       },
       "status": "all-good"
+    },
+    {
+      "slug": "vistance-networks",
+      "name": "Vistance Networks",
+      "industry": "Communications",
+      "onLight": {
+        "file": "vistance-networks-on-light.webp",
+        "width": 2048,
+        "height": 631,
+        "hasAlpha": true,
+        "aspectRatio": 3.25,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "vistance-networks-on-dark.png",
+        "width": 2048,
+        "height": 631,
+        "hasAlpha": true,
+        "aspectRatio": 3.25,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
     },
     {
       "slug": "vistaprint",

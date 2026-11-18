@@ -3,98 +3,99 @@ import { join, extname } from 'path';
 import sharp from 'sharp';
 import { zipSync, type Zippable } from 'fflate';
 import { loadLogos } from '@/lib/logos';
+import { loadBadges } from '@/lib/badges';
 
 export const runtime = 'nodejs';
 export const maxDuration = 300;
 
-const MAX_WIDTH = 2000;
+const MAX_WIDTH = 2400;
 const DEFAULT_WIDTH = 1200;
 
 // GET /api/logos/download
-//   ?type=customer|partner|prospect|self|other   filter by normalized SF type
-//   ?vertical=Healthcare                         filter by vertical
-//   ?q=cargill                                   filter by name/slug/industry
-//   ?format=png|source                           png = transcoded at ?w= (default 1200),
-//                                                source = original files (svg/webp/png as stored)
-//   ?w=1200                                      png width
-// Returns a ZIP with files named "{Company Name} (on-light).png" etc.
-// SVG sources are always included alongside the PNG when format=png.
+//   ?relationship=customer|partner|pipeline|prospect   Closed-Won truth (use this, not type)
+//   ?aiFund=1 | won | open                             SAP Business AI Fund accounts
+//   ?type=customer|partner|prospect|self|other         raw SF Account.Type bucket (legacy)
+//   ?vertical=Healthcare                               filter by vertical
+//   ?q=cargill                                         name/slug/industry contains
+//   ?slugs=3m,ecolab,cargill                           exact set
+//   ?set=badges                                        Mindset's SAP partner badges instead of logos
+//   ?format=png|source                                 png = rendered at ?w= (vector kept alongside),
+//                                                      source = master files as stored
+//   ?w=1200                                            png width
 export async function GET(req: Request) {
   const url = new URL(req.url);
-  const type = url.searchParams.get('type');
-  const vertical = url.searchParams.get('vertical');
-  const q = url.searchParams.get('q')?.trim().toLowerCase();
-  const format = url.searchParams.get('format') === 'source' ? 'source' : 'png';
-  const requested = Number(url.searchParams.get('w'));
-  const width = Number.isFinite(requested) && requested > 0
-    ? Math.min(Math.floor(requested), MAX_WIDTH)
-    : DEFAULT_WIDTH;
+  const p = (k: string) => url.searchParams.get(k)?.trim() || null;
+  const format = p('format') === 'source' ? 'source' : 'png';
+  const requested = Number(p('w'));
+  const width = Number.isFinite(requested) && requested > 0 ? Math.min(Math.floor(requested), MAX_WIDTH) : DEFAULT_WIDTH;
 
-  const logos = loadLogos().filter((l) => {
-    if (type && l.salesforce.type !== type) return false;
-    if (vertical && !l.verticals.includes(vertical)) return false;
-    if (q) {
-      const hit =
-        l.name.toLowerCase().includes(q) ||
-        l.slug.toLowerCase().includes(q) ||
-        l.industry.toLowerCase().includes(q);
-      if (!hit) return false;
-    }
-    return true;
-  });
+  type Item = { name: string; onLight: string | null; onDark: string | null };
+  let items: Item[];
+  let label: string;
 
-  if (logos.length === 0) return new Response('no logos match', { status: 404 });
-
-  const files: Zippable = {};
-
-  const safeName = (name: string) => name.replace(/[/\\:*?"<>|]/g, '').trim();
-
-  for (const logo of logos) {
-    for (const [variant, src] of [
-      ['on-light', logo.onLight],
-      ['on-dark', logo.onDark],
-    ] as const) {
-      if (!src) continue;
-      const absPath = join(process.cwd(), 'public', src);
-      let input: Buffer;
-      try {
-        input = readFileSync(absPath);
-      } catch {
-        continue;
-      }
-      const srcExt = extname(src).toLowerCase();
-      const base = `${safeName(logo.name)} (${variant})`;
-
-      if (format === 'source') {
-        files[`${base}${srcExt}`] = [new Uint8Array(input), { level: 0 }];
-        continue;
-      }
-
-      // format=png: transcode everything, and keep the vector alongside when we have one
-      if (srcExt === '.svg') {
-        files[`${base}.svg`] = [new Uint8Array(input), { level: 6 }];
-      }
-      try {
-        const density = srcExt === '.svg' ? Math.max(72, Math.ceil((width / 300) * 72)) : 72;
-        const png = await sharp(input, { density })
-          .resize({ width, fit: 'inside', withoutEnlargement: srcExt !== '.svg' })
-          .png({ compressionLevel: 9 })
-          .toBuffer();
-        files[`${base}.png`] = [new Uint8Array(png), { level: 0 }];
-      } catch {
-        files[`${base}${srcExt}`] = [new Uint8Array(input), { level: 0 }];
-      }
-    }
+  if (p('set') === 'badges') {
+    items = loadBadges().badges.filter((b) => b.status === 'current');
+    label = 'sap-badges';
+  } else {
+    const relationship = p('relationship');
+    const aiFund = p('aiFund');
+    const type = p('type');
+    const vertical = p('vertical');
+    const q = p('q')?.toLowerCase();
+    const slugs = p('slugs') ? new Set(p('slugs')!.split(',').map((s) => s.trim())) : null;
+    items = loadLogos().filter((l) => {
+      if (slugs && !slugs.has(l.slug)) return false;
+      if (relationship && l.salesforce.relationship !== relationship) return false;
+      if (aiFund && !(aiFund === '1' || aiFund === 'true' ? l.aiFund : l.aiFund === aiFund)) return false;
+      if (type && l.salesforce.type !== type) return false;
+      if (vertical && !l.verticals.includes(vertical)) return false;
+      if (q && !`${l.name} ${l.slug} ${l.industry}`.toLowerCase().includes(q)) return false;
+      return true;
+    });
+    label = [relationship, aiFund && 'ai-fund', type, vertical, q].filter(Boolean).join('-') || 'all';
   }
 
-  const zip = zipSync(files);
-  const label = type ?? 'all';
-  const stamp = new Date().toISOString().slice(0, 10);
+  const safeName = (s: string) => s.replace(/[\\/:*?"<>|]/g, '').trim();
+  const files: Zippable = {};
 
+  await Promise.all(
+    items.flatMap((item) =>
+      (['on-light', 'on-dark'] as const).map(async (variant) => {
+        const src = variant === 'on-light' ? item.onLight : item.onDark;
+        if (!src) return;
+        let input: Buffer;
+        try {
+          input = readFileSync(join(process.cwd(), 'public', src));
+        } catch {
+          return;
+        }
+        const srcExt = extname(src).toLowerCase();
+        const base = `${safeName(item.name)} (${variant})`;
+        if (format === 'source') {
+          files[`${base}${srcExt}`] = [new Uint8Array(input), { level: 0 }];
+          return;
+        }
+        if (srcExt === '.svg') files[`${base}.svg`] = [new Uint8Array(input), { level: 6 }];
+        try {
+          const density = srcExt === '.svg' ? Math.min(2400, Math.max(72, Math.ceil((width / 300) * 72) * 2)) : 72;
+          const png = await sharp(input, { density })
+            .resize({ width, fit: 'inside', withoutEnlargement: srcExt !== '.svg' })
+            .png({ compressionLevel: 9 })
+            .toBuffer();
+          files[`${base}.png`] = [new Uint8Array(png), { level: 0 }];
+        } catch {
+          files[`${base}${srcExt}`] = [new Uint8Array(input), { level: 0 }];
+        }
+      }),
+    ),
+  );
+
+  const zip = zipSync(files);
+  const stamp = new Date().toISOString().slice(0, 10);
   return new Response(new Uint8Array(zip), {
     headers: {
       'Content-Type': 'application/zip',
-      'Content-Disposition': `attachment; filename="mindset-logos-${label}-${stamp}.zip"`,
+      'Content-Disposition': `attachment; filename="mindset-${label}-${stamp}.zip"`,
       'Content-Length': String(zip.length),
       'Cache-Control': 'public, max-age=3600, s-maxage=86400',
     },

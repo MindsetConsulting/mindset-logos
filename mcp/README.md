@@ -1,34 +1,27 @@
 # @mindsetconsulting/mindset-logos-mcp
 
-MCP server for the Mindset Consulting customer logo library. Exposes the gallery at [mindset-logos.vercel.app](https://mindset-logos.vercel.app) as three tools any Claude Code session can call.
+Mindset's logo and SAP badge library as an MCP server. This package is a thin stdio proxy to the hosted server, so it always has the same tools as the claude.ai connector.
 
 ## Install
+
+Easiest, no package needed:
+
+```bash
+claude mcp add --transport http mindset-logos https://mindset-logos.vercel.app/api/mcp
+```
+
+Or via this package (needs `@mindsetconsulting` on GitHub Packages in `~/.npmrc`):
 
 ```bash
 claude mcp add mindset-logos -- bunx @mindsetconsulting/mindset-logos-mcp
 ```
 
-Or with npx:
-
-```bash
-claude mcp add mindset-logos -- npx -y @mindsetconsulting/mindset-logos-mcp
-```
-
-GitHub Packages needs auth to install scoped packages. Add this once to your `~/.npmrc`:
-
-```
-@mindsetconsulting:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-```
-
-Then make sure `GITHUB_TOKEN` is exported in your shell profile (a personal access token with `read:packages` is enough).
-
 ## Tools
 
-- `list_logos(vertical?)` — every customer in the library, optional vertical filter.
-- `search_logos(query, limit?)` — fuzzy search over slug, name, industry, verticals, HQ.
-- `get_logo(slug)` — one customer with website, industry, HQ, and absolute URLs for both `on-light` and `on-dark` variants.
+- `list_logos(relationship?, aiFund?, vertical?)`: customers (Closed Won), pipeline, prospects, partners, AI Fund accounts.
+- `search_logos(query)`: name, industry, vertical, city, DUNS, Salesforce ID.
+- `get_logo(slug or name, variant?, format?, width?, background?)`: download URLs in PNG, JPG, WebP, or SVG, plus a preview.
+- `logo_pack(...)`: ZIP URL for any filtered set.
+- `list_badges()` / `get_badge(name, ...)`: Mindset's SAP Gold Partner, BTP Expert, and AppHaus Network badges.
 
-## Source
-
-Lives in [MindsetConsulting/mindset-logos](https://github.com/MindsetConsulting/mindset-logos) under `mcp/`.
+Ask in plain words: "Ecolab logo as an SVG for print", "our BTP badge as a PNG on white".

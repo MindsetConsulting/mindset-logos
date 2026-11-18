@@ -1,7 +1,7 @@
 {
   "name": "@mindsetconsulting/mindset-logos-mcp",
-  "version": "0.1.0",
-  "description": "MCP server for the Mindset customer logo library",
+  "version": "0.2.0",
+  "description": "MCP server for the Mindset logo and SAP badge library (proxies the hosted server)",
   "type": "module",
   "bin": {
     "mindset-logos-mcp": "dist/index.js"
@@ -25,7 +25,7 @@
     "start": "node dist/index.js"
   },
   "devDependencies": {
-    "@modelcontextprotocol/sdk": "^1.20.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "zod": "^3.25.76"
   }
 }

@@ -20,6 +20,8 @@ export async function GET() {
       onLightQuality: l.onLightQuality,
       onDarkQuality: l.onDarkQuality,
       pendingApproval: l.pendingApproval,
+      aiFund: l.aiFund ?? null,
+      vector: Boolean(l.onLight?.endsWith('.svg') && l.onDark?.endsWith('.svg')),
       salesforce: {
         sfId: l.salesforce.sfId,
         sfName: l.salesforce.sfName,

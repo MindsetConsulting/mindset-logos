@@ -23,8 +23,8 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Customer Logos | Mindset Consulting",
-  description: "Every Mindset customer logo in one place — light and dark variants, one click away.",
+  title: "Logos & Badges | Mindset",
+  description: "Every Mindset customer logo and SAP partner badge, light and dark, in any format.",
   robots: "noindex, nofollow",
 };
 
@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" style={{ background: "#0A1628" }}>
       <body className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} antialiased min-h-full`}>
         {children}
       </body>

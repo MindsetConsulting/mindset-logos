@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Copy, Check, Download, ExternalLink } from 'lucide-react';
-import type { AccountType, Logo, LogoStatus, VariantQuality } from '@/lib/logos';
+import { Check, Download, ExternalLink } from 'lucide-react';
+import type { Logo, LogoStatus, Relationship, VariantQuality } from '@/lib/logos';
 
 type Props = { logo: Logo };
 
@@ -11,49 +11,49 @@ type Variant = 'on-light' | 'on-dark';
 const FORMATS = ['png', 'webp', 'jpg', 'svg'] as const;
 type Format = (typeof FORMATS)[number];
 
-const TYPE_STYLES: Record<AccountType, { label: string; bg: string; fg: string; dot: string }> = {
+const REL_STYLES: Record<Relationship, { label: string; bg: string; fg: string; dot: string; title: string }> = {
   customer: {
     label: 'Customer',
     bg: 'bg-[color:rgba(124,109,242,0.12)]',
     fg: 'text-[color:var(--color-violet-light)]',
     dot: 'bg-[color:var(--color-violet-light)]',
+    title: 'At least one Closed Won opportunity. OK to show as a client.',
   },
-  partner: {
-    label: 'Partner',
-    bg: 'bg-[color:rgba(97,189,120,0.12)]',
-    fg: 'text-[color:rgb(134,239,172)]',
-    dot: 'bg-[color:rgb(134,239,172)]',
+  pipeline: {
+    label: 'Pipeline',
+    bg: 'bg-[color:rgba(56,189,248,0.12)]',
+    fg: 'text-[color:rgb(125,211,252)]',
+    dot: 'bg-[color:rgb(125,211,252)]',
+    title: 'Open opportunity, no win yet. Internal use only.',
   },
   prospect: {
     label: 'Prospect',
     bg: 'bg-[color:rgba(234,179,8,0.12)]',
     fg: 'text-[color:rgb(250,204,21)]',
     dot: 'bg-[color:rgb(250,204,21)]',
+    title: 'No opportunities. Internal use only.',
   },
-  self: {
+  partner: {
+    label: 'Partner',
+    bg: 'bg-[color:rgba(97,189,120,0.12)]',
+    fg: 'text-[color:rgb(134,239,172)]',
+    dot: 'bg-[color:rgb(134,239,172)]',
+    title: 'Partner account.',
+  },
+  other: {
     label: 'Mindset',
     bg: 'bg-[color:rgba(247,245,242,0.08)]',
     fg: 'text-[color:var(--color-warm-white)]',
     dot: 'bg-[color:var(--color-warm-white)]',
-  },
-  other: {
-    label: 'Other',
-    bg: 'bg-[color:rgba(247,245,242,0.05)]',
-    fg: 'text-[color:rgba(247,245,242,0.55)]',
-    dot: 'bg-[color:rgba(247,245,242,0.55)]',
+    title: 'Not a Salesforce account.',
   },
 };
 
-function TypePill({ type, rawType }: { type: AccountType; rawType: string | null }) {
-  const s = TYPE_STYLES[type];
-  const title = rawType && rawType !== s.label ? `Salesforce type: ${rawType}` : `Salesforce type: ${s.label}`;
+function Pill({ label, title, bg, fg, dot }: { label: string; title: string; bg: string; fg: string; dot?: string }) {
   return (
-    <span
-      title={title}
-      className={`inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 font-mono text-[0.58rem] uppercase tracking-wider ${s.bg} ${s.fg}`}
-    >
-      <span className={`h-1.5 w-1.5 rounded-full ${s.dot}`} />
-      {s.label}
+    <span title={title} className={`inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 font-mono text-[0.58rem] uppercase tracking-wider ${bg} ${fg}`}>
+      {dot && <span className={`h-1.5 w-1.5 rounded-full ${dot}`} />}
+      {label}
     </span>
   );
 }
@@ -125,7 +125,7 @@ export default function LogoRow({ logo }: Props) {
   const origin = typeof window !== 'undefined' ? window.location.origin : '';
 
   return (
-    <div className="group grid grid-cols-1 md:grid-cols-[220px_1fr_1fr] gap-0 overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.015] transition hover:border-white/[0.14]">
+    <div className="logo-row group grid grid-cols-1 md:grid-cols-[220px_1fr_1fr] gap-0 overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.015] transition hover:border-white/[0.14]">
       <div className="flex flex-col justify-center gap-1.5 border-b border-white/[0.06] px-5 py-4 md:border-b-0 md:border-r md:py-5">
         <p className="font-serif text-lg font-semibold leading-tight text-[color:var(--color-warm-white)]">
           {logo.name}
@@ -139,7 +139,18 @@ export default function LogoRow({ logo }: Props) {
           </p>
         )}
         <div className="mt-1 flex flex-wrap items-center gap-1.5">
-          <TypePill type={logo.salesforce.type} rawType={logo.salesforce.rawType} />
+          <Pill {...REL_STYLES[logo.salesforce.relationship]} />
+          {logo.aiFund && (
+            <Pill
+              label={logo.aiFund === 'won' ? 'AI Fund · won' : 'AI Fund'}
+              title={logo.aiFund === 'won' ? 'SAP Business AI Fund deal, Closed Won' : 'SAP Business AI Fund deal in progress'}
+              bg="bg-[color:rgba(16,185,129,0.12)]"
+              fg="text-[color:rgb(110,231,183)]"
+            />
+          )}
+          {logo.onLight?.endsWith('.svg') && logo.onDark?.endsWith('.svg') && (
+            <Pill label="Vector" title="SVG master: crisp at any size" bg="bg-[color:rgba(247,245,242,0.06)]" fg="text-[color:rgba(247,245,242,0.7)]" />
+          )}
           {(logo.status !== 'all-good' || logo.pendingApproval) && (
             <StatusPill status={logo.status} pending={logo.pendingApproval} />
           )}
@@ -221,8 +232,10 @@ function VariantCell({
         style={{ background: bgStyle, minHeight: '140px' }}
       >
         <img
-          src={src}
-          alt={variant}
+          src={sourceExt === 'svg' ? src : `/api/logos/${slug}/${variant}.webp?w=480`}
+          alt={`${slug} ${variant}`}
+          loading="lazy"
+          decoding="async"
           className="max-h-[92px] max-w-[80%] object-contain"
         />
       </div>
@@ -246,7 +259,7 @@ function VariantCell({
                     ? `Copy ${fmt.toUpperCase()} URL`
                     : `SVG not available (source is ${sourceExt.toUpperCase()})`
                 }
-                className={`flex items-center gap-1 rounded px-1.5 py-1 font-mono text-[0.58rem] uppercase tracking-wider transition ${
+                className={`flex min-h-[40px] items-center gap-1 rounded px-2 sm:min-h-0 sm:px-1.5 sm:py-1 font-mono text-[0.58rem] uppercase tracking-wider transition ${
                   enabled
                     ? 'text-[color:rgba(247,245,242,0.55)] hover:bg-white/[0.06] hover:text-[color:var(--color-warm-white)]'
                     : 'cursor-not-allowed text-[color:rgba(247,245,242,0.2)]'
@@ -258,10 +271,7 @@ function VariantCell({
                     {fmt}
                   </>
                 ) : (
-                  <>
-                    <Copy className="h-3 w-3" />
-                    {fmt}
-                  </>
+                  fmt
                 )}
               </button>
             );

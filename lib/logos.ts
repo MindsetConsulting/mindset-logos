@@ -18,6 +18,8 @@ export type ManifestEntry = {
   sfId?: string;
   sfName?: string;
   hq?: HQ;
+  /** SAP Business AI Fund deal: 'won' (Closed Won) or 'open'. Hand-tagged from opp names. */
+  aiFund?: 'won' | 'open';
 };
 
 export type VariantQuality = 'good' | 'icon' | 'flat' | 'tiny' | 'missing';
@@ -126,7 +128,28 @@ function loadSalesforceFile(logosDir: string): SalesforceFile | null {
   return JSON.parse(readFileSync(path, 'utf-8')) as SalesforceFile;
 }
 
+// The library is read-only at runtime, so parse it once per server instance.
+// Dev re-reads every call so edits to manifest.json show up without a restart.
+let cached: Logo[] | null = null;
+
 export function loadLogos(): Logo[] {
+  if (cached && process.env.NODE_ENV === 'production') return cached;
+  cached = readLogos();
+  return cached;
+}
+
+export function findLogo(slugOrName: string): Logo | undefined {
+  const logos = loadLogos();
+  const q = slugOrName.trim().toLowerCase();
+  return (
+    logos.find((l) => l.slug === q) ??
+    logos.find((l) => l.name.toLowerCase() === q || l.salesforce.sfName?.toLowerCase() === q) ??
+    logos.find((l) => l.slug.replace(/-/g, ' ') === q.replace(/-/g, ' ')) ??
+    logos.find((l) => l.name.toLowerCase().startsWith(q))
+  );
+}
+
+function readLogos(): Logo[] {
   const logosDir = join(process.cwd(), 'public', 'logos');
   const manifestPath = join(logosDir, 'manifest.json');
   const raw = JSON.parse(readFileSync(manifestPath, 'utf-8')) as { customers: ManifestEntry[] };

@@ -1,5 +1,5 @@
 {
-  "lastSync": "2026-08-26T00:00:00Z",
+  "lastSync": "2026-11-18T00:00:00Z",
   "accounts": {
     "0010a00001AGTWBAA5": {
       "sfName": "Faribault Foods, Inc.",
@@ -89,7 +89,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 44,
-      "open": 4
+      "open": 2
     },
     "0010a00001BgdBGAAZ": {
       "sfName": "BMW Manufacturing Co., LLC",
@@ -296,7 +296,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 56,
-      "open": 4
+      "open": 3
     },
     "0010a00001YphbvAAB": {
       "sfName": "Furst-Mcness Company",
@@ -332,7 +332,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 0,
-      "open": 1
+      "open": 0
     },
     "0010a00001bXI73AAG": {
       "sfName": "Milliken and Company",
@@ -341,7 +341,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 7,
-      "open": 2
+      "open": 0
     },
     "0010a00001cWsxvAAC": {
       "sfName": "Mizuho OSI Inc",
@@ -359,7 +359,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 48,
-      "open": 0
+      "open": 2
     },
     "0010a00001gOOUdAAO": {
       "sfName": "Border States Industries, Inc.",
@@ -368,7 +368,7 @@
       "partner": "SAP",
       "mindsetPartner": false,
       "won": 72,
-      "open": 10
+      "open": 8
     },
     "0010a00001gOOzhAAG": {
       "sfName": "W. C. Bradley Co.",
@@ -395,7 +395,7 @@
       "partner": "SAP",
       "mindsetPartner": false,
       "won": 12,
-      "open": 6
+      "open": 5
     },
     "0015b00001kkG0vAAE": {
       "sfName": "Orbia",
@@ -431,7 +431,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 12,
-      "open": 2
+      "open": 1
     },
     "0015b00001mSonVAAS": {
       "sfName": "The Clorox Company",
@@ -440,7 +440,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 17,
-      "open": 1
+      "open": 0
     },
     "0015b00001nGW6kAAG": {
       "sfName": "Johnson Health Tech",
@@ -458,7 +458,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 15,
-      "open": 1
+      "open": 4
     },
     "0015b00001psyIZAAY": {
       "sfName": "Championx Corporation",
@@ -584,7 +584,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 1,
-      "open": 4
+      "open": 5
     },
     "0015b000029wFbMAAU": {
       "sfName": "Spirit Aerosystems Holdings, Inc.",
@@ -629,7 +629,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 8,
-      "open": 5
+      "open": 8
     },
     "001TO000002XqbPYAS": {
       "sfName": "Solventum Corporation",
@@ -638,7 +638,7 @@
       "partner": "SAP",
       "mindsetPartner": false,
       "won": 72,
-      "open": 18
+      "open": 9
     },
     "001TO000004JRa6YAG": {
       "sfName": "Fujifilm Holdings America Corporation",
@@ -656,7 +656,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 5,
-      "open": 3
+      "open": 1
     },
     "001TO000005ihSzYAI": {
       "sfName": "Northern Technologies International Corporation",
@@ -665,7 +665,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 6,
-      "open": 5
+      "open": 3
     },
     "001TO000006iy54YAA": {
       "sfName": "MARUTI SUZUKI INDIA LIMITED",
@@ -692,7 +692,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 61,
-      "open": 4
+      "open": 1
     },
     "001TO00000IcxhRYAR": {
       "sfName": "VARSITY BRANDS INC",
@@ -719,7 +719,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 7,
-      "open": 2
+      "open": 1
     },
     "001TO00000OYhXlYAL": {
       "sfName": "Shimano North America Holding, Inc.",
@@ -854,7 +854,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 8,
-      "open": 0
+      "open": 1
     },
     "001j0000005tPWdAAM": {
       "sfName": "Ecolab Inc.",
@@ -863,7 +863,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 821,
-      "open": 85
+      "open": 68
     },
     "001j0000005tPWqAAM": {
       "sfName": "International Business Machines Corporation",
@@ -872,7 +872,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 6,
-      "open": 7
+      "open": 4
     },
     "001j0000005tPX8AAM": {
       "sfName": "General Mills, Inc.",
@@ -926,7 +926,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 9,
-      "open": 1
+      "open": 2
     },
     "001j0000005tPYWAA2": {
       "sfName": "Upsher-Smith Laboratories, LLC",
@@ -944,7 +944,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 64,
-      "open": 4
+      "open": 5
     },
     "001j0000005tPYtAAM": {
       "sfName": "MTS Systems Corporation",
@@ -980,7 +980,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 58,
-      "open": 7
+      "open": 6
     },
     "001j000000HgMjhAAF": {
       "sfName": "Fujitsu Research of America, Inc.",
@@ -998,7 +998,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 4,
-      "open": 1
+      "open": 0
     },
     "001j000000Mlem7AAB": {
       "sfName": "Flagstone Foods LLC",
@@ -1034,7 +1034,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 4,
-      "open": 2
+      "open": 1
     },
     "001j000000T5tenAAB": {
       "sfName": "Turck Inc.",
@@ -1052,7 +1052,7 @@
       "partner": "Hemant Doshi",
       "mindsetPartner": false,
       "won": 2,
-      "open": 3
+      "open": 4
     },
     "001j000000YtF3jAAF": {
       "sfName": "Arctic Cat Inc.",
@@ -1142,7 +1142,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 37,
-      "open": 4
+      "open": 7
     },
     "001j000000tpJx4AAE": {
       "sfName": "Lam Research Corporation",
@@ -1169,7 +1169,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 10,
-      "open": 1
+      "open": 5
     },
     "001j0000015dfW7AAI": {
       "sfName": "The Tile Shop LLC",
@@ -1214,7 +1214,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 0,
-      "open": 2
+      "open": 3
     },
     "001j000000FiC3wAAF": {
       "sfName": "Thomson Reuters Corp.",
@@ -1241,7 +1241,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 0,
-      "open": 1
+      "open": 2
     },
     "0010a00001C8TZyAAN": {
       "sfName": "Kimberly-Clark Corporation",
@@ -1250,7 +1250,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 0,
-      "open": 1
+      "open": 0
     },
     "0015b000026ArSSAA0": {
       "sfName": "Tyson Foods, Inc.",
@@ -1259,7 +1259,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 0,
-      "open": 1
+      "open": 0
     },
     "0015b000027dJp4AAE": {
       "sfName": "Gilead Sciences, Inc.",
@@ -1295,7 +1295,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 0,
-      "open": 1
+      "open": 0
     },
     "0010a00001DMIjbAAH": {
       "sfName": "Apogee Enterprises, Inc.",
@@ -1304,7 +1304,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 0,
-      "open": 1
+      "open": 0
     },
     "001TO00000nBDLvYAO": {
       "sfName": "The Foth Companies",
@@ -1313,7 +1313,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 0,
-      "open": 1
+      "open": 0
     },
     "0010a00001UVhpAAAT": {
       "sfName": "Flowers Foods, Inc.",
@@ -1340,7 +1340,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 0,
-      "open": 1
+      "open": 0
     },
     "0015b000026ArSfAAK": {
       "sfName": "Intel Corporation",
@@ -1349,7 +1349,7 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 0,
-      "open": 1
+      "open": 0
     },
     "001TO00000gfkoIYAQ": {
       "sfName": "Solstice Advanced Materials Inc.",
@@ -1367,7 +1367,152 @@
       "partner": null,
       "mindsetPartner": false,
       "won": 28,
-      "open": 4
+      "open": 3
+    },
+    "001j000000YtSF0AAN": {
+      "sfName": "Applied Materials",
+      "type": "Prospect",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 0
+    },
+    "0015b00001wrjB2AAI": {
+      "sfName": "Builders Firstsource, Inc.",
+      "type": "Prospect",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 1
+    },
+    "0010a00001E2BR2AAN": {
+      "sfName": "Chamberlain Group",
+      "type": "Prospect",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 1
+    },
+    "001j000000j2K4BAAU": {
+      "sfName": "Eaton Corporation",
+      "type": "Prospect",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 1
+    },
+    "0010a00001gOOrtAAG": {
+      "sfName": "Everpure, Inc.",
+      "type": "Partner",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 1
+    },
+    "001j0000005tPWvAAM": {
+      "sfName": "Grant Thornton LLP",
+      "type": "Prospect",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 0
+    },
+    "0010a00001USmLGAA1": {
+      "sfName": "Haworth International, Ltd.",
+      "type": "Prospect",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 1
+    },
+    "001j000000T6GNxAAN": {
+      "sfName": "Hrizons LLC",
+      "type": "Partner",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 1
+    },
+    "001TO00000sgVczYAE": {
+      "sfName": "Livanova USA, Inc.",
+      "type": "Prospect",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 1
+    },
+    "001TO00000qvl7ZYAQ": {
+      "sfName": "NUNA Baby Essentials, Inc.",
+      "type": "Prospect",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 1
+    },
+    "0015b000026AcUCAA0": {
+      "sfName": "Reynolds Consumer Products Inc.",
+      "type": "Prospect",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 0
+    },
+    "001j0000005tPVYAA2": {
+      "sfName": "SAP America, Inc.",
+      "type": "Partner",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 14
+    },
+    "0010a00001bVpzWAAS": {
+      "sfName": "SRAM Corporation",
+      "type": "Prospect",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 2
+    },
+    "001TO00000TU5b4YAD": {
+      "sfName": "Taciti Consulting LLC",
+      "type": "Partner",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 1
+    },
+    "001TO00000uJ6EPYA0": {
+      "sfName": "Venetian Las Vegas Gaming, LLC",
+      "type": null,
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 0
+    },
+    "001TO00000qBl8yYAC": {
+      "sfName": "Vistance Networks, Inc.",
+      "type": "Prospect",
+      "duns": null,
+      "partner": null,
+      "mindsetPartner": false,
+      "won": 0,
+      "open": 0
     }
-  }
+  },
+  "syncNote": "2026-11-18: open-opportunity counts refreshed for every account; won counts carried from the 2026-08-26 full sync (Salesforce auth expired mid-session). New accounts default to won=0. Run `bun run enrich-sf` for a full refresh."
 }

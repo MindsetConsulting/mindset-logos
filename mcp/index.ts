@@ -1,206 +1,54 @@
 #!/usr/bin/env bun
-// Mindset Logos MCP — stdio server exposing the customer logo library to
-// Claude Code sessions. Reads the canonical manifest from the deployed
-// gallery at https://mindset-logos.vercel.app/api/logos (override with
-// MINDSET_LOGOS_URL env var).
+// Mindset Logos MCP (stdio). A thin proxy to the hosted server at
+// https://mindset-logos.vercel.app/api/mcp, so the tool list, descriptions, and
+// behavior always match what claude.ai users get. Nothing to update locally when
+// the library or the tools change.
 //
-// Tools:
-//   list_logos    — full list, optional vertical filter
-//   search_logos  — fuzzy search by name/slug/industry/vertical
-//   get_logo      — one customer by slug, returns both variant URLs
+// Most people don't need this package. Claude Code can talk to the hosted server
+// directly:
+//   claude mcp add --transport http mindset-logos https://mindset-logos.vercel.app/api/mcp
 //
-// Install:
-//   claude mcp add mindset-logos -- bunx @mindsetconsulting/mindset-logos-mcp
+// Override the target with MINDSET_LOGOS_MCP_URL.
 
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
-import {
-  CallToolRequestSchema,
-  ListToolsRequestSchema,
-} from '@modelcontextprotocol/sdk/types.js';
+import { Client } from '@modelcontextprotocol/sdk/client/index.js';
+import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
+import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 
-const API_URL = process.env.MINDSET_LOGOS_URL ?? 'https://mindset-logos.vercel.app/api/logos';
+const REMOTE = process.env.MINDSET_LOGOS_MCP_URL ?? 'https://mindset-logos.vercel.app/api/mcp';
 
-type HQ = {
-  street: string | null;
-  city: string | null;
-  state: string | null;
-  country: string | null;
-  display: string | null;
-};
+let client: Client | null = null;
 
-type Salesforce = {
-  sfId: string | null;
-  sfName: string | null;
-  type: 'customer' | 'partner' | 'prospect' | 'self' | 'other';
-  rawType: string | null;
-  duns: string | null;
-  partner: string | null;
-  mindsetPartner: boolean;
-};
-
-type Logo = {
-  slug: string;
-  name: string;
-  website: string;
-  industry: string;
-  verticals: string[];
-  onLight: string | null;
-  onDark: string | null;
-  hq?: HQ;
-  salesforce?: Salesforce;
-};
-
-type ApiResponse = { total: number; logos: Logo[] };
-
-let cache: { data: Logo[]; fetchedAt: number } | null = null;
-const TTL_MS = 5 * 60 * 1000;
-
-async function fetchLogos(): Promise<Logo[]> {
-  if (cache && Date.now() - cache.fetchedAt < TTL_MS) return cache.data;
-  const res = await fetch(API_URL);
-  if (!res.ok) throw new Error(`Failed to fetch ${API_URL}: ${res.status}`);
-  const json = (await res.json()) as ApiResponse;
-  // Rewrite relative paths to absolute URLs
-  const base = new URL(API_URL);
-  const origin = `${base.protocol}//${base.host}`;
-  for (const l of json.logos) {
-    if (l.onLight && l.onLight.startsWith('/')) l.onLight = origin + l.onLight;
-    if (l.onDark && l.onDark.startsWith('/')) l.onDark = origin + l.onDark;
-  }
-  cache = { data: json.logos, fetchedAt: Date.now() };
-  return json.logos;
+async function remote(): Promise<Client> {
+  if (client) return client;
+  const c = new Client({ name: 'mindset-logos-stdio-proxy', version: '0.2.0' });
+  await c.connect(new StreamableHTTPClientTransport(new URL(REMOTE)));
+  client = c;
+  return c;
 }
 
+async function withRetry<T>(fn: (c: Client) => Promise<T>): Promise<T> {
+  try {
+    return await fn(await remote());
+  } catch {
+    client = null; // stale session (server redeployed): reconnect once
+    return fn(await remote());
+  }
+}
+
+const first = await remote().catch(() => null);
+const instructions = first?.getInstructions();
+
 const server = new Server(
-  {
-    name: 'mindset-logos',
-    version: '0.1.0',
-  },
-  {
-    capabilities: { tools: {} },
-  },
+  { name: 'mindset-logos', version: '0.2.0' },
+  { capabilities: { tools: {} }, ...(instructions ? { instructions } : {}) },
 );
 
-server.setRequestHandler(ListToolsRequestSchema, async () => ({
-  tools: [
-    {
-      name: 'list_logos',
-      description:
-        'List every Mindset Consulting customer logo. Each entry has slug, name, website, industry, verticals, HQ, absolute URLs for on-light and on-dark variants, and a salesforce block with { sfId, sfName, type, rawType, duns, partner, mindsetPartner }. Type is normalized to one of: customer, partner, prospect, self, other. Optional filters for vertical and salesforce type.',
-      inputSchema: {
-        type: 'object',
-        properties: {
-          vertical: {
-            type: 'string',
-            description: 'Optional vertical/industry filter (e.g. "Healthcare", "Food & Beverage").',
-          },
-          type: {
-            type: 'string',
-            enum: ['customer', 'partner', 'prospect', 'self', 'other'],
-            description: 'Optional Salesforce account type filter (normalized).',
-          },
-        },
-      },
-    },
-    {
-      name: 'search_logos',
-      description:
-        'Fuzzy search the Mindset customer logo library by a free-text query. Matches against slug, name, industry, verticals, HQ city/state, Salesforce name, DUNS number, and Salesforce ID.',
-      inputSchema: {
-        type: 'object',
-        properties: {
-          query: { type: 'string', description: 'Search query (name, slug, industry, city, DUNS, or sfId)' },
-          limit: { type: 'number', description: 'Max results (default 20)' },
-        },
-        required: ['query'],
-      },
-    },
-    {
-      name: 'get_logo',
-      description:
-        'Get one customer logo by slug. Returns name, website, industry, verticals, HQ, absolute URLs for on-light and on-dark variants, and the salesforce metadata block. Drop the URLs directly into HTML, slides, emails, etc.',
-      inputSchema: {
-        type: 'object',
-        properties: {
-          slug: { type: 'string', description: 'Customer slug, e.g. "3m", "home-depot", "bcbs-mn"' },
-        },
-        required: ['slug'],
-      },
-    },
-  ],
-}));
+server.setRequestHandler(ListToolsRequestSchema, async () => withRetry((c) => c.listTools()));
 
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  const { name, arguments: args } = request.params;
-  const logos = await fetchLogos();
+server.setRequestHandler(CallToolRequestSchema, async (req) =>
+  withRetry((c) => c.callTool({ name: req.params.name, arguments: req.params.arguments ?? {} })),
+);
 
-  if (name === 'list_logos') {
-    const { vertical, type } = (args as { vertical?: string; type?: string }) ?? {};
-    let out = logos;
-    if (vertical) {
-      out = out.filter((l) => l.verticals.includes(vertical) || l.industry === vertical);
-    }
-    if (type) {
-      out = out.filter((l) => l.salesforce?.type === type);
-    }
-    return {
-      content: [
-        {
-          type: 'text',
-          text: JSON.stringify({ total: out.length, logos: out }, null, 2),
-        },
-      ],
-    };
-  }
-
-  if (name === 'search_logos') {
-    const { query, limit = 20 } = args as { query: string; limit?: number };
-    const q = query.toLowerCase();
-    const scored = logos
-      .map((l) => {
-        let score = 0;
-        if (l.slug.includes(q)) score += 10;
-        if (l.name.toLowerCase().includes(q)) score += 8;
-        if (l.industry.toLowerCase().includes(q)) score += 4;
-        if (l.verticals.some((v) => v.toLowerCase().includes(q))) score += 4;
-        if (l.hq?.city?.toLowerCase().includes(q)) score += 2;
-        if (l.hq?.state?.toLowerCase().includes(q)) score += 2;
-        if (l.salesforce?.sfName?.toLowerCase().includes(q)) score += 6;
-        if (l.salesforce?.duns && l.salesforce.duns.includes(q)) score += 12;
-        if (l.salesforce?.sfId && l.salesforce.sfId.toLowerCase().includes(q)) score += 12;
-        return { logo: l, score };
-      })
-      .filter((x) => x.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, limit)
-      .map((x) => x.logo);
-    return {
-      content: [
-        { type: 'text', text: JSON.stringify({ total: scored.length, logos: scored }, null, 2) },
-      ],
-    };
-  }
-
-  if (name === 'get_logo') {
-    const { slug } = args as { slug: string };
-    const logo = logos.find((l) => l.slug === slug);
-    if (!logo) {
-      return {
-        content: [{ type: 'text', text: JSON.stringify({ error: `No logo found for slug "${slug}"` }) }],
-        isError: true,
-      };
-    }
-    return {
-      content: [{ type: 'text', text: JSON.stringify(logo, null, 2) }],
-    };
-  }
-
-  return {
-    content: [{ type: 'text', text: `Unknown tool: ${name}` }],
-    isError: true,
-  };
-});
-
-const transport = new StdioServerTransport();
-await server.connect(transport);
+await server.connect(new StdioServerTransport());

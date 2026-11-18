@@ -17,3 +17,9 @@ body {
   background: rgba(107, 90, 205, 0.3);
   color: var(--color-warm-white);
 }
+
+/* 169 rows: let the browser skip layout and paint for rows offscreen. */
+.logo-row {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 190px;
+}
