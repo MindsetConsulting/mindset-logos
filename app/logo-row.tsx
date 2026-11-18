@@ -232,7 +232,7 @@ function VariantCell({
         style={{ background: bgStyle, minHeight: '140px' }}
       >
         <img
-          src={sourceExt === 'svg' ? src : `/api/logos/${slug}/${variant}.webp?w=480`}
+          src={`/api/logos/${slug}/${variant}.webp?w=480`}
           alt={`${slug} ${variant}`}
           loading="lazy"
           decoding="async"
