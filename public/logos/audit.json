@@ -1,9 +1,9 @@
 {
-  "ranAt": "2026-11-18T15:33:34.966Z",
+  "ranAt": "2026-11-18T15:46:21.062Z",
   "counts": {
     "total": 169,
-    "allGood": 37,
-    "partial": 132,
+    "allGood": 36,
+    "partial": 133,
     "broken": 0,
     "byQuality": {
       "onLight": {
@@ -668,21 +668,22 @@
       "industry": "Food & Beverage",
       "onLight": {
         "file": "cheney-brothers-on-light.png",
-        "width": 302,
-        "height": 121,
+        "width": 571,
+        "height": 179,
         "hasAlpha": true,
-        "aspectRatio": 2.5,
+        "aspectRatio": 3.19,
         "quality": "good"
       },
       "onDark": {
         "file": "cheney-brothers-on-dark.png",
-        "width": 302,
-        "height": 121,
+        "width": 571,
+        "height": 179,
         "hasAlpha": true,
-        "aspectRatio": 2.5,
+        "aspectRatio": 3.19,
         "quality": "good"
       },
-      "status": "all-good"
+      "status": "partial",
+      "pendingApproval": true
     },
     {
       "slug": "chs",
