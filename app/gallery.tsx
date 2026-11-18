@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import { Search, Github, ChevronDown, Copy, Check, Download, Sparkles, Terminal, Award } from 'lucide-react';
 import type { Logo, Relationship } from '@/lib/logos';
-import type { Badge, BadgeGap } from '@/lib/badges';
+import type { Badge, BadgeGap, BadgeRequest } from '@/lib/badges';
 import LogoRow from './logo-row';
 
 type RelFilter = 'all' | Relationship;
@@ -18,7 +18,17 @@ const PROMPTS = [
   'Build a 12-logo customer wall for a navy slide, manufacturing only.',
 ];
 
-export default function Gallery({ logos, badges, badgeGaps }: { logos: Logo[]; badges: Badge[]; badgeGaps: BadgeGap[] }) {
+export default function Gallery({
+  logos,
+  badges,
+  badgeGaps,
+  badgeRequests,
+}: {
+  logos: Logo[];
+  badges: Badge[];
+  badgeGaps: BadgeGap[];
+  badgeRequests: BadgeRequest[];
+}) {
   const [query, setQuery] = useState('');
   const [vertical, setVertical] = useState('');
   const [rel, setRel] = useState<RelFilter>('all');
@@ -129,6 +139,11 @@ export default function Gallery({ logos, badges, badgeGaps }: { logos: Logo[]; b
                 <BadgeCard key={b.slug} badge={b} copied={copied} onCopy={copy} />
               ))}
           </div>
+          {badgeRequests.length > 0 && (
+            <p className="mt-5 font-sans text-sm text-[color:rgba(247,245,242,0.7)]">
+              Coming from SAP (requested {badgeRequests[0].requested}): {badgeRequests.map((r) => r.name).join(' and ')}. These replace the BTP badge, which SAP has renamed.
+            </p>
+          )}
           {badgeGaps.length > 0 && (
             <p className="mt-5 font-sans text-sm text-[color:rgba(247,245,242,0.45)]">
               Not on file: {badgeGaps.map((g) => g.name).join(', ')}. SAP PartnerEdge doesn't offer them either.

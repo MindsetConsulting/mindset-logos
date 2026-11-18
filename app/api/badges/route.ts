@@ -5,6 +5,6 @@ import { badgeJson } from '@/lib/links';
 export const dynamic = 'force-static';
 
 export async function GET() {
-  const { badges, notFound } = loadBadges();
-  return NextResponse.json({ total: badges.length, badges: badges.map(badgeJson), notFound });
+  const { badges, notFound, requested } = loadBadges();
+  return NextResponse.json({ total: badges.length, badges: badges.map(badgeJson), requested, notFound });
 }

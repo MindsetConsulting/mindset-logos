@@ -234,9 +234,9 @@ const handler = createMcpHandler(
         inputSchema: { includeSuperseded: z.boolean().optional() },
       },
       async ({ includeSuperseded }) => {
-        const { badges, notFound } = loadBadges();
+        const { badges, notFound, requested } = loadBadges();
         const list = badges.filter((b) => includeSuperseded || b.status === 'current').map(badgeJson);
-        return { content: [json({ total: list.length, badges: list, notFound, zip: `${SITE_ORIGIN}/api/logos/download?set=badges` })] };
+        return { content: [json({ total: list.length, badges: list, requestedFromSap: requested, notFound, zip: `${SITE_ORIGIN}/api/logos/download?set=badges` })] };
       },
     );
 

@@ -24,19 +24,21 @@ export type Badge = {
 };
 
 export type BadgeGap = { name: string; notes: string };
+export type BadgeRequest = { name: string; requested: string; via: string };
 
 const EXTS = ['svg', 'png', 'webp', 'jpg'] as const;
 
-let cached: { badges: Badge[]; notFound: BadgeGap[] } | null = null;
+let cached: { badges: Badge[]; notFound: BadgeGap[]; requested: BadgeRequest[] } | null = null;
 
-export function loadBadges(): { badges: Badge[]; notFound: BadgeGap[] } {
+export function loadBadges(): { badges: Badge[]; notFound: BadgeGap[]; requested: BadgeRequest[] } {
   if (cached && process.env.NODE_ENV === 'production') return cached;
   const dir = join(process.cwd(), 'public', 'badges');
   const path = join(dir, 'manifest.json');
-  if (!existsSync(path)) return { badges: [], notFound: [] };
+  if (!existsSync(path)) return { badges: [], notFound: [], requested: [] };
   const raw = JSON.parse(readFileSync(path, 'utf-8')) as {
     badges: Omit<Badge, 'onLight' | 'onDark'>[];
     notFound?: BadgeGap[];
+    requested?: BadgeRequest[];
   };
   const files = new Set(readdirSync(dir));
   const find = (slug: string, v: 'on-light' | 'on-dark') => {
@@ -50,6 +52,7 @@ export function loadBadges(): { badges: Badge[]; notFound: BadgeGap[] } {
       return { ...b, masterFiles, onLight: find(b.slug, 'on-light'), onDark: find(b.slug, 'on-dark') };
     }),
     notFound: raw.notFound ?? [],
+    requested: raw.requested ?? [],
   };
   return cached;
 }
