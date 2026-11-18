@@ -16,6 +16,9 @@ export type Badge = {
   selfContained: boolean;
   source: string;
   notes: string;
+  /** folder of print/vector masters, when SAP supplied them */
+  masters?: string;
+  masterFiles?: string[];
   onLight: string | null;
   onDark: string | null;
 };
@@ -41,7 +44,11 @@ export function loadBadges(): { badges: Badge[]; notFound: BadgeGap[] } {
     return null;
   };
   cached = {
-    badges: raw.badges.map((b) => ({ ...b, onLight: find(b.slug, 'on-light'), onDark: find(b.slug, 'on-dark') })),
+    badges: raw.badges.map((b) => {
+      const mdir = b.masters ? join(process.cwd(), 'public', b.masters) : null;
+      const masterFiles = mdir && existsSync(mdir) ? readdirSync(mdir).filter((f) => !f.startsWith('.')).sort() : undefined;
+      return { ...b, masterFiles, onLight: find(b.slug, 'on-light'), onDark: find(b.slug, 'on-dark') };
+    }),
     notFound: raw.notFound ?? [],
   };
   return cached;

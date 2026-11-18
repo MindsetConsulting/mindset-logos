@@ -131,7 +131,7 @@ export default function Gallery({ logos, badges, badgeGaps }: { logos: Logo[]; b
           </div>
           {badgeGaps.length > 0 && (
             <p className="mt-5 font-sans text-sm text-[color:rgba(247,245,242,0.45)]">
-              Not on file: {badgeGaps.map((g) => g.name).join(', ')}. If SAP issued these, they live in PartnerEdge.
+              Not on file: {badgeGaps.map((g) => g.name).join(', ')}. SAP PartnerEdge doesn't offer them either.
             </p>
           )}
         </div>
@@ -324,6 +324,22 @@ function BadgeCard({ badge, copied, onCopy }: { badge: Badge; copied: string | n
               );
             }),
           )}
+          {badge.masters && badge.masterFiles?.length ? (
+            <details className="w-full">
+              <summary className="inline-flex min-h-[36px] cursor-pointer items-center rounded px-2 font-mono text-[0.6rem] uppercase tracking-wider text-[color:var(--color-violet-light)] hover:text-[color:var(--color-warm-white)]">
+                Print masters ({badge.masterFiles.length})
+              </summary>
+              <ul className="mt-1 grid grid-cols-1 gap-0.5 px-2 pb-2 sm:grid-cols-2">
+                {badge.masterFiles.map((f) => (
+                  <li key={f}>
+                    <a href={`${badge.masters}${f}`} download className="font-mono text-[0.62rem] text-[color:rgba(247,245,242,0.65)] hover:text-[color:var(--color-warm-white)]">
+                      {f}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ) : null}
           <a
             href={`/api/badges/${badge.slug}/on-light.png?w=2400`}
             download={`${badge.slug}.png`}

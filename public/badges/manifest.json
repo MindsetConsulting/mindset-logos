@@ -1,17 +1,18 @@
 {
-  "source": "Mindset's own SAP partner credentials. Official files from SAP via Mindset Slack and mindsetconsulting.com uploads. SAP badges are self-contained artwork: never recolor, crop, or redraw them. Vector masters live in SAP PartnerEdge (partner login).",
+  "source": "Mindset's own SAP partner credentials. Official files from SAP PartnerEdge, Mindset Slack, and mindsetconsulting.com uploads. SAP badges are self-contained artwork: never recolor, crop, or redraw them. Vector masters live in SAP PartnerEdge (partner login).",
   "badges": [
     {
       "slug": "sap-gold-partner",
       "name": "SAP Gold Partner",
       "issuer": "SAP",
       "category": "partner-level",
-      "description": "SAP PartnerEdge Gold Partner badge.",
+      "description": "SAP PartnerEdge Gold Partner logo, current August 2024 artwork.",
       "since": "2024-02",
       "status": "current",
       "selfContained": true,
-      "source": "mindsetconsulting.com/wp-content/uploads/2024/02/SAP_GoldPartner_R.jpg",
-      "notes": "Raster only (407x239). Vector master is in SAP PartnerEdge."
+      "source": "SAP PartnerEdge, Logos and badges > SAP Gold Partner Logo (SAP_Gold_Partner.zip, Aug 2024)",
+      "notes": "Official vector. Print masters (CMYK, Pantone, black, AI/EPS) and SAP's treatment guide are in /badges/masters/sap-gold-partner/. SAP rules: don't recolor, keep aspect ratio, clear space = half the height, minimum 92px on screen.",
+      "masters": "/badges/masters/sap-gold-partner/"
     },
     {
       "slug": "sap-gold-partner-btp-expert",
@@ -23,7 +24,7 @@
       "status": "current",
       "selfContained": true,
       "source": "Slack #partnership_sap, 2024-10-31 (Badge_G_3BTP_DB_AD_AP.png)",
-      "notes": "Use this for 'SAP BTP partner'. Replaces the Advanced badge."
+      "notes": "Use this for 'SAP BTP partner'. Replaces the Advanced badge. Competency badges aren't downloadable: SAP issues them on request from the competency card in SAP for Me, so this PNG is the file SAP sent."
     },
     {
       "slug": "sap-apphaus-network",
@@ -53,11 +54,11 @@
   "notFound": [
     {
       "name": "SAP Build Partner",
-      "notes": "No badge file found in Drive, Slack, the website, or the repos. SAP may not issue one separately from the BTP competency."
+      "notes": "Not offered on SAP PartnerEdge's Logos and badges page (checked 2026-11-18)."
     },
     {
       "name": "SAP Migration Factory",
-      "notes": "No badge file found. Integration Migration Factory is an SAP program, not a partner badge we hold a file for."
+      "notes": "Not offered on SAP PartnerEdge's Logos and badges page (checked 2026-11-18)."
     }
   ]
 }

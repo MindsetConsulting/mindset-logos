@@ -60,6 +60,9 @@ export function badgeJson(b: Badge) {
     status: b.status,
     selfContained: b.selfContained,
     notes: b.notes,
+    masters: b.masters && b.masterFiles?.length
+      ? { note: 'Print and vector originals from SAP: AI, EPS, and SVG in RGB, CMYK, Pantone, and black.', files: b.masterFiles.map((f) => SITE_ORIGIN + b.masters + f) }
+      : null,
     formats: {
       onLight: formatsFor('badges', b.slug, 'on-light', b.onLight),
       onDark: formatsFor('badges', b.slug, 'on-dark', b.onDark),
