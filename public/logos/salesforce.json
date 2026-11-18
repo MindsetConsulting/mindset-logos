@@ -1200,7 +1200,7 @@
     },
     "0010a00001hupxFAAQ": {
       "sfName": "Continental Resources, Inc.",
-      "type": "Prospect",
+      "type": "Customer",
       "duns": "74292095",
       "partner": null,
       "mindsetPartner": false,
@@ -1209,7 +1209,7 @@
     },
     "0015b00001vseKiAAI": {
       "sfName": "Simpson Strong-Tie Company Inc.",
-      "type": "Prospect",
+      "type": "Customer",
       "duns": "069747764",
       "partner": null,
       "mindsetPartner": false,

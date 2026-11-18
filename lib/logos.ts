@@ -38,7 +38,8 @@ export type AccountType = 'customer' | 'partner' | 'prospect' | 'self' | 'other'
  * Opportunity-based relationship, the ground truth for "is this a client".
  * Unlike AccountType (a hand-maintained SF picklist), this is derived from
  * actual opportunities on the account:
- *   customer — at least one Closed Won opportunity (and not a partner)
+ *   customer — at least one Closed Won opportunity (and not a partner),
+ *              including a won SAP AI Fund deal booked on the SAP account
  *   partner  — partner-typed account, regardless of won opps
  *   pipeline — no win yet, but at least one open opportunity
  *   prospect — in the library, but no opportunities at all
@@ -179,7 +180,10 @@ function readLogos(): Logo[] {
       relationship = 'other';
     } else if (type === 'partner' || Boolean(src?.mindsetPartner)) {
       relationship = 'partner';
-    } else if (wonCount > 0) {
+    } else if (wonCount > 0 || c.aiFund === 'won') {
+      // A Closed Won anywhere makes a customer. AI Fund deals are booked on the
+      // SAP America account with the end customer in the opp name, so a won
+      // fund deal counts even when the customer's own account shows no win.
       relationship = 'customer';
     } else if (openCount > 0) {
       relationship = 'pipeline';

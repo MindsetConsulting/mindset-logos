@@ -6,7 +6,7 @@ This repo is the source of truth for every Mindset Consulting customer logo. Eac
 
 The library holds more than customers: open-opportunity pipeline accounts and partners are useful in sales decks. What separates them is the `relationship` field, derived in `lib/logos.ts` from opportunity counts in `salesforce.json` (synced by `scripts/enrich-salesforce.ts`):
 
-- `customer` — at least one Closed Won opportunity, not a partner
+- `customer` — at least one Closed Won opportunity (own account, or a won AI Fund deal on the SAP account), not a partner
 - `partner` — partner-typed account (SAP, IBM, Indeed, Thoughtworks, Everpure, Hrizons, Taciti)
 - `pipeline` — open opportunity, no win yet
 - `prospect` — in the library with no opportunities at all
@@ -14,7 +14,7 @@ The library holds more than customers: open-opportunity pipeline accounts and pa
 
 **Account.Type alone is NOT proof of a client relationship.** In August 2026 thirteen prospect logos scrolled on the mindsetconsulting.com homepage because nothing checked for Closed Won opps. Any consumer presenting logos as delivered work must filter `relationship === 'customer'`. The website marquee does.
 
-**AI Fund.** `aiFund: "won" | "open"` in `manifest.json` marks SAP Business AI Fund end customers. Most fund opportunities sit on the SAP America account with the end customer in the opp name, so this is hand-tagged from opp names (search `Name LIKE '%AI Fund%'`). A fund win does NOT make an account a `customer` unless its own account also has a Closed Won opp (Pentair is the current example).
+**AI Fund.** `aiFund: "won" | "open"` in `manifest.json` marks SAP Business AI Fund end customers. Most fund opportunities sit on the SAP America account with the end customer in the opp name, so this is hand-tagged from opp names (search `Name LIKE '%AI Fund%'`). A won fund deal DOES make the end customer a `customer` (Gavin, 2026-11-18: any Closed Won counts), even when its own account shows no win (Pentair).
 
 ## SAP partner badges (Mindset's own)
 
