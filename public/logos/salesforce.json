@@ -327,7 +327,7 @@
     },
     "0010a00001bWmyEAAS": {
       "sfName": "Pentair, Inc.",
-      "type": "Prospect",
+      "type": "Customer",
       "duns": "006451249",
       "partner": null,
       "mindsetPartner": false,
