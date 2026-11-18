@@ -19,7 +19,7 @@ const INSTRUCTIONS = `Mindset Consulting's mark library: customer logos plus Min
 Rules that matter:
 - Only relationship "customer" (at least one Closed Won opportunity) may be shown as a client. "pipeline" means an open opportunity, "prospect" means none. Never present pipeline or prospect logos as customers.
 - on-light is for light backgrounds (dark ink), on-dark is for dark backgrounds (light ink).
-- Every logo comes in any format through URLs: png, webp, jpg, and svg when a vector master exists. Width with ?w=, background with ?bg=. For slides and email use PNG (Outlook drops WebP). For print or web use SVG when vector is true.
+- Every logo comes in any format through URLs: png, webp, jpg, and svg when a vector master exists. Width with ?w=, background with ?bg=. For slides and email use PNG (Outlook drops WebP). For web use SVG when vector is set. For print prefer vector "official". A "traced" vector is Mindset's redraw from the best raster: say so, and suggest asking the brand for its file before large print.
 - SAP badges are official SAP artwork. Don't recolor, crop, or redraw them.`;
 
 type Variant = 'on-light' | 'on-dark';

@@ -104,7 +104,8 @@
         "state": "Massachusetts",
         "country": "United States",
         "display": "Wilmington, Massachusetts, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "anchorage",
@@ -194,7 +195,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Thief River Falls, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "astemo",
@@ -228,7 +230,8 @@
         "state": null,
         "country": null,
         "display": null
-      }
+      },
+      "traced": true
     },
     {
       "slug": "auria-solutions",
@@ -317,7 +320,8 @@
         "state": "South Carolina",
         "country": "United States",
         "display": "Greer, South Carolina, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "boehringer-ingelheim",
@@ -352,7 +356,8 @@
         "state": "North Dakota",
         "country": "United States",
         "display": "Fargo, North Dakota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "brown-forman",
@@ -406,7 +411,8 @@
         "state": "California",
         "country": "United States",
         "display": "Carlsbad, California, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "canadian-pacific",
@@ -424,7 +430,8 @@
         "state": "Alberta",
         "country": "Canada",
         "display": "Calgary, Alberta, Canada"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "cardinal-health",
@@ -498,7 +505,8 @@
         "state": "Texas",
         "country": "United States",
         "display": "The Woodlands, Texas, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "cheney-brothers",
@@ -605,7 +613,8 @@
         "state": "Oklahoma",
         "country": "United States",
         "display": "Oklahoma City, Oklahoma, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "cps-energy",
@@ -658,7 +667,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Minneapolis, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "diageo-india",
@@ -693,7 +703,8 @@
         "state": "New York",
         "country": "United States",
         "display": "New York, New York, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "durag",
@@ -709,7 +720,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Hopkins, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "dycom",
@@ -727,7 +739,8 @@
         "state": "Florida",
         "country": "United States",
         "display": "West Palm Beach, Florida, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "eaton",
@@ -769,7 +782,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Saint Paul, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "edf-renewables",
@@ -787,7 +801,8 @@
         "state": "California",
         "country": "United States",
         "display": "San Diego, California, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "entegris",
@@ -857,7 +872,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Faribault, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "flagstone-foods",
@@ -874,7 +890,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Minneapolis, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "flowers-foods",
@@ -938,7 +955,8 @@
         "state": "Wisconsin",
         "country": "United States",
         "display": "De Pere, Wisconsin, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "fujifilm",
@@ -990,7 +1008,8 @@
         "state": "Illinois",
         "country": "United States",
         "display": "Freeport, Illinois, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "gallagher",
@@ -1041,7 +1060,8 @@
         "country": "United States",
         "display": "Foster City, California, United States"
       },
-      "aiFund": "open"
+      "aiFund": "open",
+      "traced": true
     },
     {
       "slug": "grant-thornton",
@@ -1079,7 +1099,8 @@
         "country": "United States",
         "display": "Holland, Michigan, United States"
       },
-      "aiFund": "open"
+      "aiFund": "open",
+      "traced": true
     },
     {
       "slug": "hd-supply",
@@ -1113,7 +1134,8 @@
         "state": "Ohio",
         "country": "United States",
         "display": "Columbus, Ohio, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "home-depot",
@@ -1341,7 +1363,8 @@
         "state": "Wisconsin",
         "country": "United States",
         "display": "Cottage Grove, Wisconsin, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "johnson-screens",
@@ -1428,7 +1451,8 @@
         "country": "United States",
         "display": "Irving, Texas, United States"
       },
-      "aiFund": "open"
+      "aiFund": "open",
+      "traced": true
     },
     {
       "slug": "kingspan",
@@ -1463,7 +1487,8 @@
         "state": "New York",
         "country": "United States",
         "display": "Rochester, New York, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "lakeshore-learning",
@@ -1479,7 +1504,8 @@
         "state": "California",
         "country": "United States",
         "display": "Carson, California, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "lam-research",
@@ -1550,7 +1576,8 @@
         "state": "Virginia",
         "country": "United States",
         "display": "Virginia Beach, Virginia, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "livanova",
@@ -1585,7 +1612,8 @@
         "state": "North Carolina",
         "country": "United States",
         "display": "Cary, North Carolina, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "lucid-motors",
@@ -1620,7 +1648,8 @@
         "country": "United States",
         "display": "Coopersburg, Pennsylvania, United States"
       },
-      "aiFund": "won"
+      "aiFund": "won",
+      "traced": true
     },
     {
       "slug": "marathon-oil",
@@ -1712,7 +1741,8 @@
         "state": "Alberta",
         "country": "Canada",
         "display": "Calgary, Alberta, Canada"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "megha-engineering",
@@ -1801,7 +1831,8 @@
         "state": "California",
         "country": "United States",
         "display": "Union City, California, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "mts-systems",
@@ -1909,7 +1940,8 @@
         "state": "New Hampshire",
         "country": "United States",
         "display": "Portsmouth, New Hampshire, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "nppd",
@@ -2034,7 +2066,8 @@
         "country": "United States",
         "display": "Saint Paul, Minnesota, United States"
       },
-      "aiFund": "open"
+      "aiFund": "open",
+      "traced": true
     },
     {
       "slug": "penn-state",
@@ -2139,7 +2172,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Saint Paul, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "pyxus",
@@ -2155,7 +2189,8 @@
         "state": "North Carolina",
         "country": "United States",
         "display": "Morrisville, North Carolina, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "qbp",
@@ -2244,7 +2279,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Minneapolis, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "sany-america",
@@ -2298,7 +2334,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Bloomington, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "securian",
@@ -2332,7 +2369,8 @@
         "state": "California",
         "country": "United States",
         "display": "Irvine, California, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "sick",
@@ -2348,7 +2386,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Minneapolis, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "simpson-strong-tie",
@@ -2400,7 +2439,8 @@
         "country": "United States",
         "display": "Morris Plains, New Jersey, United States"
       },
-      "aiFund": "open"
+      "aiFund": "open",
+      "traced": true
     },
     {
       "slug": "solventum",
@@ -2432,7 +2472,8 @@
         "state": "Georgia",
         "country": "United States",
         "display": "Carrolton, Georgia, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "spartech",
@@ -2467,7 +2508,8 @@
         "state": "Kansas",
         "country": "United States",
         "display": "Wichita, Kansas, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "sram",
@@ -2522,7 +2564,8 @@
         "state": "New Jersey",
         "country": "United States",
         "display": "Little Falls, New Jersey, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "sullair",
@@ -2540,7 +2583,8 @@
         "state": "Indiana",
         "country": "United States",
         "display": "Michigan City, Indiana, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "sun-chemical",
@@ -2559,7 +2603,8 @@
         "country": "United States",
         "display": "Parsippany, New Jersey, United States"
       },
-      "aiFund": "won"
+      "aiFund": "won",
+      "traced": true
     },
     {
       "slug": "taciti",
@@ -2577,7 +2622,8 @@
         "state": "Texas",
         "country": "United States",
         "display": "Plano, Texas, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "tamko",
@@ -2596,7 +2642,8 @@
         "country": "United States",
         "display": "Joplin, Missouri, United States"
       },
-      "aiFund": "open"
+      "aiFund": "open",
+      "traced": true
     },
     {
       "slug": "target",
@@ -2612,7 +2659,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Minneapolis, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "textron-aviation",
@@ -2628,7 +2676,8 @@
         "state": "Kansas",
         "country": "United States",
         "display": "Wichita, Kansas, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "thomson-reuters",
@@ -2644,7 +2693,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Eagan, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "thoughtworks",
@@ -2698,7 +2748,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Bloomington, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "tsi",
@@ -2732,7 +2783,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Plymouth, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "tyson-foods",
@@ -2749,7 +2801,8 @@
         "country": "United States",
         "display": "Springdale, Arkansas, United States"
       },
-      "aiFund": "open"
+      "aiFund": "open",
+      "traced": true
     },
     {
       "slug": "ucare",
@@ -2768,7 +2821,8 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Minneapolis, Minnesota, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "ugi",
@@ -2786,7 +2840,8 @@
         "state": "Pennsylvania",
         "country": "United States",
         "display": "King OF Prussia, Pennsylvania, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "upsher-smith",
@@ -2853,7 +2908,8 @@
         "state": "California",
         "country": "United States",
         "display": "Brea, California, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "victrola",
@@ -2888,7 +2944,8 @@
         "country": "United States",
         "display": "Richardson, Texas, United States"
       },
-      "aiFund": "open"
+      "aiFund": "open",
+      "traced": true
     },
     {
       "slug": "vistaprint",
@@ -2941,7 +2998,8 @@
         "state": "Georgia",
         "country": "United States",
         "display": "Columbus, Georgia, United States"
-      }
+      },
+      "traced": true
     },
     {
       "slug": "xcel-energy",

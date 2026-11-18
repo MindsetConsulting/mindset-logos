@@ -34,7 +34,7 @@ export function logoJson(l: Logo, opts: { formats?: boolean } = {}) {
     hq: l.hq?.display ?? null,
     relationship: l.salesforce.relationship,
     aiFund: l.aiFund ?? null,
-    vector: isVector(l.onLight) && isVector(l.onDark),
+    vector: isVector(l.onLight) && isVector(l.onDark) ? (l.traced ? 'traced' : 'official') : false,
     onLight: l.onLight ? SITE_ORIGIN + l.onLight : null,
     onDark: l.onDark ? SITE_ORIGIN + l.onDark : null,
     ...(opts.formats
@@ -71,4 +71,5 @@ export function badgeJson(b: Badge) {
 }
 
 export const URL_HELP =
+  'vector is "official" (the brand\'s own SVG), "traced" (redrawn by Mindset from the best raster, fine for slides and web, check with the brand before large print), or false. ' +
   'Transcoder URLs take ?w= (width in px, max 2400) and ?bg= (hex like FFFFFF, flattens the background; default keeps transparency, JPG defaults to cream for on-light and navy for on-dark). SVG only exists when the master is vector.';

@@ -20,6 +20,8 @@ export type ManifestEntry = {
   hq?: HQ;
   /** SAP Business AI Fund deal: 'won' (Closed Won) or 'open'. Hand-tagged from opp names. */
   aiFund?: 'won' | 'open';
+  /** true when the SVG was traced by us from the best raster, not supplied by the brand */
+  traced?: boolean;
 };
 
 export type VariantQuality = 'good' | 'icon' | 'flat' | 'tiny' | 'missing';

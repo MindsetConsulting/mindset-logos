@@ -24,6 +24,8 @@ The library holds more than customers: open-opportunity pipeline accounts and pa
 
 Prefer SVG for every mark. The transcoder renders any PNG/JPG/WebP width and background from an SVG, so one good vector beats any raster. When replacing a raster with a vendor SVG, follow Technique 3 below and verify the render with `sharp` (librsvg is what production uses).
 
+**Traced vectors.** When no official SVG exists, we trace the best raster with potrace, one layer per flat color, stacked so colors don't seam. Each trace is rendered back and scored against the original; only traces under 4% edge difference that also pass a visual check go in. They carry `"traced": true` in `manifest.json`, show as "Traced vector" in the gallery and `vector: "traced"` in the API/MCP, and the original raster stays next to the SVG as the source of truth. Replace a trace with the brand's official SVG whenever one turns up. Never trace SAP marks or anything with gradients, photos, or thin hairlines.
+
 The gallery is a Next.js app deployed to Vercel under the `mindsetconsulting` team. The hosted MCP server is `app/api/[transport]/route.ts` (claude.ai connector "Mindset Logos", and `claude mcp add --transport http mindset-logos https://mindset-logos.vercel.app/api/mcp`). `mcp/` is a stdio package that just proxies the hosted server. Tools: `list_logos`, `search_logos`, `get_logo`, `logo_pack`, `list_badges`, `get_badge`.
 
 ## Working on the library

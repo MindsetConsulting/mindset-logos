@@ -149,7 +149,12 @@ export default function LogoRow({ logo }: Props) {
             />
           )}
           {logo.onLight?.endsWith('.svg') && logo.onDark?.endsWith('.svg') && (
-            <Pill label="Vector" title="SVG master: crisp at any size" bg="bg-[color:rgba(247,245,242,0.06)]" fg="text-[color:rgba(247,245,242,0.7)]" />
+            <Pill
+              label={logo.traced ? 'Traced vector' : 'Vector'}
+              title={logo.traced ? 'SVG redrawn by Mindset from the best raster. Fine for slides and web. Ask the brand for the official file before large print.' : "The brand's own SVG. Crisp at any size."}
+              bg="bg-[color:rgba(247,245,242,0.06)]"
+              fg="text-[color:rgba(247,245,242,0.7)]"
+            />
           )}
           {(logo.status !== 'all-good' || logo.pendingApproval) && (
             <StatusPill status={logo.status} pending={logo.pendingApproval} />
