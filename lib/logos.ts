@@ -20,6 +20,13 @@ export type ManifestEntry = {
   hq?: HQ;
   /** SAP Business AI Fund deal: 'won' (Closed Won) or 'open'. Hand-tagged from opp names. */
   aiFund?: 'won' | 'open';
+  /**
+   * Deal sold through a partner and booked on the partner's Salesforce account,
+   * with this company as the end customer in the opp name, e.g.
+   * "IBM (Partner) - Consumers Energy (End Customer) - ...". `partner` is the
+   * partner's slug in this library. Hand-tagged from opp names, like aiFund.
+   */
+  partnerDeal?: { partner: string; status: 'won' | 'open' };
   /** true when the SVG was traced by us from the best raster, not supplied by the brand */
   traced?: boolean;
 };
@@ -40,6 +47,7 @@ export type AccountType = 'customer' | 'partner' | 'prospect' | 'self' | 'other'
  * actual opportunities on the account:
  *   customer — at least one Closed Won opportunity (and not a partner),
  *              including a won SAP AI Fund deal booked on the SAP account
+ *              or a won deal sold through a partner (partnerDeal)
  *   partner  — partner-typed account, regardless of won opps
  *   pipeline — no win yet, but at least one open opportunity
  *   prospect — in the library, but no opportunities at all
@@ -178,14 +186,18 @@ function readLogos(): Logo[] {
     let relationship: Relationship;
     if (!c.sfId) {
       relationship = 'other';
-    } else if (type === 'partner' || Boolean(src?.mindsetPartner)) {
+    } else if (type === 'partner' || (Boolean(src?.mindsetPartner) && !c.partnerDeal)) {
+      // Salesforce also sets Mindset_Partner__c on accounts we reach through a
+      // partner (Amkor carries it, with Partner__c = IBM). A partnerDeal tag
+      // means this company is the end customer, so the flag doesn't make it a partner.
       relationship = 'partner';
-    } else if (wonCount > 0 || c.aiFund === 'won') {
+    } else if (wonCount > 0 || c.aiFund === 'won' || c.partnerDeal?.status === 'won') {
       // A Closed Won anywhere makes a customer. AI Fund deals are booked on the
-      // SAP America account with the end customer in the opp name, so a won
-      // fund deal counts even when the customer's own account shows no win.
+      // SAP America account and partner-sold deals on the partner's account
+      // (IBM), with the end customer in the opp name, so those wins count even
+      // when the customer's own account shows no win.
       relationship = 'customer';
-    } else if (openCount > 0) {
+    } else if (openCount > 0 || c.partnerDeal?.status === 'open') {
       relationship = 'pipeline';
     } else {
       relationship = 'prospect';

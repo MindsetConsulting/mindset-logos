@@ -91,6 +91,50 @@
       }
     },
     {
+      "slug": "amkor",
+      "name": "Amkor Technology",
+      "website": "https://www.amkor.com",
+      "industry": "Electronics",
+      "verticals": [
+        "Manufacturing"
+      ],
+      "sfId": "0015b00001lOAejAAG",
+      "sfName": "Amkor Technology, Inc.",
+      "hq": {
+        "street": "2045 E Innovation Cir",
+        "city": "Tempe",
+        "state": "Arizona",
+        "country": "United States",
+        "display": "Tempe, Arizona, United States"
+      },
+      "partnerDeal": {
+        "partner": "ibm",
+        "status": "won"
+      }
+    },
+    {
+      "slug": "amtrak",
+      "name": "Amtrak",
+      "website": "https://www.amtrak.com",
+      "industry": "Transportation",
+      "verticals": [
+        "Transportation"
+      ],
+      "sfId": "001j000000AmeitAAB",
+      "sfName": "Amtrak",
+      "hq": {
+        "street": "60 Massachusetts Avenue, NE",
+        "city": "Washington",
+        "state": "District of Columbia",
+        "country": "United States",
+        "display": "Washington, District of Columbia, United States"
+      },
+      "partnerDeal": {
+        "partner": "ibm",
+        "status": "won"
+      }
+    },
+    {
       "slug": "analog-devices",
       "name": "Analog Devices",
       "website": "https://www.analog.com",
@@ -248,6 +292,29 @@
         "state": "Michigan",
         "country": "United States",
         "display": "Southfield, Michigan, United States"
+      }
+    },
+    {
+      "slug": "avangrid",
+      "name": "Avangrid",
+      "website": "https://www.avangrid.com",
+      "industry": "Utilities",
+      "verticals": [
+        "Utilities",
+        "Energy"
+      ],
+      "sfId": "0010a00001gOOU0AAO",
+      "sfName": "Avangrid, Inc.",
+      "hq": {
+        "street": "180 Marsh Hill Rd",
+        "city": "Orange",
+        "state": "Connecticut",
+        "country": "United States",
+        "display": "Orange, Connecticut, United States"
+      },
+      "partnerDeal": {
+        "partner": "ibm",
+        "status": "open"
       }
     },
     {
@@ -597,6 +664,29 @@
         "state": "North Carolina",
         "country": "United States",
         "display": "Hickory, North Carolina, United States"
+      }
+    },
+    {
+      "slug": "consumers-energy",
+      "name": "Consumers Energy",
+      "website": "https://www.consumersenergy.com",
+      "industry": "Utilities",
+      "verticals": [
+        "Utilities",
+        "Energy"
+      ],
+      "sfId": "0015b00001vseJgAAI",
+      "sfName": "Consumers Energy",
+      "hq": {
+        "street": "1 Energy Plz",
+        "city": "Jackson",
+        "state": "Michigan",
+        "country": "United States",
+        "display": "Jackson, Michigan, United States"
+      },
+      "partnerDeal": {
+        "partner": "ibm",
+        "status": "won"
       }
     },
     {
@@ -1171,6 +1261,28 @@
         "state": "Minnesota",
         "country": "United States",
         "display": "Hanover, Minnesota, United States"
+      }
+    },
+    {
+      "slug": "hubbell",
+      "name": "Hubbell",
+      "website": "https://www.hubbell.com",
+      "industry": "Electronics",
+      "verticals": [
+        "Manufacturing"
+      ],
+      "sfId": "0010a00001UTH3BAAX",
+      "sfName": "Hubbell Incorporated",
+      "hq": {
+        "street": "40 Waterview Dr",
+        "city": "Shelton",
+        "state": "Connecticut",
+        "country": "United States",
+        "display": "Shelton, Connecticut, United States"
+      },
+      "partnerDeal": {
+        "partner": "ibm",
+        "status": "open"
       }
     },
     {
@@ -2281,6 +2393,29 @@
         "display": "Minneapolis, Minnesota, United States"
       },
       "traced": true
+    },
+    {
+      "slug": "sabic",
+      "name": "SABIC",
+      "website": "https://www.sabic.com",
+      "industry": "Chemicals",
+      "verticals": [
+        "Chemical",
+        "Manufacturing"
+      ],
+      "sfId": "001TO00000fwh9pYAA",
+      "sfName": "Sabic Innovative Plastics US LLC",
+      "hq": {
+        "street": "2500 Citywest Blvd Ste 100",
+        "city": "Houston",
+        "state": "Texas",
+        "country": "United States",
+        "display": "Houston, Texas, United States"
+      },
+      "partnerDeal": {
+        "partner": "ibm",
+        "status": "open"
+      }
     },
     {
       "slug": "sany-america",

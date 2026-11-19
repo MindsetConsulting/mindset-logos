@@ -128,3 +128,63 @@ const typeCounts = all.reduce<Record<string, number>>((acc, a) => {
 
 console.log(`[enrich-sf] Wrote ${Object.keys(accounts).length} accounts to ${OUTPUT_PATH}`);
 console.log('[enrich-sf] Type distribution:', typeCounts);
+
+// Partner-booked deals. When a partner is prime (IBM, SAP), the opportunity
+// sits on the partner's account and the real client only appears in the opp
+// name: "IBM (Partner) - Consumers Energy (End Customer) - ...". The per-account
+// counts above never see those companies, which is how Consumers Energy, a
+// $920K win, was missing from the library until an employee asked for it
+// (2026-11-19). This only reports. Add the entry or fix the tag by hand.
+type PartnerOpp = { Name: string; IsWon: boolean; IsClosed: boolean; Account: { Name: string } | null };
+type Entry = Customer & { name: string; sfName?: string; partnerDeal?: { partner: string; status: 'won' | 'open' } };
+
+// End customers whose opp-name spelling doesn't resemble their library entry.
+const END_CUSTOMER_ALIASES: Record<string, string> = { 'pure storage': 'everpure' };
+
+const norm = (s: string) => s.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]/g, '');
+const entries = manifest.customers as Entry[];
+
+function findEntry(endCustomer: string): Entry | undefined {
+  const alias = END_CUSTOMER_ALIASES[endCustomer.toLowerCase()];
+  if (alias) return entries.find((e) => e.slug === alias);
+  const q = norm(endCustomer);
+  if (q.length < 3) return undefined;
+  return entries.find((e) =>
+    [e.slug, e.name, e.sfName ?? ''].map(norm).some((k) => k.length >= 3 && (k.includes(q) || q.includes(k))),
+  );
+}
+
+const partnerOpps = await soql<PartnerOpp>(
+  "SELECT Name, IsWon, IsClosed, Account.Name FROM Opportunity WHERE Name LIKE '%(End Customer)%' AND (IsWon = true OR IsClosed = false)",
+);
+const live = new Map<string, { won: boolean; via: Set<string> }>();
+for (const o of partnerOpps) {
+  const endCustomer = o.Name.split(/\(End Customer\)/i)[0].replace(/^.*Partner\)?\s*-?\s*/i, '').trim();
+  if (!endCustomer) continue;
+  const cur = live.get(endCustomer) ?? { won: false, via: new Set<string>() };
+  cur.won = cur.won || o.IsWon;
+  if (o.Account?.Name) cur.via.add(o.Account.Name);
+  live.set(endCustomer, cur);
+}
+
+const missing: string[] = [];
+const tagged = new Map<string, 'won' | 'open'>();
+for (const [endCustomer, d] of live) {
+  const entry = findEntry(endCustomer);
+  const status = d.won ? 'won' : 'open';
+  if (!entry) missing.push(`${endCustomer} (${status}, booked on ${[...d.via].join(', ')})`);
+  else if (entry.partnerDeal) tagged.set(entry.slug, tagged.get(entry.slug) === 'won' ? 'won' : status);
+}
+const stale = entries
+  .filter((e) => e.partnerDeal && tagged.get(e.slug) !== e.partnerDeal.status)
+  .map((e) => `${e.slug}: tagged ${e.partnerDeal!.status}, Salesforce says ${tagged.get(e.slug) ?? 'no won or open deal'}`);
+
+if (missing.length) {
+  console.log(`[enrich-sf] ${missing.length} end customers on partner-booked deals are NOT in the library:`);
+  for (const m of missing) console.log(`[enrich-sf]   ${m}`);
+}
+if (stale.length) {
+  console.log('[enrich-sf] partnerDeal tags in manifest.json that no longer match Salesforce:');
+  for (const s of stale) console.log(`[enrich-sf]   ${s}`);
+}
+if (!missing.length && !stale.length) console.log('[enrich-sf] Partner-booked deals: every end customer is in the library and tagged correctly.');

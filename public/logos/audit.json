@@ -1,20 +1,20 @@
 {
-  "ranAt": "2026-11-18T15:46:21.062Z",
+  "ranAt": "2026-11-19T13:58:17.866Z",
   "counts": {
-    "total": 169,
+    "total": 175,
     "allGood": 36,
-    "partial": 133,
+    "partial": 139,
     "broken": 0,
     "byQuality": {
       "onLight": {
-        "good": 167,
+        "good": 173,
         "icon": 2,
         "flat": 0,
         "tiny": 0,
         "missing": 0
       },
       "onDark": {
-        "good": 166,
+        "good": 172,
         "icon": 1,
         "flat": 1,
         "tiny": 1,
@@ -136,6 +136,52 @@
         "quality": "good"
       },
       "status": "all-good"
+    },
+    {
+      "slug": "amkor",
+      "name": "Amkor Technology",
+      "industry": "Electronics",
+      "onLight": {
+        "file": "amkor-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "amkor-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
+      "slug": "amtrak",
+      "name": "Amtrak",
+      "industry": "Transportation",
+      "onLight": {
+        "file": "amtrak-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "amtrak-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
     },
     {
       "slug": "analog-devices",
@@ -332,6 +378,29 @@
       },
       "onDark": {
         "file": "auria-solutions-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
+      "slug": "avangrid",
+      "name": "Avangrid",
+      "industry": "Utilities",
+      "onLight": {
+        "file": "avangrid-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "avangrid-on-dark.svg",
         "width": 0,
         "height": 0,
         "hasAlpha": true,
@@ -768,6 +837,29 @@
       },
       "onDark": {
         "file": "commscope-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
+      "slug": "consumers-energy",
+      "name": "Consumers Energy",
+      "industry": "Utilities",
+      "onLight": {
+        "file": "consumers-energy-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "consumers-energy-on-dark.svg",
         "width": 0,
         "height": 0,
         "hasAlpha": true,
@@ -1501,6 +1593,29 @@
       },
       "onDark": {
         "file": "hrizons-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
+      "slug": "hubbell",
+      "name": "Hubbell",
+      "industry": "Electronics",
+      "onLight": {
+        "file": "hubbell-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "hubbell-on-dark.svg",
         "width": 0,
         "height": 0,
         "hasAlpha": true,
@@ -2911,6 +3026,29 @@
       },
       "onDark": {
         "file": "room-and-board-on-dark.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "status": "partial",
+      "pendingApproval": true
+    },
+    {
+      "slug": "sabic",
+      "name": "SABIC",
+      "industry": "Chemicals",
+      "onLight": {
+        "file": "sabic-on-light.svg",
+        "width": 0,
+        "height": 0,
+        "hasAlpha": true,
+        "aspectRatio": 0,
+        "quality": "good"
+      },
+      "onDark": {
+        "file": "sabic-on-dark.svg",
         "width": 0,
         "height": 0,
         "hasAlpha": true,

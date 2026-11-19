@@ -34,6 +34,7 @@ export function logoJson(l: Logo, opts: { formats?: boolean } = {}) {
     hq: l.hq?.display ?? null,
     relationship: l.salesforce.relationship,
     aiFund: l.aiFund ?? null,
+    partnerDeal: l.partnerDeal ?? null,
     vector: isVector(l.onLight) && isVector(l.onDark) ? (l.traced ? 'traced' : 'official') : false,
     onLight: l.onLight ? SITE_ORIGIN + l.onLight : null,
     onDark: l.onDark ? SITE_ORIGIN + l.onDark : null,

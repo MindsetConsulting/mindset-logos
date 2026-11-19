@@ -151,6 +151,18 @@ export default function LogoRow({ logo }: Props) {
               fg="text-[color:rgb(110,231,183)]"
             />
           )}
+          {logo.partnerDeal && (
+            <Pill
+              label={`Via ${logo.partnerDeal.partner}${logo.partnerDeal.status === 'won' ? ' · won' : ''}`}
+              title={
+                logo.partnerDeal.status === 'won'
+                  ? `Closed Won deal sold through ${logo.partnerDeal.partner}, booked on the partner's Salesforce account`
+                  : `Open deal sold through ${logo.partnerDeal.partner}, booked on the partner's Salesforce account`
+              }
+              bg="bg-[color:rgba(247,245,242,0.06)]"
+              fg="text-[color:rgba(247,245,242,0.7)]"
+            />
+          )}
           {logo.onLight?.endsWith('.svg') && logo.onDark?.endsWith('.svg') && (
             <Pill
               label={logo.traced ? 'Traced vector' : 'Vector'}

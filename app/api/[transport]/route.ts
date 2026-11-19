@@ -18,6 +18,8 @@ const INSTRUCTIONS = `Mindset Consulting's mark library: customer logos plus Min
 
 Rules that matter:
 - Only relationship "customer" (at least one Closed Won opportunity) may be shown as a client. "pipeline" means an open opportunity, "prospect" means none. Never present pipeline or prospect logos as customers.
+- partnerDeal marks a deal sold through a partner (IBM) and booked on the partner's account. Won still means customer. Say the work came through that partner when it matters.
+- The library does not hold every account in Salesforce. If a company is missing, say it is not in the library yet. Don't call it a failure, and don't substitute a logo from the web.
 - on-light is for light backgrounds (dark ink), on-dark is for dark backgrounds (light ink).
 - Every logo comes in any format through URLs: png, webp, jpg, and svg when a vector master exists. Width with ?w=, background with ?bg=. For slides and email use PNG (Outlook drops WebP). For web use SVG when vector is set. For print prefer vector "official". A "traced" vector is Mindset's redraw from the best raster: say so, and suggest asking the brand for its file before large print.
 - SAP badges are official SAP artwork. Don't recolor, crop, or redraw them.`;
@@ -189,7 +191,10 @@ const handler = createMcpHandler(
         const logo = findLogo(slug);
         if (!logo) {
           const near = loadLogos().map((l) => ({ l, s: score(l, slug) })).filter((x) => x.s > 0).slice(0, 5).map((x) => x.l.slug);
-          return { content: [json({ error: `No logo for "${slug}".`, didYouMean: near })], isError: true };
+          return {
+            content: [json({ error: `"${slug}" is not in the Mindset logo library yet. The library holds ${loadLogos().length} accounts, not every company in Salesforce.`, didYouMean: near })],
+            isError: true,
+          };
         }
         const [pl, pd] = await Promise.all([preview(logo.onLight, 'on-light'), preview(logo.onDark, 'on-dark')]);
         const content: Array<ReturnType<typeof text> | NonNullable<typeof pl>> = [
@@ -197,6 +202,10 @@ const handler = createMcpHandler(
         ];
         if (logo.salesforce.relationship !== 'customer' && logo.salesforce.relationship !== 'other') {
           content.push(text(`Note: ${logo.name} is "${logo.salesforce.relationship}", not a Closed Won customer. Don't present it as a client.`));
+        }
+        if (logo.partnerDeal) {
+          const via = findLogo(logo.partnerDeal.partner)?.name ?? logo.partnerDeal.partner;
+          content.push(text(`Note: the ${logo.name} deal (${logo.partnerDeal.status}) is sold through ${via} and booked on ${via}'s account.`));
         }
         if (pl) content.push(pl);
         if (pd) content.push(pd);
