@@ -1,9 +1,9 @@
 {
-  "ranAt": "2026-11-19T13:58:17.866Z",
+  "ranAt": "2026-11-19T14:18:13.290Z",
   "counts": {
     "total": 175,
-    "allGood": 36,
-    "partial": 139,
+    "allGood": 42,
+    "partial": 133,
     "broken": 0,
     "byQuality": {
       "onLight": {
@@ -157,8 +157,7 @@
         "aspectRatio": 0,
         "quality": "good"
       },
-      "status": "partial",
-      "pendingApproval": true
+      "status": "all-good"
     },
     {
       "slug": "amtrak",
@@ -180,8 +179,7 @@
         "aspectRatio": 0,
         "quality": "good"
       },
-      "status": "partial",
-      "pendingApproval": true
+      "status": "all-good"
     },
     {
       "slug": "analog-devices",
@@ -407,8 +405,7 @@
         "aspectRatio": 0,
         "quality": "good"
       },
-      "status": "partial",
-      "pendingApproval": true
+      "status": "all-good"
     },
     {
       "slug": "baxter",
@@ -866,8 +863,7 @@
         "aspectRatio": 0,
         "quality": "good"
       },
-      "status": "partial",
-      "pendingApproval": true
+      "status": "all-good"
     },
     {
       "slug": "continental-resources",
@@ -1622,8 +1618,7 @@
         "aspectRatio": 0,
         "quality": "good"
       },
-      "status": "partial",
-      "pendingApproval": true
+      "status": "all-good"
     },
     {
       "slug": "ibm",
@@ -3055,8 +3050,7 @@
         "aspectRatio": 0,
         "quality": "good"
       },
-      "status": "partial",
-      "pendingApproval": true
+      "status": "all-good"
     },
     {
       "slug": "sany-america",
