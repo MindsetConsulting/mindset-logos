@@ -10,7 +10,7 @@ type RelFilter = 'all' | Relationship;
 type FundFilter = 'all' | 'any' | 'won' | 'open';
 
 const PROMPTS = [
-  'Give me our SAP Gold Partner and BTP Expert badges as PNGs on white, 1200px wide.',
+  'Give me our SAP Gold Partner and Business AI Platform Expert badges as PNGs on white, 1200px wide.',
   'Get the AppHaus Network badge for a dark slide.',
   'Ecolab logo as an SVG for print.',
   'Zip up every Closed Won customer logo in Food & Beverage.',
@@ -141,7 +141,7 @@ export default function Gallery({
           </div>
           {badgeRequests.length > 0 && (
             <p className="mt-5 font-sans text-sm text-[color:rgba(247,245,242,0.7)]">
-              Coming from SAP (requested {badgeRequests[0].requested}): {badgeRequests.map((r) => r.name).join(' and ')}. These replace the BTP badge, which SAP has renamed.
+              Coming from SAP (requested {badgeRequests[0].requested}): {badgeRequests.map((r) => r.name).join(' and ')}.
             </p>
           )}
           {badgeGaps.length > 0 && (
@@ -217,7 +217,7 @@ https://mindset-logos.vercel.app/api/logos/cargill/on-light.png?w=1600&bg=FFFFFF
 https://mindset-logos.vercel.app/api/logos/anchorage/on-light.svg            # when vector
 
 # SAP badges
-https://mindset-logos.vercel.app/api/badges/sap-gold-partner-btp-expert/on-light.png?w=600
+https://mindset-logos.vercel.app/api/badges/sap-gold-partner-bdc-baip-expert/on-light.png?w=600
 https://mindset-logos.vercel.app/api/badges/sap-apphaus-network/on-dark.png?w=1600
 
 # lists and ZIPs

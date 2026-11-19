@@ -15,16 +15,29 @@
       "masters": "/badges/masters/sap-gold-partner/"
     },
     {
+      "slug": "sap-gold-partner-bdc-baip-expert",
+      "name": "SAP Gold Partner, Expert in SAP Business Data Cloud and SAP Business AI Platform",
+      "issuer": "SAP",
+      "category": "competency",
+      "description": "Gold Partner badge with Expert competency in SAP Business Data Cloud and SAP Business AI Platform, plus Essential in Supply Chain Management.",
+      "since": "2026-11",
+      "status": "current",
+      "selfContained": true,
+      "source": "SAP PartnerEdge Logos & Branding Support case, emailed 2026-11-19 (Badge_G_3BDC_BAIP_1SCM.png)",
+      "notes": "Replaces the 2024 BTP Expert badge (SAP renamed BTP to Business AI Platform). PNG only, 461x678. Ask SAP for a vector before large print."
+    },
+    {
       "slug": "sap-gold-partner-btp-expert",
       "name": "SAP Gold Partner, Expert in SAP BTP",
       "issuer": "SAP",
       "category": "competency",
       "description": "Gold Partner badge with Expert competency in SAP Business Technology Platform: Database and Data Management, Application Development and Integration, Analytics and Planning.",
       "since": "2024-10",
-      "status": "current",
+      "status": "superseded",
       "selfContained": true,
       "source": "Slack #partnership_sap, 2024-10-31 (Badge_G_3BTP_DB_AD_AP.png)",
-      "notes": "Our 2024 badge. SAP has since renamed this competency area to SAP Business AI Platform, where SAP for Me shows Mindset at Expert. New Business AI Platform and Business Data Cloud badges were requested from SAP on 2026-11-18. Use this one until they arrive."
+      "notes": "Our 2024 badge. Superseded 2026-11-19 by the Business Data Cloud and Business AI Platform badge. Kept for history. Don't use in new work.",
+      "supersededBy": "sap-gold-partner-bdc-baip-expert"
     },
     {
       "slug": "sap-apphaus-network",
@@ -48,7 +61,8 @@
       "status": "superseded",
       "selfContained": true,
       "source": "Slack #partnership_sap, 2024-08-22 (SAP_Gold_Advanced_BTP_Badge.png)",
-      "notes": "Superseded by the Expert badge in October 2024. Kept for history. Don't use in new work."
+      "notes": "Superseded by the Expert badge in October 2024. Kept for history. Don't use in new work.",
+      "supersededBy": "sap-gold-partner-bdc-baip-expert"
     }
   ],
   "notFound": [
@@ -61,16 +75,5 @@
       "notes": "Not offered on SAP PartnerEdge's Logos and badges page (checked 2026-11-18)."
     }
   ],
-  "requested": [
-    {
-      "name": "SAP Business AI Platform, Expert",
-      "requested": "2026-11-18",
-      "via": "SAP for Me > Partnership > Competencies & Specializations > Request a Logo (Logos & Branding Support case)"
-    },
-    {
-      "name": "SAP Business Data Cloud, Expert",
-      "requested": "2026-11-18",
-      "via": "Same case"
-    }
-  ]
+  "requested": []
 }

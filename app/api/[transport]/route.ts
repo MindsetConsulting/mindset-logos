@@ -14,7 +14,7 @@ export const maxDuration = 60;
 const INSTRUCTIONS = `Mindset Consulting's mark library: customer logos plus Mindset's own SAP partner badges.
 
 - Customer, partner, pipeline, and AI Fund logos: list_logos, search_logos, get_logo, logo_pack.
-- Mindset's SAP credentials (Gold Partner, BTP Expert competency, AppHaus Network): list_badges, get_badge.
+- Mindset's SAP credentials (Gold Partner, Expert in Business Data Cloud and Business AI Platform, AppHaus Network): list_badges, get_badge.
 
 Rules that matter:
 - Only relationship "customer" (at least one Closed Won opportunity) may be shown as a client. "pipeline" means an open opportunity, "prospect" means none. Never present pipeline or prospect logos as customers.
@@ -257,7 +257,7 @@ const handler = createMcpHandler(
         const content: Array<ReturnType<typeof text> | NonNullable<typeof pl>> = [
           json({ ...badgeJson(b), delivery: deliveryBlock('badges', b.slug, b, a) }),
         ];
-        if (b.status === 'superseded') content.push(text(`Note: ${b.name} is superseded. Use sap-gold-partner-btp-expert instead.`));
+        if (b.status === 'superseded') content.push(text(`Note: ${b.name} is superseded. Use ${b.supersededBy ?? 'a current badge'} instead.`));
         if (pl) content.push(pl);
         if (pd && !b.selfContained) content.push(pd);
         return { content };

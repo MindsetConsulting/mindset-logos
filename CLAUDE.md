@@ -18,7 +18,7 @@ The library holds more than customers: open-opportunity pipeline accounts and pa
 
 ## SAP partner badges (Mindset's own)
 
-`public/badges/` holds Mindset's SAP credentials, separate from customer logos: `manifest.json` plus `{slug}-on-light.png` / `-on-dark.png`. Current: `sap-gold-partner`, `sap-gold-partner-btp-expert` (Oct 2024, replaces `-btp-advanced`), `sap-apphaus-network`. SAP badge art is self-contained: never recolor, crop, or redraw it. Vector masters live in SAP PartnerEdge behind a partner login. `notFound` lists badges people asked for that we don't hold (SAP Build Partner, Migration Factory).
+`public/badges/` holds Mindset's SAP credentials, separate from customer logos: `manifest.json` plus `{slug}-on-light.png` / `-on-dark.png`. Current: `sap-gold-partner`, `sap-gold-partner-bdc-baip-expert` (Nov 2026: Expert in Business Data Cloud and Business AI Platform, Essential in SCM. Replaces `-btp-expert` and `-btp-advanced`), `sap-apphaus-network`. SAP badge art is self-contained: never recolor, crop, or redraw it. Vector masters live in SAP PartnerEdge behind a partner login. `notFound` lists badges people asked for that we don't hold (SAP Build Partner, Migration Factory).
 
 ## Vectors are the masters
 

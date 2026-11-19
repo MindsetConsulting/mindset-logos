@@ -12,6 +12,8 @@ export type Badge = {
   description: string;
   since: string;
   status: 'current' | 'superseded';
+  /** slug of the badge that replaced this one */
+  supersededBy?: string;
   /** Badge art carries its own background. Same file works on light and dark. */
   selfContained: boolean;
   source: string;

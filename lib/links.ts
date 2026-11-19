@@ -58,6 +58,7 @@ export function badgeJson(b: Badge) {
     description: b.description,
     since: b.since,
     status: b.status,
+    supersededBy: b.supersededBy ?? null,
     selfContained: b.selfContained,
     notes: b.notes,
     masters: b.masters && b.masterFiles?.length
